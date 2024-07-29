@@ -24,7 +24,7 @@ const generateThemeCssVariables = () => {
                   ([subKey, subValue]) =>
                     `--${colorKey}-${toCssCasting(mainKey)}-${toCssCasting(
                       subKey
-                    )}: ${subValue}`
+                    )}: ${subValue};`
                 )
                 .join("\n")
             )
