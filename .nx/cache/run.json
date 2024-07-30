@@ -1,8 +1,8 @@
 {
   "run": {
-    "command": "nx build @byeonghyeon/themes",
-    "startTime": "2024-07-30T10:42:36.062Z",
-    "endTime": "2024-07-30T10:42:41.196Z",
+    "command": "nx build @byeonghyeon/react-components-layout",
+    "startTime": "2024-07-30T11:08:05.572Z",
+    "endTime": "2024-07-30T11:08:13.844Z",
     "inner": false
   },
   "tasks": [
@@ -10,9 +10,9 @@
       "taskId": "@byeonghyeon/esbuild-config:build",
       "target": "build",
       "projectName": "@byeonghyeon/esbuild-config",
-      "hash": "5187349505263551225",
-      "startTime": "2024-07-30T10:42:36.066Z",
-      "endTime": "2024-07-30T10:42:37.184Z",
+      "hash": "12892165746164310697",
+      "startTime": "2024-07-30T11:08:05.576Z",
+      "endTime": "2024-07-30T11:08:06.540Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
@@ -21,9 +21,20 @@
       "taskId": "@byeonghyeon/themes:build",
       "target": "build",
       "projectName": "@byeonghyeon/themes",
-      "hash": "11909150431792349755",
-      "startTime": "2024-07-30T10:42:37.185Z",
-      "endTime": "2024-07-30T10:42:41.195Z",
+      "hash": "4481964982980962896",
+      "startTime": "2024-07-30T11:08:06.541Z",
+      "endTime": "2024-07-30T11:08:10.135Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@byeonghyeon/react-components-layout:build",
+      "target": "build",
+      "projectName": "@byeonghyeon/react-components-layout",
+      "hash": "9106819818975727620",
+      "startTime": "2024-07-30T11:08:10.135Z",
+      "endTime": "2024-07-30T11:08:13.844Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
