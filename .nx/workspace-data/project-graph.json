@@ -3356,51 +3356,6 @@
       },
       {
         "source": "@byeonghyeon/themes",
-        "target": "npm:eslint-config-prettier@9.1.0",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
-        "target": "npm:eslint-plugin-import@2.29.1",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
-        "target": "npm:eslint-plugin-json-format@2.0.1",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
-        "target": "npm:eslint-plugin-jsx-a11y@6.9.0",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
-        "target": "npm:eslint-plugin-react@7.35.0",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
-        "target": "npm:eslint-plugin-react-hooks@4.6.2",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
-        "target": "npm:eslint-plugin-simple-import-sort@10.0.0",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
-        "target": "npm:eslint-plugin-storybook@0.6.15",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
-        "target": "npm:prettier@3.3.3",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/themes",
         "target": "npm:typescript",
         "type": "static"
       }

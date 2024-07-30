@@ -3,7 +3,16 @@
   "nxVersion": "19.5.3",
   "deps": {
     "nx": "^19.5.3",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "prettier": "^3.0.3"
   },
   "pathMappings": {},
   "nxJsonPlugins": [],
@@ -15,12 +24,24 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".eslintrc.js",
-        "hash": "7307395377797753530"
+        "file": "tsconfig.base.json",
+        "hash": "15322884351288772532"
       },
       {
-        "file": ".gitignore",
-        "hash": "17707248708148241590"
+        "file": ".yarn/sdks/integrations.yml",
+        "hash": "5703335058684100671"
+      },
+      {
+        "file": ".yarn/sdks/typescript/bin/tsserver",
+        "hash": "6152172598867696651"
+      },
+      {
+        "file": ".yarn/sdks/typescript/package.json",
+        "hash": "5518062098860193450"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "9856994552877416869"
       },
       {
         "file": ".prettierrc",
@@ -31,32 +52,60 @@
         "hash": "1397390985206817274"
       },
       {
-        "file": ".yarnrc.yml",
-        "hash": "9628362127946110903"
+        "file": ".yarn/sdks/typescript/lib/tsserver.js",
+        "hash": "9001145393404039874"
       },
       {
         "file": "README.md",
         "hash": "12782607159840618905"
       },
       {
+        "file": "yarn.lock",
+        "hash": "2977550409858402255"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "17707248708148241590"
+      },
+      {
+        "file": ".yarnrc.yml",
+        "hash": "9628362127946110903"
+      },
+      {
         "file": "nx.json",
         "hash": "15404029855851022287"
-      },
-      {
-        "file": "package.json",
-        "hash": "6751212242618762752"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "15322884351288772532"
       },
       {
         "file": "tsconfig.eslint.json",
         "hash": "2757264458533909294"
       },
       {
-        "file": "yarn.lock",
-        "hash": "2977550409858402255"
+        "file": ".yarn/sdks/typescript/lib/tsc.js",
+        "hash": "12195125482120828380"
+      },
+      {
+        "file": ".yarn/sdks/typescript/bin/tsc",
+        "hash": "3928130886875515345"
+      },
+      {
+        "file": "package.json",
+        "hash": "6050527708496137985"
+      },
+      {
+        "file": ".eslintrc.js",
+        "hash": "7307395377797753530"
+      },
+      {
+        "file": ".yarn/sdks/typescript/lib/tsserverlibrary.js",
+        "hash": "5687832540798906735"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "2102046839467124312"
+      },
+      {
+        "file": ".yarn/sdks/typescript/lib/typescript.js",
+        "hash": "3024332767199450555"
       }
     ],
     "projectFileMap": {
@@ -67,18 +116,9 @@
         },
         {
           "file": "package/themes/package.json",
-          "hash": "17182696222435066092",
+          "hash": "4537150592108917829",
           "deps": [
             "@byeonghyeon/esbuild-config",
-            "npm:eslint-config-prettier@9.1.0",
-            "npm:eslint-plugin-import@2.29.1",
-            "npm:eslint-plugin-json-format@2.0.1",
-            "npm:eslint-plugin-jsx-a11y@6.9.0",
-            "npm:eslint-plugin-react@7.35.0",
-            "npm:eslint-plugin-react-hooks@4.6.2",
-            "npm:eslint-plugin-simple-import-sort@10.0.0",
-            "npm:eslint-plugin-storybook@0.6.15",
-            "npm:prettier@3.3.3",
             "npm:typescript"
           ]
         },
