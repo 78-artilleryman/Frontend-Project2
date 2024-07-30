@@ -27,3 +27,7 @@ dist
 
 .env
 **/.env
+*storybook.log
+
+.nx
+.nx/cache
