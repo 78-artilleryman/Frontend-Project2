@@ -2,10 +2,18 @@
   "name": "frontend-project",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "workspaces": [
+    "package/**/*",
+    "service/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nx build",
+    "graph": "nx run-many --target=build --graph"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "packageManager": "yarn@4.3.1",
+  "devDependencies": {
+    "nx": "^19.5.3"
+  }
 }

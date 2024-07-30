@@ -1,0 +1,205 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.5.3",
+  "deps": {
+    "nx": "^19.5.3"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": false
+    }
+  },
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".yarn/releases/yarn-4.3.1.cjs",
+        "hash": "1397390985206817274"
+      },
+      {
+        "file": "package.json",
+        "hash": "8155050966724881820"
+      },
+      {
+        "file": "README.md",
+        "hash": "12782607159840618905"
+      },
+      {
+        "file": ".yarnrc.yml",
+        "hash": "9628362127946110903"
+      },
+      {
+        "file": "nx.json",
+        "hash": "15404029855851022287"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "17707248708148241590"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "16511679709379207206"
+      }
+    ],
+    "projectFileMap": {
+      "@byeonghyeon/themes": [
+        {
+          "file": "package/themes/build.js",
+          "hash": "16158560902625002410"
+        },
+        {
+          "file": "package/themes/package.json",
+          "hash": "15289801114828739243",
+          "deps": [
+            "npm:esbuild@0.16.17",
+            "npm:typescript@5.5.4"
+          ]
+        },
+        {
+          "file": "package/themes/scripts/build-css-module.js",
+          "hash": "17556886394602366772"
+        },
+        {
+          "file": "package/themes/src/classes/index.ts",
+          "hash": "14874153686921477232"
+        },
+        {
+          "file": "package/themes/src/classes/typography.ts",
+          "hash": "4613592670763236173"
+        },
+        {
+          "file": "package/themes/src/index.ts",
+          "hash": "5051740342712927388"
+        },
+        {
+          "file": "package/themes/src/variables/box.ts",
+          "hash": "17415301785716516678"
+        },
+        {
+          "file": "package/themes/src/variables/colors/index.ts",
+          "hash": "16067044052561609752"
+        },
+        {
+          "file": "package/themes/src/variables/colors/scale.ts",
+          "hash": "7227875050283308958"
+        },
+        {
+          "file": "package/themes/src/variables/colors/static/dark.ts",
+          "hash": "681337314988286385"
+        },
+        {
+          "file": "package/themes/src/variables/colors/static/index.ts",
+          "hash": "17639848047638776056"
+        },
+        {
+          "file": "package/themes/src/variables/colors/static/light.ts",
+          "hash": "5111065768491833496"
+        },
+        {
+          "file": "package/themes/src/variables/index.ts",
+          "hash": "17288868138055620940"
+        },
+        {
+          "file": "package/themes/src/variables/typography.ts",
+          "hash": "15749593622752628120"
+        },
+        {
+          "file": "package/themes/tsconfig.json",
+          "hash": "1179432164812416385"
+        }
+      ],
+      "test": [
+        {
+          "file": "service/test/.gitignore",
+          "hash": "5403484524555424706"
+        },
+        {
+          "file": "service/test/README.md",
+          "hash": "17911282315018038361"
+        },
+        {
+          "file": "service/test/package.json",
+          "hash": "16041644507127463538",
+          "deps": [
+            "@byeonghyeon/themes",
+            "npm:@emotion/react@11.13.0",
+            "npm:@emotion/styled@11.13.0",
+            "npm:@testing-library/jest-dom@5.17.0",
+            "npm:@testing-library/react@13.4.0",
+            "npm:@testing-library/user-event@13.5.0",
+            "npm:@types/jest@27.5.2",
+            "npm:@types/node@16.18.104",
+            "npm:@types/react@18.3.3",
+            "npm:@types/react-dom@18.3.0",
+            "npm:react@18.3.1",
+            "npm:react-dom@18.3.1",
+            "npm:react-scripts@5.0.1",
+            "npm:typescript@4.9.5",
+            "npm:web-vitals@2.1.4"
+          ]
+        },
+        {
+          "file": "service/test/public/favicon.ico",
+          "hash": "2949791817221603359"
+        },
+        {
+          "file": "service/test/public/index.html",
+          "hash": "14867128736298792809"
+        },
+        {
+          "file": "service/test/public/logo192.png",
+          "hash": "7585273181698778288"
+        },
+        {
+          "file": "service/test/public/logo512.png",
+          "hash": "9339365414554387981"
+        },
+        {
+          "file": "service/test/public/manifest.json",
+          "hash": "1447645250373428393"
+        },
+        {
+          "file": "service/test/public/robots.txt",
+          "hash": "2790380794362165217"
+        },
+        {
+          "file": "service/test/src/App.css",
+          "hash": "18444725761904634926"
+        },
+        {
+          "file": "service/test/src/App.tsx",
+          "hash": "13497232680432691219"
+        },
+        {
+          "file": "service/test/src/index.css",
+          "hash": "14056909652331273425"
+        },
+        {
+          "file": "service/test/src/index.tsx",
+          "hash": "739739618053825298"
+        },
+        {
+          "file": "service/test/src/logo.svg",
+          "hash": "5137778160416929466"
+        },
+        {
+          "file": "service/test/src/react-app-env.d.ts",
+          "hash": "3195158367843515590"
+        },
+        {
+          "file": "service/test/src/reportWebVitals.ts",
+          "hash": "4905365886999342103"
+        },
+        {
+          "file": "service/test/src/setupTests.ts",
+          "hash": "16903885983588411080"
+        },
+        {
+          "file": "service/test/tsconfig.json",
+          "hash": "3664978063588679595"
+        }
+      ]
+    }
+  }
+}

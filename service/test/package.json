@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@byeonghyeon/themes": "file:../../package/themes",
+    "@byeonghyeon/themes": "workspace:^",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@testing-library/jest-dom": "^5.17.0",
