@@ -1,6 +1,7 @@
 {
   "name": "@byeonghyeon/esbuild-config",
   "packageManager": "yarn@4.3.1",
+  "main": "index.js",
   "files": [
     "index.js"
   ],
