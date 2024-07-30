@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { ThemeProvider } from "@emotion/react";
-import { vars } from "@byeonghyeon/themes";
+import { classes, vars } from "@byeonghyeon/themes";
 import styled from "@emotion/styled";
 
 function App() {
@@ -25,6 +25,7 @@ function View() {
 }
 
 const Text = styled.p`
+  ${classes.typography.heading["4xl"]}
   color: ${vars.colors.$static.light.red[500]};
 `;
 
