@@ -19,7 +19,10 @@ function App() {
 function View() {
   return (
     <div>
-      <Text>{vars.colors.$static.light.red[500]}</Text>
+      <Text>
+        {vars.colors.$static.light.red[500]}
+        {vars.box.radii.base}
+      </Text>
     </div>
   );
 }
