@@ -31,3 +31,7 @@ dist
 
 .nx
 .nx/cache
+.nx/workspace-data/d
+.nx/workspace-data
+
+.vscode
