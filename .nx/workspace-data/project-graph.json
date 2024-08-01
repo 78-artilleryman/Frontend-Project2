@@ -8961,6 +8961,11 @@
       },
       {
         "source": "@byeonghyeon/storybook",
+        "target": "npm:react@18.3.1",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/storybook",
         "target": "npm:storybook@8.2.6",
         "type": "static"
       },
