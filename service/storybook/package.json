@@ -2,6 +2,7 @@
   "name": "@byeonghyeon/storybook",
   "packageManager": "yarn@4.3.1",
   "devDependencies": {
+    "@byeonghyeon/react-components-button": "workspace:^",
     "@byeonghyeon/react-components-layout": "workspace:^",
     "@byeonghyeon/themes": "workspace:^",
     "@chromatic-com/storybook": "^1.6.1",

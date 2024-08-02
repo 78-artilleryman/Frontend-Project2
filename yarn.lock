@@ -1443,6 +1443,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@byeonghyeon/react-components-button@workspace:^, @byeonghyeon/react-components-button@workspace:package/react/components/button":
+  version: 0.0.0-use.local
+  resolution: "@byeonghyeon/react-components-button@workspace:package/react/components/button"
+  dependencies:
+    "@byeonghyeon/esbuild-config": "workspace:^"
+    "@byeonghyeon/themes": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    "@vanilla-extract/css": "npm:^1.15.3"
+    "@vanilla-extract/dynamic": "npm:^2.1.1"
+    "@vanilla-extract/esbuild-plugin": "npm:^2.3.8"
+    "@vanilla-extract/recipes": "npm:^0.5.3"
+    "@vanilla-extract/sprinkles": "npm:^1.6.2"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    "@byeonghyeon/themes": "workspace:^"
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@byeonghyeon/react-components-layout@workspace:^, @byeonghyeon/react-components-layout@workspace:package/react/components/layout":
   version: 0.0.0-use.local
   resolution: "@byeonghyeon/react-components-layout@workspace:package/react/components/layout"
@@ -1469,6 +1492,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@byeonghyeon/storybook@workspace:service/storybook"
   dependencies:
+    "@byeonghyeon/react-components-button": "workspace:^"
     "@byeonghyeon/react-components-layout": "workspace:^"
     "@byeonghyeon/themes": "workspace:^"
     "@chromatic-com/storybook": "npm:^1.6.1"
@@ -3202,6 +3226,15 @@ __metadata:
     modern-ahocorasick: "npm:^1.0.0"
     picocolors: "npm:^1.0.0"
   checksum: 10c0/57c53e961bc0a273fa792c65c1b6cc6ce45d8f0d3c8b239df6ece4fbf2c58d09764ed70773bf25582e3cc6789ccce2b920c33d177ef276f63c6604c85dbc5c01
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/dynamic@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@vanilla-extract/dynamic@npm:2.1.1"
+  dependencies:
+    "@vanilla-extract/private": "npm:^1.0.5"
+  checksum: 10c0/0c353b6326e73054a5ca1cfbb02e865cd8853e88976d7f53794e91ccf3fdfcab18211ad93750927b05c8d57e3816c1e56b55a8e24ad7f616b5e627339a3d36b6
   languageName: node
   linkType: hard
 

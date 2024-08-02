@@ -12,7 +12,7 @@ export default {
   tags: ["autodocs"],
 };
 
-export const FlexStory = {
+export const GridStory = {
   args: {
     as: "div",
     padding: "5",
