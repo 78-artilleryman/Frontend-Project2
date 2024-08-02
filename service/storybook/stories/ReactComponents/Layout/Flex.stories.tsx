@@ -1,5 +1,5 @@
-import {Flex as _Flex} from "@byeonghyeon/react-components-layout"
-import "@byeonghyeon/react-components-layout/style.css"
+import { Flex as _Flex } from "@byeonghyeon/react-components-layout";
+import "@byeonghyeon/react-components-layout/style.css";
 import * as React from "react";
 
 export default {
@@ -13,20 +13,23 @@ export default {
 
 export const FlexStory = {
   args: {
-    as: 'div',
-    padding: '5',
-    background: 'pink',
-    boxShadow: 'xl',
-    borderRadius: 'md',
-    justify: 'space-between',
+    as: "div",
+    padding: "5",
+    background: "pink",
+    boxShadow: "xl",
+    borderRadius: "md",
+    justify: "space-between",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    alignItems: "center",
     style: {
-      width: '300px',
-    }
+      width: "300px",
+    },
   },
-  render: (args) => (
+  render: args => (
     <_Flex {...args}>
       <div>Flex</div>
       <div>Flex</div>
     </_Flex>
-  )
+  ),
 };
