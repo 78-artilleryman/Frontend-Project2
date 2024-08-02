@@ -2,14 +2,14 @@ import { vars } from "@byeonghyeon/themes";
 import { AsElementProps, StyleProps } from "../core/types";
 import { CSSProperties } from "@vanilla-extract/css";
 
-export type BoxProps = AsElementProps & StyleProps
+export type BoxProps = AsElementProps & StyleProps;
 
 export type DividerProps = {
   orientaion?: "horizontal" | "vertical";
   color?: keyof typeof vars.colors.$scale;
   size?: number;
   variant?: "solid" | "dashed";
-}& React.HTMLAttributes<HTMLHRElement>
+} & React.HTMLAttributes<HTMLHRElement>;
 
 export type FlexProps = {
   align?: CSSProperties["alignItems"];
@@ -19,5 +19,29 @@ export type FlexProps = {
   justify?: CSSProperties["justifyContent"];
   shrink?: CSSProperties["flexShrink"];
   wrap?: CSSProperties["flexWrap"];
-  gap?: number
-} & BoxProps
+  gap?: CSSProperties["gap"];
+} & BoxProps;
+
+export type GridProps = {
+  autoColumns?: CSSProperties["gridAutoColumns"];
+  autoFlow?: CSSProperties["gridAutoFlow"];
+  autoRows?: CSSProperties["gridAutoRows"];
+  column?: CSSProperties["gridColumn"];
+  columnGap?: CSSProperties["columnGap"];
+  gap?: CSSProperties["gap"];
+  row?: CSSProperties["gridRow"];
+  rowGap?: CSSProperties["rowGap"];
+  templateAreas?: CSSProperties["gridTemplateAreas"];
+  templateColumns?: CSSProperties["gridTemplateColumns"];
+  templateRows?: CSSProperties["gridTemplateRows"];
+} & BoxProps;
+
+export type GridItemProps = {
+  area?: CSSProperties["gridArea"];
+  colEnd?: CSSProperties["gridColumnEnd"];
+  colStart?: CSSProperties["gridColumnStart"];
+  colSpan?: CSSProperties["gridColumn"];
+  rowEnd?: CSSProperties["gridRowEnd"];
+  rowStart?: CSSProperties["gridRowStart"];
+  rowSpan?: CSSProperties["gridRow"];
+} & BoxProps;
