@@ -1449,6 +1449,7 @@ __metadata:
   dependencies:
     "@byeonghyeon/esbuild-config": "workspace:^"
     "@byeonghyeon/react-hooks-button": "workspace:^"
+    "@byeonghyeon/react-hooks-toggle": "workspace:^"
     "@byeonghyeon/themes": "workspace:^"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
@@ -1492,6 +1493,23 @@ __metadata:
 "@byeonghyeon/react-hooks-button@workspace:^, @byeonghyeon/react-hooks-button@workspace:package/react/hooks/button":
   version: 0.0.0-use.local
   resolution: "@byeonghyeon/react-hooks-button@workspace:package/react/hooks/button"
+  dependencies:
+    "@byeonghyeon/esbuild-config": "workspace:^"
+    "@byeonghyeon/react-hooks-toggle": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@byeonghyeon/react-hooks-toggle@workspace:^, @byeonghyeon/react-hooks-toggle@workspace:package/react/hooks/toggle":
+  version: 0.0.0-use.local
+  resolution: "@byeonghyeon/react-hooks-toggle@workspace:package/react/hooks/toggle"
   dependencies:
     "@byeonghyeon/esbuild-config": "workspace:^"
     "@types/react": "npm:^18.3.3"

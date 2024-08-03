@@ -3,7 +3,7 @@ import "@byeonghyeon/react-components-button/style.css";
 import "@byeonghyeon/react-components-layout/style.css";
 import { Text } from "@byeonghyeon/react-components-layout";
 import { vars } from "@byeonghyeon/themes";
-import { useButton } from "@byeonghyeon/react-hooks-button";
+import { useButton, useToggleButton } from "@byeonghyeon/react-hooks-button";
 import React from "react";
 
 export default {
@@ -57,6 +57,18 @@ export const TextButtonStory = {
         }}>
         텍스트 버튼입니다.
       </Text>
+    );
+  },
+};
+
+export const ToggleButtonStory = {
+  render: () => {
+    const { buttonProps, isSelected } = useToggleButton({ elementType: "button" }, false);
+
+    return (
+      <_Button {...buttonProps} variant={isSelected ? "solid" : "outline"} color="yellow">
+        {isSelected ? "🌚" : "🌝"}
+      </_Button>
     );
   },
 };
