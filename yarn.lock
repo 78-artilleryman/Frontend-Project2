@@ -1448,6 +1448,7 @@ __metadata:
   resolution: "@byeonghyeon/react-components-button@workspace:package/react/components/button"
   dependencies:
     "@byeonghyeon/esbuild-config": "workspace:^"
+    "@byeonghyeon/react-hooks-button": "workspace:^"
     "@byeonghyeon/themes": "workspace:^"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
@@ -1488,12 +1489,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@byeonghyeon/react-hooks-button@workspace:^, @byeonghyeon/react-hooks-button@workspace:package/react/hooks/button":
+  version: 0.0.0-use.local
+  resolution: "@byeonghyeon/react-hooks-button@workspace:package/react/hooks/button"
+  dependencies:
+    "@byeonghyeon/esbuild-config": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@byeonghyeon/storybook@workspace:service/storybook":
   version: 0.0.0-use.local
   resolution: "@byeonghyeon/storybook@workspace:service/storybook"
   dependencies:
     "@byeonghyeon/react-components-button": "workspace:^"
     "@byeonghyeon/react-components-layout": "workspace:^"
+    "@byeonghyeon/react-hooks-button": "workspace:^"
     "@byeonghyeon/themes": "workspace:^"
     "@chromatic-com/storybook": "npm:^1.6.1"
     "@storybook/addon-essentials": "npm:^8.2.6"
