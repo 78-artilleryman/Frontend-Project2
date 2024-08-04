@@ -1,0 +1,38 @@
+{
+  "name": "@byeonghyeon/react-hooks-input",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "yarn build:js && yarn build:type",
+    "build:js": "node build.js",
+    "build:type": "yarn tsc --emitDeclarationOnly",
+    "clean": "rm -rf dist",
+    "dev": "yarn build:js --watch && yarn build:type --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@byeonghyeon/esbuild-config": "workspace:^",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "dependencies": {
+    "@byeonghyeon/react-hooks-toggle": "workspace:^",
+    "clsx": "^2.1.1"
+  }
+}

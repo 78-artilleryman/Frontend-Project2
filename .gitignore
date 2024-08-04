@@ -29,9 +29,9 @@ dist
 **/.env
 *storybook.log
 
-.nx
-.nx/cache
+
+.nx/cache/*
 .nx/workspace-data/d
-.nx/workspace-data
+.nx/workspace-data/*
 
 .vscode
