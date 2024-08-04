@@ -5,7 +5,7 @@ import { clsx } from "clsx";
 import * as React from "react";
 import { accordionStyle } from "./style.css";
 
-const Accordion = (props: AccordionProps, ref: React.Ref<HTMLDivElement>) => {
+function Accordion(props: AccordionProps, ref: React.Ref<HTMLDivElement>) {
   const { defaultActiveItems = [], children, className, ...rest } = props;
 
   const [activeItems, setActiveItems] = useState<string[]>(defaultActiveItems);
@@ -29,7 +29,7 @@ const Accordion = (props: AccordionProps, ref: React.Ref<HTMLDivElement>) => {
       </div>
     </AccordionContext.Provider>
   );
-};
+}
 
 const _Accordion = React.forwardRef(Accordion);
 export { _Accordion as Accordion };

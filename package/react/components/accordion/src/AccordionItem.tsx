@@ -4,7 +4,7 @@ import { accordionItemStyle } from "./style.css";
 import { AccordionItemProps } from "./types";
 import { Children, cloneElement, isValidElement } from "react";
 
-const AccordionItem = (props: AccordionItemProps, ref: React.Ref<HTMLDivElement>) => {
+function AccordionItem(props: AccordionItemProps, ref: React.Ref<HTMLDivElement>) {
   const { itemName, children, className, ...rest } = props;
 
   const childrenWithProps = Children.toArray(children);
@@ -22,7 +22,7 @@ const AccordionItem = (props: AccordionItemProps, ref: React.Ref<HTMLDivElement>
       {accordionItemChildren}
     </div>
   );
-};
+}
 
 const _AccordionItem = React.forwardRef(AccordionItem);
 export { _AccordionItem as AccordionItem };

@@ -6,7 +6,7 @@ import { useButton } from "@byeonghyeon/react-hooks-button";
 import { useAccordionContext } from "./AccordionContext";
 import { useCallback } from "react";
 
-const AccordionButton = (props: AccordionButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+function AccordionButton(props: AccordionButtonProps, ref: React.Ref<HTMLButtonElement>) {
   const { className, itemName = "", onClick, children, ...rest } = props;
 
   const { setActiveItem } = useAccordionContext();
@@ -30,7 +30,7 @@ const AccordionButton = (props: AccordionButtonProps, ref: React.Ref<HTMLButtonE
       {children}
     </button>
   );
-};
+}
 
 const _AccordionButton = React.forwardRef(AccordionButton);
 export { _AccordionButton as AccordionButton };
