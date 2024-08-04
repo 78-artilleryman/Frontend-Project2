@@ -6,7 +6,7 @@ import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { colorVariant, errorBorderColorVariant, focusBorderColorVariant, inputStyle } from "./style.css";
 import { vars } from "@byeonghyeon/themes";
 
-const Input = (props: InputProps, ref: React.Ref<HTMLInputElement>) => {
+function Input(props: InputProps, ref: React.Ref<HTMLInputElement>) {
   const {
     color = "gray",
     size = "lg",
@@ -41,7 +41,7 @@ const Input = (props: InputProps, ref: React.Ref<HTMLInputElement>) => {
       }}
     />
   );
-};
+}
 
 const _Input = React.forwardRef(Input);
 

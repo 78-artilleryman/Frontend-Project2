@@ -1,6 +1,6 @@
 import React from "react";
 import "@byeonghyeon/react-components-input/style.css";
-import { Input } from "@byeonghyeon/react-components-input";
+import { Input, InputGroup, InputLeftAddon } from "@byeonghyeon/react-components-input";
 
 export default {
   title: "React Components/Input",
@@ -12,6 +12,15 @@ export default {
 
 export const InputStory = {
   render: () => <Input placeholder="placeholder" />,
+};
+
+export const InputGroupStory = {
+  render: () => (
+    <InputGroup size="lg" color="red">
+      <InputLeftAddon>$</InputLeftAddon>
+      <Input placeholder="placeholder" />
+    </InputGroup>
+  ),
 };
 
 export const InputVariantFilledStory = {
