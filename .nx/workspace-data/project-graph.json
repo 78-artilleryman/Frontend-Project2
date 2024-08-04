@@ -300,6 +300,106 @@
         "implicitDependencies": []
       }
     },
+    "@byeonghyeon/react-components-select": {
+      "name": "@byeonghyeon/react-components-select",
+      "type": "lib",
+      "data": {
+        "root": "package/react/components/select",
+        "sourceRoot": "package/react/components/select",
+        "name": "@byeonghyeon/react-components-select",
+        "projectType": "library",
+        "tags": [
+          "npm:public"
+        ],
+        "metadata": {
+          "targetGroups": {
+            "NPM Scripts": [
+              "build",
+              "build:js",
+              "build:type",
+              "clean",
+              "dev"
+            ]
+          },
+          "description": ""
+        },
+        "targets": {
+          "build": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "metadata": {
+              "scriptContent": "yarn build:js && yarn build:type",
+              "runCommand": "yarn build"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [
+              "^build"
+            ]
+          },
+          "build:js": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:js"
+            },
+            "metadata": {
+              "scriptContent": "node build.js",
+              "runCommand": "yarn build:js"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "build:type": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:type"
+            },
+            "metadata": {
+              "scriptContent": "yarn tsc --emitDeclarationOnly",
+              "runCommand": "yarn build:type"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "clean": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "clean"
+            },
+            "metadata": {
+              "scriptContent": "rm -rf dist",
+              "runCommand": "yarn clean"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "dev": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "dev"
+            },
+            "metadata": {
+              "scriptContent": "yarn build:js --watch && yarn build:type --watch",
+              "runCommand": "yarn dev"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {},
+            "parallelism": true
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
     "@byeonghyeon/react-components-input": {
       "name": "@byeonghyeon/react-components-input",
       "type": "lib",
@@ -407,6 +507,106 @@
         "root": "package/react/hooks/button",
         "sourceRoot": "package/react/hooks/button",
         "name": "@byeonghyeon/react-hooks-button",
+        "projectType": "library",
+        "tags": [
+          "npm:public"
+        ],
+        "metadata": {
+          "targetGroups": {
+            "NPM Scripts": [
+              "build",
+              "build:js",
+              "build:type",
+              "clean",
+              "dev"
+            ]
+          },
+          "description": ""
+        },
+        "targets": {
+          "build": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "metadata": {
+              "scriptContent": "yarn build:js && yarn build:type",
+              "runCommand": "yarn build"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [
+              "^build"
+            ]
+          },
+          "build:js": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:js"
+            },
+            "metadata": {
+              "scriptContent": "node build.js",
+              "runCommand": "yarn build:js"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "build:type": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:type"
+            },
+            "metadata": {
+              "scriptContent": "yarn tsc --emitDeclarationOnly",
+              "runCommand": "yarn build:type"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "clean": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "clean"
+            },
+            "metadata": {
+              "scriptContent": "rm -rf dist",
+              "runCommand": "yarn clean"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "dev": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "dev"
+            },
+            "metadata": {
+              "scriptContent": "yarn build:js --watch && yarn build:type --watch",
+              "runCommand": "yarn dev"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {},
+            "parallelism": true
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "@byeonghyeon/react-hooks-select": {
+      "name": "@byeonghyeon/react-hooks-select",
+      "type": "lib",
+      "data": {
+        "root": "package/react/hooks/select",
+        "sourceRoot": "package/react/hooks/select",
+        "name": "@byeonghyeon/react-hooks-select",
         "projectType": "library",
         "tags": [
           "npm:public"
@@ -9654,6 +9854,78 @@
         "type": "static"
       }
     ],
+    "@byeonghyeon/react-components-select": [
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "@byeonghyeon/themes",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:react@18.3.1",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "@byeonghyeon/esbuild-config",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:@types/react@18.3.3",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:@types/react-dom@18.3.0",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:@vanilla-extract/css@1.15.3",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:@vanilla-extract/dynamic@2.1.1",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:@vanilla-extract/esbuild-plugin@2.3.8",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:@vanilla-extract/recipes@0.5.3",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:@vanilla-extract/sprinkles@1.6.2",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:react-dom@18.3.1",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "@byeonghyeon/react-hooks-select",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-components-select",
+        "target": "npm:clsx@2.1.1",
+        "type": "static"
+      }
+    ],
     "@byeonghyeon/react-components-input": [
       {
         "source": "@byeonghyeon/react-components-input",
@@ -9768,6 +10040,43 @@
         "type": "static"
       }
     ],
+    "@byeonghyeon/react-hooks-select": [
+      {
+        "source": "@byeonghyeon/react-hooks-select",
+        "target": "npm:react@18.3.1",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-hooks-select",
+        "target": "@byeonghyeon/esbuild-config",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-hooks-select",
+        "target": "npm:@types/react@18.3.3",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-hooks-select",
+        "target": "npm:@types/react-dom@18.3.0",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-hooks-select",
+        "target": "npm:react-dom@18.3.1",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-hooks-select",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/react-hooks-select",
+        "target": "npm:clsx@2.1.1",
+        "type": "static"
+      }
+    ],
     "@byeonghyeon/react-hooks-toggle": [
       {
         "source": "@byeonghyeon/react-hooks-toggle",
@@ -9834,11 +10143,6 @@
       {
         "source": "@byeonghyeon/react-hooks-input",
         "target": "npm:typescript",
-        "type": "static"
-      },
-      {
-        "source": "@byeonghyeon/react-hooks-input",
-        "target": "@byeonghyeon/react-hooks-toggle",
         "type": "static"
       },
       {
@@ -9948,6 +10252,11 @@
       {
         "source": "@byeonghyeon/storybook",
         "target": "@byeonghyeon/react-components-input",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/storybook",
+        "target": "@byeonghyeon/react-components-select",
         "type": "static"
       },
       {

@@ -1539,6 +1539,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@byeonghyeon/react-components-select@workspace:^, @byeonghyeon/react-components-select@workspace:package/react/components/select":
+  version: 0.0.0-use.local
+  resolution: "@byeonghyeon/react-components-select@workspace:package/react/components/select"
+  dependencies:
+    "@byeonghyeon/esbuild-config": "workspace:^"
+    "@byeonghyeon/react-hooks-select": "workspace:^"
+    "@byeonghyeon/themes": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    "@vanilla-extract/css": "npm:^1.15.3"
+    "@vanilla-extract/dynamic": "npm:^2.1.1"
+    "@vanilla-extract/esbuild-plugin": "npm:^2.3.8"
+    "@vanilla-extract/recipes": "npm:^0.5.3"
+    "@vanilla-extract/sprinkles": "npm:^1.6.2"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    "@byeonghyeon/themes": "workspace:^"
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@byeonghyeon/react-hooks-button@workspace:^, @byeonghyeon/react-hooks-button@workspace:package/react/hooks/button":
   version: 0.0.0-use.local
   resolution: "@byeonghyeon/react-hooks-button@workspace:package/react/hooks/button"
@@ -1561,7 +1585,22 @@ __metadata:
   resolution: "@byeonghyeon/react-hooks-input@workspace:package/react/hooks/input"
   dependencies:
     "@byeonghyeon/esbuild-config": "workspace:^"
-    "@byeonghyeon/react-hooks-toggle": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@byeonghyeon/react-hooks-select@workspace:^, @byeonghyeon/react-hooks-select@workspace:package/react/hooks/select":
+  version: 0.0.0-use.local
+  resolution: "@byeonghyeon/react-hooks-select@workspace:package/react/hooks/select"
+  dependencies:
+    "@byeonghyeon/esbuild-config": "workspace:^"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     clsx: "npm:^2.1.1"
@@ -1597,6 +1636,7 @@ __metadata:
     "@byeonghyeon/react-components-button": "workspace:^"
     "@byeonghyeon/react-components-input": "workspace:^"
     "@byeonghyeon/react-components-layout": "workspace:^"
+    "@byeonghyeon/react-components-select": "workspace:^"
     "@byeonghyeon/react-hooks-button": "workspace:^"
     "@byeonghyeon/themes": "workspace:^"
     "@chromatic-com/storybook": "npm:^1.6.1"
