@@ -28,6 +28,7 @@
     "@byeonghyeon/react-components-accordion": "workspace:^",
     "@byeonghyeon/react-components-input": "workspace:^",
     "@byeonghyeon/react-components-select": "workspace:^",
+    "@byeonghyeon/react-components-toast": "workspace:^",
     "@byeonghyeon/react-hooks-button": "workspace:^"
   }
 }
