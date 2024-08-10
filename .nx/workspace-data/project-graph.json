@@ -3201,6 +3201,15 @@
         "hash": "10c0/69ee906f3125fb2c6bb6ec5cdd84e8827d93b49b3892bce8b62267116cc7e197b5cccf20c160a1d32c26014ecd14470a72a5e3ee37a58f1d6dadc0db1ccf3894"
       }
     },
+    "npm:@storybook/addon-a11y@8.2.8": {
+      "type": "npm",
+      "name": "npm:@storybook/addon-a11y@8.2.8",
+      "data": {
+        "version": "8.2.8",
+        "packageName": "@storybook/addon-a11y",
+        "hash": "10c0/29df4c37626263bdac54bf3750d60634dcc48efba405e51a284539b99d6d319d16d393c73134c2885520db30f3923ede41928f77d1c9b7fd602bb2740106d4a1"
+      }
+    },
     "npm:@storybook/addon-actions@8.2.6": {
       "type": "npm",
       "name": "npm:@storybook/addon-actions@8.2.6",
@@ -3253,6 +3262,15 @@
         "version": "8.2.6",
         "packageName": "@storybook/addon-highlight",
         "hash": "10c0/1093477970a152a84159e74a90b93a46abeb1fd043c109780ad058bb5bf04e2a64080106c2b41568da12f1e3a76b9bcbb967630ea1eb40e49357a53044fdde23"
+      }
+    },
+    "npm:@storybook/addon-highlight@8.2.8": {
+      "type": "npm",
+      "name": "npm:@storybook/addon-highlight@8.2.8",
+      "data": {
+        "version": "8.2.8",
+        "packageName": "@storybook/addon-highlight",
+        "hash": "10c0/6489f61ca915ff56edab55888d34c05cfd25b33d2c5bd37af3cd75917fdc04367dccb976906cd9a4cb132364b981e168c9a8bd38d05e5a4efd8b6c41abe90379"
       }
     },
     "npm:@storybook/addon-interactions@8.2.6": {
@@ -10734,6 +10752,11 @@
       },
       {
         "source": "@byeonghyeon/storybook",
+        "target": "npm:@storybook/addon-a11y@8.2.8",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/storybook",
         "target": "npm:@storybook/addon-essentials@8.2.6",
         "type": "static"
       },
@@ -12989,6 +13012,18 @@
         "type": "static"
       }
     ],
+    "npm:@storybook/addon-a11y@8.2.8": [
+      {
+        "source": "npm:@storybook/addon-a11y@8.2.8",
+        "target": "npm:@storybook/addon-highlight@8.2.8",
+        "type": "static"
+      },
+      {
+        "source": "npm:@storybook/addon-a11y@8.2.8",
+        "target": "npm:axe-core@4.10.0",
+        "type": "static"
+      }
+    ],
     "npm:@storybook/addon-actions@8.2.6": [
       {
         "source": "npm:@storybook/addon-actions@8.2.6",
@@ -13172,6 +13207,13 @@
     "npm:@storybook/addon-highlight@8.2.6": [
       {
         "source": "npm:@storybook/addon-highlight@8.2.6",
+        "target": "npm:@storybook/global@5.0.0",
+        "type": "static"
+      }
+    ],
+    "npm:@storybook/addon-highlight@8.2.8": [
+      {
+        "source": "npm:@storybook/addon-highlight@8.2.8",
         "target": "npm:@storybook/global@5.0.0",
         "type": "static"
       }
