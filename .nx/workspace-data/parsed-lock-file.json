@@ -3555,6 +3555,15 @@
         "hash": "10c0/fabfa96be99802f849fd1ec030914bfd3583e2f380b3d5857c527c906514b8a3250b816d3ceff6975fb69730cf981b087ad7ec6cb469f824c27929e46123cb83"
       }
     },
+    "npm:chromatic@11.7.0": {
+      "type": "npm",
+      "name": "npm:chromatic@11.7.0",
+      "data": {
+        "version": "11.7.0",
+        "packageName": "chromatic",
+        "hash": "10c0/f9164191f0ca4412ebdd2756428c02d5365d5b7e9cc70f509aeda870dfa569ff96654e3b4f6540e2c0f5ec8e49640bccc22dedafc7329fa2a922ac27cbd3b9ce"
+      }
+    },
     "npm:citty@0.1.6": {
       "type": "npm",
       "name": "npm:citty@0.1.6",
@@ -7882,6 +7891,15 @@
         "version": "1.0.0",
         "packageName": "stop-iteration-iterator",
         "hash": "10c0/c4158d6188aac510d9e92925b58709207bd94699e9c31186a040c80932a687f84a51356b5895e6dc72710aad83addb9411c22171832c9ae0e6e11b7d61b0dfb9"
+      }
+    },
+    "npm:storybook-addon-pseudo-states@3.1.1": {
+      "type": "npm",
+      "name": "npm:storybook-addon-pseudo-states@3.1.1",
+      "data": {
+        "version": "3.1.1",
+        "packageName": "storybook-addon-pseudo-states",
+        "hash": "10c0/ed70ebacee76f433482e44a12e0e29d3f048ae8ef4fab7f02edd348b5a9917003e2626d78f3f86654ab6abb60a153370ae0fa6577d1a12805e2a1fec2bb1ec74"
       }
     },
     "npm:storybook-addon-root-attributes@2.1.3": {

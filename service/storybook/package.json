@@ -32,7 +32,9 @@
     "vitest": "^2.0.5"
   },
   "scripts": {
-    "test": "vitest",
+    "build": "npx chromatic --project-token=chpt_9c187a7da42ea41",
+    "test": "vitest run",
+    "test:awtch": "vitest",
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

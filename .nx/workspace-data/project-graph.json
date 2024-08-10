@@ -1012,41 +1012,9 @@
           "npm:public"
         ],
         "metadata": {
-          "targetGroups": {
-            "NPM Scripts": [
-              "build",
-              "test"
-            ]
-          }
+          "targetGroups": {}
         },
         "targets": {
-          "build": {
-            "executor": "nx:run-script",
-            "options": {
-              "script": "build"
-            },
-            "metadata": {
-              "scriptContent": "echo \"Tada!\"",
-              "runCommand": "yarn build"
-            },
-            "configurations": {},
-            "parallelism": true,
-            "dependsOn": [
-              "^build"
-            ]
-          },
-          "test": {
-            "executor": "nx:run-script",
-            "options": {
-              "script": "test"
-            },
-            "metadata": {
-              "scriptContent": "echo \"Error: no test specified\" && exit 1",
-              "runCommand": "yarn test"
-            },
-            "configurations": {},
-            "parallelism": true
-          },
           "nx-release-publish": {
             "dependsOn": [
               "^nx-release-publish"
@@ -1074,22 +1042,52 @@
         "metadata": {
           "targetGroups": {
             "NPM Scripts": [
+              "build",
               "test",
+              "test:awtch",
               "test:ui",
               "storybook",
-              "build"
+              "build-storybook",
+              "chromatic"
             ]
           }
         },
         "targets": {
+          "build": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "metadata": {
+              "scriptContent": "npx chromatic --project-token=chpt_9c187a7da42ea41",
+              "runCommand": "yarn build"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [
+              "^build"
+            ]
+          },
           "test": {
             "executor": "nx:run-script",
             "options": {
               "script": "test"
             },
             "metadata": {
-              "scriptContent": "vitest",
+              "scriptContent": "vitest run",
               "runCommand": "yarn test"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "test:awtch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:awtch"
+            },
+            "metadata": {
+              "scriptContent": "vitest",
+              "runCommand": "yarn test:awtch"
             },
             "configurations": {},
             "parallelism": true
@@ -1118,20 +1116,29 @@
             "configurations": {},
             "parallelism": true
           },
-          "build": {
+          "build-storybook": {
             "executor": "nx:run-script",
             "options": {
-              "script": "build"
+              "script": "build-storybook"
             },
             "metadata": {
               "scriptContent": "storybook build",
-              "runCommand": "yarn build"
+              "runCommand": "yarn build-storybook"
             },
             "configurations": {},
-            "parallelism": true,
-            "dependsOn": [
-              "^build"
-            ]
+            "parallelism": true
+          },
+          "chromatic": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "chromatic"
+            },
+            "metadata": {
+              "scriptContent": "npx chromatic --project-token=chpt_9c187a7da42ea41",
+              "runCommand": "yarn chromatic"
+            },
+            "configurations": {},
+            "parallelism": true
           },
           "nx-release-publish": {
             "dependsOn": [
@@ -4801,6 +4808,15 @@
         "version": "11.5.6",
         "packageName": "chromatic",
         "hash": "10c0/fabfa96be99802f849fd1ec030914bfd3583e2f380b3d5857c527c906514b8a3250b816d3ceff6975fb69730cf981b087ad7ec6cb469f824c27929e46123cb83"
+      }
+    },
+    "npm:chromatic@11.7.0": {
+      "type": "npm",
+      "name": "npm:chromatic@11.7.0",
+      "data": {
+        "version": "11.7.0",
+        "packageName": "chromatic",
+        "hash": "10c0/f9164191f0ca4412ebdd2756428c02d5365d5b7e9cc70f509aeda870dfa569ff96654e3b4f6540e2c0f5ec8e49640bccc22dedafc7329fa2a922ac27cbd3b9ce"
       }
     },
     "npm:citty@0.1.6": {
@@ -9132,6 +9148,15 @@
         "hash": "10c0/c4158d6188aac510d9e92925b58709207bd94699e9c31186a040c80932a687f84a51356b5895e6dc72710aad83addb9411c22171832c9ae0e6e11b7d61b0dfb9"
       }
     },
+    "npm:storybook-addon-pseudo-states@3.1.1": {
+      "type": "npm",
+      "name": "npm:storybook-addon-pseudo-states@3.1.1",
+      "data": {
+        "version": "3.1.1",
+        "packageName": "storybook-addon-pseudo-states",
+        "hash": "10c0/ed70ebacee76f433482e44a12e0e29d3f048ae8ef4fab7f02edd348b5a9917003e2626d78f3f86654ab6abb60a153370ae0fa6577d1a12805e2a1fec2bb1ec74"
+      }
+    },
     "npm:storybook-addon-root-attributes@2.1.3": {
       "type": "npm",
       "name": "npm:storybook-addon-root-attributes@2.1.3",
@@ -10827,6 +10852,11 @@
       },
       {
         "source": "@byeonghyeon/storybook",
+        "target": "npm:chromatic@11.7.0",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/storybook",
         "target": "npm:happy-dom@14.12.3",
         "type": "static"
       },
@@ -10843,6 +10873,11 @@
       {
         "source": "@byeonghyeon/storybook",
         "target": "npm:storybook@8.2.6",
+        "type": "static"
+      },
+      {
+        "source": "@byeonghyeon/storybook",
+        "target": "npm:storybook-addon-pseudo-states@3.1.1",
         "type": "static"
       },
       {
