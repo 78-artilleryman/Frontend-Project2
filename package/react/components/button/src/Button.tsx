@@ -1,6 +1,8 @@
-import * as React from "react";
-import { ButtonProps } from "./types";
+import { useButton } from "@byeonghyeon/react-hooks-button";
+import { vars } from "@byeonghyeon/themes";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { clsx } from "clsx";
+import * as React from "react";
 import {
   buttonStyle,
   enableColorVariant,
@@ -9,9 +11,7 @@ import {
   spanStyle,
   spinnerStyle,
 } from "./style.css";
-import { vars } from "@byeonghyeon/themes";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { useButton } from "@byeonghyeon/react-hooks-button";
+import { ButtonProps } from "./types";
 
 function Button(props: ButtonProps, ref: React.Ref<HTMLButtonElement>) {
   const { buttonProps } = useButton(props);
@@ -41,7 +41,7 @@ function Button(props: ButtonProps, ref: React.Ref<HTMLButtonElement>) {
         }),
         ...style,
       }}>
-      {isLoading && <div className={spinnerStyle({ size })}></div>}
+      {isLoading && <div className={spinnerStyle({ size })} />}
       {leftIcon && <span className={spanStyle({ size })}>{leftIcon}</span>}
       <span>{children}</span>
       {rightIcon && <span className={spanStyle({ size })}>{rightIcon}</span>}
