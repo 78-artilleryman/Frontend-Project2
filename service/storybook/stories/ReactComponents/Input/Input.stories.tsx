@@ -1,6 +1,6 @@
+import { Input, InputGroup, InputLeftAddon } from "@byeonghyeon/react-components-input";
 import React from "react";
 import "@byeonghyeon/react-components-input/style.css";
-import { Input, InputGroup, InputLeftAddon } from "@byeonghyeon/react-components-input";
 
 export default {
   title: "React Components/Input",

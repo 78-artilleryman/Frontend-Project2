@@ -1,10 +1,10 @@
-import * as React from "react";
-import { InputProps } from "./types";
 import { useInput } from "@byeonghyeon/react-hooks-input";
-import { clsx } from "clsx";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { colorVariant, errorBorderColorVariant, focusBorderColorVariant, inputStyle } from "./style.css";
 import { vars } from "@byeonghyeon/themes";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { clsx } from "clsx";
+import * as React from "react";
+import { colorVariant, errorBorderColorVariant, focusBorderColorVariant, inputStyle } from "./style.css";
+import { InputProps } from "./types";
 
 function Input(props: InputProps, ref: React.Ref<HTMLInputElement>) {
   const {

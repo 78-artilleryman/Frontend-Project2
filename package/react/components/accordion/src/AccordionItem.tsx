@@ -1,8 +1,8 @@
-import * as React from "react";
 import { clsx } from "clsx";
+import * as React from "react";
+import { Children, cloneElement, isValidElement } from "react";
 import { accordionItemStyle } from "./style.css";
 import { AccordionItemProps } from "./types";
-import { Children, cloneElement, isValidElement } from "react";
 
 function AccordionItem(props: AccordionItemProps, ref: React.Ref<HTMLDivElement>) {
   const { itemName, children, className, ...rest } = props;

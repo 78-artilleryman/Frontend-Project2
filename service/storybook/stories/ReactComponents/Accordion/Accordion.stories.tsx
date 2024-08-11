@@ -1,9 +1,8 @@
-import "@byeonghyeon/react-components-accordion/style.css";
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from "@byeonghyeon/react-components-accordion";
-import React from "react";
-
-import "@byeonghyeon/react-components-layout/style.css";
 import { Text, Heading } from "@byeonghyeon/react-components-layout";
+import "@byeonghyeon/react-components-accordion/style.css";
+import React from "react";
+import "@byeonghyeon/react-components-layout/style.css";
 
 export default {
   title: "React Components/Accordion",

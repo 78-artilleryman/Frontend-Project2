@@ -1,7 +1,7 @@
 import { vars } from "@byeonghyeon/themes";
+import { clsx } from "clsx";
 import { inputLeftAddonStyle } from "./style.css";
 import { InputLeftAddonProps } from "./types";
-import { clsx } from "clsx";
 
 function InputLeftAddon(props: InputLeftAddonProps) {
   const { size = "md", color = "gray", children } = props;

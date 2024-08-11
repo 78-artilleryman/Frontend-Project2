@@ -1,8 +1,8 @@
-import * as React from "react";
-import { InputGroupProps } from "./types";
-import { Children, cloneElement, isValidElement } from "react";
 import { clsx } from "clsx";
+import * as React from "react";
+import { Children, cloneElement, isValidElement } from "react";
 import { inputGroupStyle } from "./style.css";
+import { InputGroupProps } from "./types";
 
 function InputGroup(props: InputGroupProps, ref: React.Ref<HTMLDivElement>) {
   const { children, className, color = "gray", size = "md", ...rest } = props;

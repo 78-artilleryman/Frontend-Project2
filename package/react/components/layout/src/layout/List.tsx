@@ -1,7 +1,7 @@
 import * as React from "react";
-import { ListProps } from "./types";
-import { UnorderedList } from "./UnorderedList";
 import { OrderedList } from "./OrderedList";
+import { UnorderedList } from "./UnorderedList";
+import { ListProps } from "./types";
 
 function List(props: ListProps, ref: React.Ref<HTMLOListElement>) {
   const { variant = "unordered", ...rest } = props;

@@ -1,12 +1,12 @@
-import {Text as _Text} from "@byeonghyeon/react-components-layout"
-import "@byeonghyeon/react-components-layout/style.css"
+import { Text as _Text } from "@byeonghyeon/react-components-layout";
+import "@byeonghyeon/react-components-layout/style.css";
 import { classes, vars } from "@byeonghyeon/themes";
 
 export default {
   title: "React Components/Layout/Typography/Text",
   component: _Text,
-  parameters:{
-    layout: "centered"
+  parameters: {
+    layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {
@@ -23,12 +23,12 @@ export default {
       control: "select",
     },
   },
-}
+};
 
 export const Text = {
   args: {
     as: "p",
     fontSize: "sm",
-    children: "test"
-  }
+    children: "test",
+  },
 };

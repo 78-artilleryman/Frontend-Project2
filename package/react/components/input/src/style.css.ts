@@ -1,6 +1,6 @@
 import { vars } from "@byeonghyeon/themes";
-import { recipe } from "@vanilla-extract/recipes";
 import { createVar, style } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
 
 export const errorBorderColorVariant = createVar();
 export const focusBorderColorVariant = createVar();

@@ -1,12 +1,12 @@
-import run from "@byeonghyeon/esbuild-config"
-import pkg from "./package.json" assert {type: "json"}
-import {vanillaExtractPlugin} from "@vanilla-extract/esbuild-plugin"
+import run from "@byeonghyeon/esbuild-config";
+import { vanillaExtractPlugin } from "@vanilla-extract/esbuild-plugin";
+import pkg from "./package.json" assert { type: "json" };
 
 const config = {
-  plugins:[vanillaExtractPlugin()]
-}
+  plugins: [vanillaExtractPlugin()],
+};
 
 run({
   pkg,
   config,
-})
+});

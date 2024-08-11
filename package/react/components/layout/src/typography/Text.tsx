@@ -1,13 +1,13 @@
-import {clsx} from "clsx"
-import { TextProps } from "./types";
+import { vars } from "@byeonghyeon/themes";
+import { clsx } from "clsx";
+import * as React from "react";
 import { BaseStyle, StyleSprinkles } from "../core/style.css";
 import { extractSprinkleProps } from "../utils/properties";
-import { vars } from "@byeonghyeon/themes";
-import * as React from "react";
 import { textStyle } from "./style.css";
+import { TextProps } from "./types";
 
-function Text(props: TextProps, ref: React.Ref<HTMLElement>){
-  const { as = "p", color = 'gray', background, children, fontSize } = props;
+function Text(props: TextProps, ref: React.Ref<HTMLElement>) {
+  const { as = "p", color = "gray", background, children, fontSize } = props;
 
   return React.createElement(
     as,
@@ -16,9 +16,7 @@ function Text(props: TextProps, ref: React.Ref<HTMLElement>){
       ref,
       className: clsx([
         BaseStyle,
-        StyleSprinkles(
-          extractSprinkleProps(props, Array.from(StyleSprinkles.properties)),
-        ),
+        StyleSprinkles(extractSprinkleProps(props, Array.from(StyleSprinkles.properties))),
         textStyle({
           fontSize,
         }),
@@ -30,9 +28,9 @@ function Text(props: TextProps, ref: React.Ref<HTMLElement>){
         ...props.style,
       },
     },
-    children,
+    children
   );
-};
+}
 
 const _Text = React.forwardRef(Text);
 export { _Text as Text };

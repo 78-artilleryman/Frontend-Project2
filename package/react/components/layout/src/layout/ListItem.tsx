@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ListItemProps } from "./types";
 import { Text } from "../typography";
+import { ListItemProps } from "./types";
 
 const ListItem = (props: ListItemProps, ref: React.Ref<HTMLLIElement>) => {
   return <Text {...props} ref={ref} as="li" />;

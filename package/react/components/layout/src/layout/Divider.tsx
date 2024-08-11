@@ -1,14 +1,9 @@
+import { vars } from "@byeonghyeon/themes";
 import * as React from "react";
 import { DividerProps } from "./types";
-import { vars } from "@byeonghyeon/themes";
 
 function Divider(props: DividerProps, ref: React.Ref<HTMLHRElement>) {
-  const {
-    color = "gray",
-    variant = "solid",
-    size = 1,
-    orientaion = "horizontal"
-  } = props;
+  const { color = "gray", variant = "solid", size = 1, orientaion = "horizontal" } = props;
 
   const borderStyle =
     orientaion === "horizontal"
@@ -36,4 +31,4 @@ function Divider(props: DividerProps, ref: React.Ref<HTMLHRElement>) {
 }
 
 const _Diver = React.forwardRef(Divider);
-export {_Diver as Divider}
+export { _Diver as Divider };

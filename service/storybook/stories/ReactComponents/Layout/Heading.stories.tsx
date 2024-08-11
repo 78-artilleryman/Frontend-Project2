@@ -1,6 +1,6 @@
-import "@byeonghyeon/react-components-layout/style.css"
+import "@byeonghyeon/react-components-layout/style.css";
 import { Heading as _Heading } from "@byeonghyeon/react-components-layout";
-import { classes, vars } from '@byeonghyeon/themes';
+import { classes, vars } from "@byeonghyeon/themes";
 
 export default {
   title: "React Components/Layout/Typography/Heading",
@@ -24,7 +24,6 @@ export default {
     },
   },
 };
-
 
 export const Heading = {
   args: {

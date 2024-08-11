@@ -1,9 +1,9 @@
-import { GridProps } from "./types";
-import * as React from "react";
+import { vars } from "@byeonghyeon/themes";
 import { clsx } from "clsx";
+import * as React from "react";
 import { BaseStyle, StyleSprinkles } from "../core/style.css";
 import { extractSprinkleProps } from "../utils/properties";
-import { vars } from "@byeonghyeon/themes";
+import { GridProps } from "./types";
 
 function Grid(props: GridProps, ref: React.Ref<HTMLElement>) {
   const {

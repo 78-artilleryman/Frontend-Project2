@@ -1,7 +1,7 @@
+import { composeStories } from "@storybook/react";
 import React from "react";
 import { describe, expect, it, vi } from "vitest";
 import { render, screen, userEvent, waitFor } from "../../../test/test-utils";
-import { composeStories } from "@storybook/react";
 import * as stories from "./Toast.stories";
 
 const { ToastStory } = composeStories(stories);

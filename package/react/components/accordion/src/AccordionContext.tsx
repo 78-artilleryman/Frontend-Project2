@@ -2,6 +2,7 @@ import { createContext, useContext } from "react";
 
 export type AccordionContextType = {
   activeItems: string[];
+  // eslint-disable-next-line no-unused-vars
   setActiveItem: (item: string) => void;
 };
 

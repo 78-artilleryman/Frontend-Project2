@@ -1,7 +1,7 @@
+import { composeStories } from "@storybook/react";
 import React from "react";
 import { describe, expect, it } from "vitest";
 import { render, screen } from "../../../test/test-utils";
-import { composeStories } from "@storybook/react";
 import * as stories from "./Accordion.stories";
 
 const { AccordionTestStory } = composeStories(stories);

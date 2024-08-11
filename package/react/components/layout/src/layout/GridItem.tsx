@@ -1,9 +1,9 @@
-import { GridItemProps } from "./types";
-import * as React from "react";
+import { vars } from "@byeonghyeon/themes";
 import { clsx } from "clsx";
+import * as React from "react";
 import { BaseStyle, StyleSprinkles } from "../core/style.css";
 import { extractSprinkleProps } from "../utils/properties";
-import { vars } from "@byeonghyeon/themes";
+import { GridItemProps } from "./types";
 
 function GridItem(props: GridItemProps, ref: React.Ref<HTMLElement>) {
   const { as = "div", children, color, background, area, colEnd, colStart, colSpan, rowEnd, rowStart, rowSpan } = props;

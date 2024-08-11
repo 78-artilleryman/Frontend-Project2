@@ -1,8 +1,8 @@
+import { setProjectAnnotations } from "@storybook/react";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach } from "vitest";
 import "@testing-library/jest-dom";
 import * as globalStorybookConfig from "../.storybook/preview";
-import { setProjectAnnotations } from "@storybook/react";
 
 // @ts-ignore
 setProjectAnnotations(globalStorybookConfig);

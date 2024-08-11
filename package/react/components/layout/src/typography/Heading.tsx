@@ -1,11 +1,11 @@
 import { vars } from "@byeonghyeon/themes";
+import { clsx } from "clsx";
 import * as React from "react";
 import { forwardRef, Ref } from "react";
-import { textStyle } from "./style.css";
-import { HeadingProps } from "./types";
-import { clsx } from "clsx";
 import { BaseStyle, StyleSprinkles } from "../core/style.css";
 import { extractSprinkleProps } from "../utils/properties";
+import { textStyle } from "./style.css";
+import { HeadingProps } from "./types";
 
 const Heading = (props: HeadingProps, ref: Ref<HTMLElement>) => {
   const { as = "h1", fontSize, background, color = "gray", children } = props;
@@ -17,9 +17,7 @@ const Heading = (props: HeadingProps, ref: Ref<HTMLElement>) => {
       ref,
       className: clsx([
         BaseStyle,
-        StyleSprinkles(
-          extractSprinkleProps(props, Array.from(StyleSprinkles.properties)),
-        ),
+        StyleSprinkles(extractSprinkleProps(props, Array.from(StyleSprinkles.properties))),
         textStyle({
           fontSize,
         }),
@@ -31,7 +29,7 @@ const Heading = (props: HeadingProps, ref: Ref<HTMLElement>) => {
         ...props.style,
       },
     },
-    children,
+    children
   );
 };
 

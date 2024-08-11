@@ -1,5 +1,5 @@
 import { classes } from "@byeonghyeon/themes";
-import { recipe } from '@vanilla-extract/recipes';
+import { recipe } from "@vanilla-extract/recipes";
 
 export const textStyle = recipe({
   variants: {
@@ -7,11 +7,10 @@ export const textStyle = recipe({
       ...classes.typography.text,
     },
     defaultVariants: {
-      fontSize: 'xl',
+      fontSize: "xl",
     },
-  }
+  },
 });
-
 
 export const headingStyle = recipe({
   variants: {

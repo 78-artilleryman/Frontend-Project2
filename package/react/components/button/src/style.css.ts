@@ -24,7 +24,7 @@ export const buttonStyle = recipe({
       opacity: 0.4,
       cursor: "not-allowed",
     },
-    '&[data-loading="true"]': {
+    "&[data-loading='true']": {
       "& span": {
         opacity: 0,
       },

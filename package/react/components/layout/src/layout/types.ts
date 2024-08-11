@@ -1,6 +1,6 @@
 import { vars } from "@byeonghyeon/themes";
-import { AsElementProps, StyleProps } from "../core/types";
 import { CSSProperties } from "@vanilla-extract/css";
+import { AsElementProps, StyleProps } from "../core/types";
 import { TextProps } from "../typography";
 
 export type BoxProps = AsElementProps & StyleProps;

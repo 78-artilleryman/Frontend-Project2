@@ -1,13 +1,17 @@
 import "@byeonghyeon/react-components-layout/style.css";
 import { Box, Divider as _Divider } from "@byeonghyeon/react-components-layout";
-import { vars } from '@byeonghyeon/themes';
+import { vars } from "@byeonghyeon/themes";
 import * as React from "react";
 
 export default {
   title: "React Components/Layout/Divider",
   component: _Divider,
   decorators: [
-    (Story) => <Box padding={3} style={{ width: '300px', height: '300px' }}><Story /></Box>
+    Story => (
+      <Box padding={3} style={{ width: "300px", height: "300px" }}>
+        <Story />
+      </Box>
+    ),
   ],
   parameters: {
     layout: "centered",
@@ -28,7 +32,6 @@ export default {
     },
   },
 };
-
 
 export const Divider = {
   args: {

@@ -1,10 +1,10 @@
-import * as React from "react";
-import { AccordionButtonProps } from "./types";
-import { clsx } from "clsx";
-import { accordionButtonStyle } from "./style.css";
 import { useButton } from "@byeonghyeon/react-hooks-button";
-import { useAccordionContext } from "./AccordionContext";
+import { clsx } from "clsx";
+import * as React from "react";
 import { useCallback } from "react";
+import { useAccordionContext } from "./AccordionContext";
+import { accordionButtonStyle } from "./style.css";
+import { AccordionButtonProps } from "./types";
 
 function AccordionButton(props: AccordionButtonProps, ref: React.Ref<HTMLButtonElement>) {
   const { className, itemName = "", onClick, children, ...rest } = props;
@@ -16,6 +16,7 @@ function AccordionButton(props: AccordionButtonProps, ref: React.Ref<HTMLButtonE
       setActiveItem(itemName);
       onClick?.(event);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [itemName, setActiveItem]
   );
 

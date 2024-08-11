@@ -1,11 +1,10 @@
-import * as React from "react";
-import { SelectProps } from "./types";
-
-import { clsx } from "clsx";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { colorVariant, errorBorderColorVariant, focusBorderColorVariant, selectStyle } from "./style.css";
-import { vars } from "@byeonghyeon/themes";
 import { useSelect } from "@byeonghyeon/react-hooks-select";
+import { vars } from "@byeonghyeon/themes";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { clsx } from "clsx";
+import * as React from "react";
+import { colorVariant, errorBorderColorVariant, focusBorderColorVariant, selectStyle } from "./style.css";
+import { SelectProps } from "./types";
 
 const Select = (props: SelectProps, ref: React.Ref<HTMLSelectElement>) => {
   const {

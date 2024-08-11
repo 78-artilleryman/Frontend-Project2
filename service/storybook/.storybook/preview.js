@@ -1,5 +1,5 @@
-import "@byeonghyeon/themes/themes.css"
-import "./style.css"
+import "@byeonghyeon/themes/themes.css";
+import "./style.css";
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -18,14 +18,14 @@ const preview = {
         attribute: "class",
         defaultState: {
           name: "light",
-          value: 'theme-light',
+          value: "theme-light",
         },
         states: [
           {
             name: "dark",
-            value: 'theme-dark',
-          }
-        ]
+            value: "theme-dark",
+          },
+        ],
       },
     ],
   },
@@ -40,7 +40,7 @@ const initTheme = () => {
 
   const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 
-  mediaQueryList.addEventListener("change", (e) => {
+  mediaQueryList.addEventListener("change", e => {
     if (e.matches) {
       document.body.classList.add("theme-dark");
     } else {

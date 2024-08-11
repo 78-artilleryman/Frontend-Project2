@@ -1,10 +1,10 @@
-import * as React from "react";
-import { AccordionPanelProps } from "./types";
-import { clsx } from "clsx";
-import { accordionPanelStyle, panelHeight } from "./style.css";
-import { useAccordionContext } from "./AccordionContext";
-import { useEffect, useRef, useState } from "react";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { clsx } from "clsx";
+import * as React from "react";
+import { useEffect, useRef, useState } from "react";
+import { useAccordionContext } from "./AccordionContext";
+import { accordionPanelStyle, panelHeight } from "./style.css";
+import { AccordionPanelProps } from "./types";
 
 function AccordionPanel(props: AccordionPanelProps, ref: React.Ref<HTMLDivElement>) {
   const { itemName = "", children, className, style, ...rest } = props;
@@ -48,7 +48,7 @@ function AccordionPanel(props: AccordionPanelProps, ref: React.Ref<HTMLDivElemen
       data-action-item={isActive}
       style={{
         ...assignInlineVars({
-          [panelHeight]: currentPanelHeight ?? `$innerRef.current.clientHeight}px`,
+          [panelHeight]: currentPanelHeight ?? "$innerRef.current.clientHeight}px",
         }),
         ...style,
       }}>

@@ -1,7 +1,7 @@
-import * as React from "react";
-import { UnorderedListProps } from "./types";
 import { vars } from "@byeonghyeon/themes";
+import * as React from "react";
 import { Flex } from "./Flex";
+import { UnorderedListProps } from "./types";
 
 function UnorderedList(props: UnorderedListProps, ref: React.Ref<HTMLOListElement>) {
   const { listStyleType = "disc", spacing = 3, children, ...rest } = props;

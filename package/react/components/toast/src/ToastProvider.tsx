@@ -1,10 +1,10 @@
 import { PropsWithChildren, useContext, useRef, useState } from "react";
-import { ToastContainer } from "./ToastContainer";
 import { Toast } from "./Toast";
+import { ToastContainer } from "./ToastContainer";
 import { ToastConfigProps, ToastContext } from "./ToastContext";
 import { ToastPayload } from "./types";
 
-export const ToastProvider = ({ children }: PropsWithChildren<{}>) => {
+export const ToastProvider = ({ children }: PropsWithChildren<object>) => {
   const [toastPayload, setToastPayload] = useState<ToastPayload | undefined>(undefined);
 
   const timeoutRef = useRef<number | undefined>(undefined);

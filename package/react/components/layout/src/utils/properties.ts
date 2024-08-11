@@ -1,10 +1,7 @@
-export const extractSprinkleProps = <T extends Object>(
-  props: T,
-  keys: (keyof T)[],
-) => {
+export const extractSprinkleProps = <T extends object>(props: T, keys: (keyof T)[]) => {
   const result: any = {};
 
-  keys.forEach((key) => {
+  keys.forEach(key => {
     if (props?.[key]) {
       result[key] = props[key];
     }

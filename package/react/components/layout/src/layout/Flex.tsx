@@ -1,9 +1,9 @@
-import { FlexProps } from "./types";
-import * as React from "react";
+import { vars } from "@byeonghyeon/themes";
 import { clsx } from "clsx";
+import * as React from "react";
 import { BaseStyle, StyleSprinkles } from "../core/style.css";
 import { extractSprinkleProps } from "../utils/properties";
-import { vars } from "@byeonghyeon/themes";
+import { FlexProps } from "./types";
 
 function Flex(props: FlexProps, ref: React.Ref<HTMLElement>) {
   const { as = "div", children, color, background, align, basis, direction, grow, justify, shrink, wrap, gap } = props;

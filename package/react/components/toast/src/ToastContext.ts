@@ -7,6 +7,7 @@ export type ToastConfigProps = {
 };
 
 export type ToastContextType = {
+  // eslint-disable-next-line no-unused-vars
   toast: (toastProps: ToastConfigProps) => void;
 };
 

@@ -4,7 +4,6 @@ export type AccordionProps = {
   defaultActiveItems?: string[];
   children: React.ReactNode | React.ReactNode[];
 } & Omit<React.HTMLAttributes<HTMLDivElement>, "children">;
-4;
 
 export type AccordionItemProps = {
   children: React.ReactNode[];

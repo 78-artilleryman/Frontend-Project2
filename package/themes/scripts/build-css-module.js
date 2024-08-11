@@ -1,12 +1,12 @@
-import * as theme from "../dist/index.js";
 import fs from "fs";
+import * as theme from "../dist/index.js";
 
 // theme.css
 // :root {
 //   --gray-900: #171923
 // }
 
-const toCssCasting = (str) => {
+const toCssCasting = str => {
   return str
     .replace(/([a-z])(\d)/, "$1-$2")
     .replace(/([A-Z])/g, "-$1")
@@ -25,12 +25,7 @@ const generateThemeCssVariables = () => {
           const cssVariables = Object.entries(colorValue)
             .map(([mainKey, mainValue]) =>
               Object.entries(mainValue)
-                .map(
-                  ([subKey, subValue]) =>
-                    `--${toCssCasting(mainKey)}-${toCssCasting(
-                      subKey
-                    )}: ${subValue};`
-                )
+                .map(([subKey, subValue]) => `--${toCssCasting(mainKey)}-${toCssCasting(subKey)}: ${subValue};`)
                 .join("\n")
             )
             .join("\n");
@@ -44,12 +39,7 @@ const generateThemeCssVariables = () => {
           const cssVariables = Object.entries(colorValue)
             .map(([mainKey, mainValue]) =>
               Object.entries(mainValue)
-                .map(
-                  ([subKey, subValue]) =>
-                    `--${toCssCasting(mainKey)}-${toCssCasting(
-                      subKey
-                    )}: ${subValue};`
-                )
+                .map(([subKey, subValue]) => `--${toCssCasting(mainKey)}-${toCssCasting(subKey)}: ${subValue};`)
                 .join("\n")
             )
             .join("\n");
@@ -66,10 +56,7 @@ const generateThemeCssVariables = () => {
     const cssVariables = Object.entries(value)
       .map(([mainKey, mainValue]) =>
         Object.entries(mainValue)
-          .map(
-            ([subKey, subValue]) =>
-              `--${toCssCasting(mainKey)}-${toCssCasting(subKey)}: ${subValue};`
-          )
+          .map(([subKey, subValue]) => `--${toCssCasting(mainKey)}-${toCssCasting(subKey)}: ${subValue};`)
           .join("\n")
       )
       .join("\n");
@@ -90,24 +77,26 @@ const generateThemeCssClasses = () => {
 
   Object.entries(theme.classes).forEach(([, value]) => {
     const cssClasses = Object.entries(value)
-      .map(([mainKey, mainValue]) => (
+      .map(([mainKey, mainValue]) =>
         Object.entries(mainValue)
           .map(([subKey, subValue]) => {
             const className = `.${toCssCasting(mainKey)}${toCssCasting(subKey)}`;
 
-            const styleProperties = Object.entries(subValue).map(([styleKey, styleValue]) => (
-              `${toCssCasting(styleKey)}: ${styleValue};`
-            )).join('\n');
-            
+            const styleProperties = Object.entries(subValue)
+              .map(([styleKey, styleValue]) => `${toCssCasting(styleKey)}: ${styleValue};`)
+              .join("\n");
+
             return `${className} {\n${styleProperties}\n}`;
-          }).join('\n')
-      )).join('\n');
-    
+          })
+          .join("\n")
+      )
+      .join("\n");
+
     cssString.push(cssClasses);
-  })
+  });
 
   return cssString;
-}
+};
 
 const generateThemeCss = () => {
   const variables = generateThemeCssVariables();

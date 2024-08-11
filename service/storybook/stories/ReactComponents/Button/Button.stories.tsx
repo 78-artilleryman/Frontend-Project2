@@ -2,8 +2,8 @@ import { Button as _Button } from "@byeonghyeon/react-components-button";
 import "@byeonghyeon/react-components-button/style.css";
 import "@byeonghyeon/react-components-layout/style.css";
 import { Text } from "@byeonghyeon/react-components-layout";
-import { vars } from "@byeonghyeon/themes";
 import { useButton, useToggleButton } from "@byeonghyeon/react-hooks-button";
+import { vars } from "@byeonghyeon/themes";
 import React from "react";
 
 export default {
@@ -41,6 +41,7 @@ export const ButtonStory = {
 
 export const TextButtonStory = {
   render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { buttonProps } = useButton({
       elementType: "div",
     });
@@ -63,6 +64,7 @@ export const TextButtonStory = {
 
 export const ToggleButtonStory = {
   render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { buttonProps, isSelected } = useToggleButton({ elementType: "button" }, false);
 
     return (
