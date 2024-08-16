@@ -14,11 +14,15 @@ function Loginpage() {
           <h2 className="text-6xl font-bold text-blue-700">Login Page</h2>
         </div>
         <div className="w-[50%] flex flex-col items-center gap-11">
-          <h3 className="text-4xl font-bold text-blackAlpha-900">User Login</h3>
+          <h3 className="text-4xl font-bold text-blackAlpha-900">
+            User <span className="text-blue-600">Login</span>
+          </h3>
           <form className="w-[50%] flex flex-col items-center gap-7">
             <Input type="text" placeholder="Email" />
             <Input type="password" placeholder="Password" />
-            <Button color="blue">Login</Button>
+            <Button size="md" color="blue" className="w-[250px] flex justify-center rounded-[20px]">
+              Login
+            </Button>
           </form>
           <p className="text-lg font-normal text-gray-400">Create Your Account</p>
         </div>
