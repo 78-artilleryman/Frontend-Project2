@@ -16,7 +16,17 @@ import { ButtonProps } from "./types";
 function Button(props: ButtonProps, ref: React.Ref<HTMLButtonElement>) {
   const { buttonProps } = useButton(props);
 
-  const { variant = "solid", size = "md", color = "gray", children, style, leftIcon, rightIcon, isLoading } = props;
+  const {
+    variant = "solid",
+    size = "md",
+    color = "gray",
+    children,
+    style,
+    leftIcon,
+    rightIcon,
+    isLoading,
+    className,
+  } = props;
 
   const enableColor = vars.colors.$scale[color][500];
   const hoverColor = variant === "solid" ? vars.colors.$scale[color][600] : vars.colors.$scale[color][50];
@@ -32,6 +42,7 @@ function Button(props: ButtonProps, ref: React.Ref<HTMLButtonElement>) {
           size,
           variant,
         }),
+        className,
       ])}
       style={{
         ...assignInlineVars({

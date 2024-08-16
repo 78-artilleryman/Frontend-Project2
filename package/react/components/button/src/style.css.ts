@@ -64,6 +64,27 @@ export const buttonStyle = recipe({
         gap: "0.5rem",
         height: "3rem",
       },
+      xl: {
+        ...classes.typography.text.xl,
+        fontWeight: vars.typography.fontWeight[600],
+        padding: "0 2rem",
+        gap: "0.5rem",
+        height: "3.5rem",
+      },
+      ["2xl"]: {
+        ...classes.typography.text["2xl"],
+        fontWeight: vars.typography.fontWeight[600],
+        padding: "0 2.5rem",
+        gap: "0.5rem",
+        height: "4rem",
+      },
+      ["3xl"]: {
+        ...classes.typography.text["3xl"],
+        fontWeight: vars.typography.fontWeight[600],
+        padding: "0 3rem",
+        gap: "0.5rem",
+        height: "4.5rem",
+      },
     },
     variant: {
       solid: {
@@ -125,6 +146,18 @@ export const spanStyle = recipe({
         ...classes.typography.text.lg,
         fontWeight: vars.typography.fontWeight[600],
       },
+      xl: {
+        ...classes.typography.text.xl,
+        fontWeight: vars.typography.fontWeight[600],
+      },
+      ["2xl"]: {
+        ...classes.typography.text["2xl"],
+        fontWeight: vars.typography.fontWeight[600],
+      },
+      ["3xl"]: {
+        ...classes.typography.text["3xl"],
+        fontWeight: vars.typography.fontWeight[600],
+      },
     },
   },
 });
@@ -166,6 +199,21 @@ export const spinnerStyle = recipe({
         width: vars.typography.fontSize[18],
         height: vars.typography.fontSize[18],
         left: `calc(50% - ${vars.typography.fontSize[18]}/2)`,
+      },
+      xl: {
+        width: vars.typography.fontSize[18],
+        height: vars.typography.fontSize[18],
+        left: `calc(50% - ${vars.typography.fontSize[20]}/2)`,
+      },
+      ["2xl"]: {
+        width: vars.typography.fontSize[18],
+        height: vars.typography.fontSize[18],
+        left: `calc(50% - ${vars.typography.fontSize[24]}/2)`,
+      },
+      ["3xl"]: {
+        width: vars.typography.fontSize[18],
+        height: vars.typography.fontSize[18],
+        left: `calc(50% - ${vars.typography.fontSize[30]}/2)`,
       },
     },
   },

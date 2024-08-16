@@ -15,7 +15,7 @@ export default {
   tags: ["autodocs"],
   argTypes: {
     size: {
-      options: ["xs", "sm", "md", "lg"],
+      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
       control: "select",
     },
     color: {
