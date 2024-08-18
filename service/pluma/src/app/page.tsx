@@ -1,9 +1,9 @@
 import { cookies } from "next/headers";
-import { createClient } from "@/util/supabase/server";
+import { serverCreateClient } from "@/util/supabase/server";
 
 export default function Home() {
   const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = serverCreateClient(cookieStore);
   console.log(supabase);
 
   return (
