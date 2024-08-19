@@ -19,7 +19,6 @@
     "@byeonghyeon/react-components-select": "workspace:^",
     "@byeonghyeon/react-components-toast": "workspace:^",
     "@byeonghyeon/themes": "workspace:^",
-    "@prisma/client": "^5.18.0",
     "@supabase/ssr": "0.4.0",
     "@supabase/supabase-js": "^2.45.1",
     "next": "14.2.5",
