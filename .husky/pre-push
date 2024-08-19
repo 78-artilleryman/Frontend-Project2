@@ -1,0 +1,2 @@
+cd service/pluma/
+yarn run build

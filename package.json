@@ -16,7 +16,8 @@
     "dev:package": "nx run-many --target=dev --projects='@byeonghyeon/react-components-*,@byeonghyeon/react-hooks-*'",
     "dev:reset": "nx reset",
     "lint": "eslint 'package/**/*.{js,jsx,ts,tsx}' 'service/**/*.{js,jsx,ts,tsx}'",
-    "lint:service:pluma": "eslint 'service/pluma/src/**/*.{js,jsx,ts,tsx}'"
+    "lint:service:pluma": "eslint 'service/pluma/src/**/*.{js,jsx,ts,tsx}'",
+    "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
@@ -33,11 +34,16 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-storybook": "^0.6.13",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9",
     "nx": "^19.5.3",
     "prettier": "^3.0.3",
     "typescript": "^5.5.4"
   },
   "dependencies": {
     "vite": "^4.4.9"
+  },
+  "lint-staged": {
+    "package/**/*.{js,jsx,ts,tsx}' 'service/**/*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   }
 }
