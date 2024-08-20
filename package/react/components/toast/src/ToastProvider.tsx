@@ -21,7 +21,7 @@ export const ToastProvider = ({ children }: PropsWithChildren<object>) => {
 
     setToastPayload(toastProps.payload);
 
-    timeoutRef.current = setTimeout(() => {
+    timeoutRef.current = window.setTimeout(() => {
       setToastPayload(undefined);
       timeoutRef.current = undefined;
     }, duration);
