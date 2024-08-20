@@ -1,12 +1,12 @@
-import { PrismaAdapter } from "@auth/prisma-adapter";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import { Adapter } from "next-auth/adapters";
 import GoogleProvider from "next-auth/providers/google";
-import KakaoProvider from "next-auth/providers/kakao";
-import NaverProvider from "next-auth/providers/naver";
 import prisma from "@/db";
+// import KakaoProvider from "next-auth/providers/kakao";
+// import NaverProvider from "next-auth/providers/naver";
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma) as Adapter,
   session: {
     strategy: "jwt" as const,
@@ -15,20 +15,20 @@ const authOptions: NextAuthOptions = {
   },
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "",
+      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "",
     }),
-    NaverProvider({
-      clientId: process.env.NAVER_CLIENT_ID || "",
-      clientSecret: process.env.NAVER_CLIENT_SECRET || "",
-    }),
-    KakaoProvider({
-      clientId: process.env.KAKAO_CLIENT_ID || "",
-      clientSecret: process.env.KAKAO_CLIENT_SECRET || "",
-    }),
+    // NaverProvider({
+    //   clientId: process.env.NAVER_CLIENT_ID || "",
+    //   clientSecret: process.env.NAVER_CLIENT_SECRET || "",
+    // }),
+    // KakaoProvider({
+    //   clientId: process.env.KAKAO_CLIENT_ID || "",
+    //   clientSecret: process.env.KAKAO_CLIENT_SECRET || "",
+    // }),
   ],
   pages: {
-    signIn: "/signin",
+    signIn: "/users/signin",
   },
   callbacks: {
     session: ({ session, token }) => ({
