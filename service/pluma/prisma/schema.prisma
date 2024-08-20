@@ -9,71 +9,41 @@ datasource db {
 }
 
 model Account {
-  id                       String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  userid                   String?   @db.Uuid
-  type                     String    @db.VarChar(255)
-  provider                 String    @db.VarChar(255)
-  provideraccountid        String?   @db.VarChar(255)
-  refresh_token            String?
-  refresh_token_expires_in Int?
-  access_token             String?
-  expires_at               Int?
-  token_type               String?   @db.VarChar(255)
-  scope                    String?   @db.VarChar(255)
-  id_token                 String?
-  session_state            String?
-  created_at               DateTime? @default(now()) @db.Timestamptz(6)
-  User                     User?     @relation(fields: [userid], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  refresh_token_expires_in    Int?
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
 
-  @@unique([provider, provideraccountid])
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
 }
 
-model File {
-  id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name       String    @db.VarChar(255)
-  path       String
-  content    String?
-  folderid   String?   @db.Uuid
-  created_at DateTime? @default(now()) @db.Timestamptz(6)
-  Folder     Folder?   @relation(fields: [folderid], references: [id], onDelete: Cascade, onUpdate: NoAction)
-}
-
-model Folder {
-  id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name       String    @db.VarChar(255)
-  novelid    String?   @db.Uuid
-  created_at DateTime? @default(now()) @db.Timestamptz(6)
-  File       File[]
-  Novel      Novel?    @relation(fields: [novelid], references: [id], onDelete: Cascade, onUpdate: NoAction)
-}
-
-model Novel {
-  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  title       String    @db.VarChar(255)
-  description String?
-  userid      String?   @db.Uuid
-  created_at  DateTime? @default(now()) @db.Timestamptz(6)
-  Folder      Folder[]
-  User        User?     @relation(fields: [userid], references: [id], onDelete: Cascade, onUpdate: NoAction)
-}
 
 model Session {
-  id           String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  sessiontoken String    @unique @db.VarChar(255)
-  userid       String?   @db.Uuid
-  expires      DateTime  @db.Timestamptz(6)
-  created_at   DateTime? @default(now()) @db.Timestamptz(6)
-  User         User?     @relation(fields: [userid], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model User {
-  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  email         String    @unique @db.VarChar(255)
+  id          String     @id @default(uuid())
+  email         String?    @unique @db.VarChar(255)
   name          String?   @db.VarChar(255)
-  emailverified DateTime? @db.Timestamptz(6)
+  emailVerified DateTime? @db.Timestamptz(6)
   image         String?
   created_at    DateTime? @default(now()) @db.Timestamptz(6)
-  Account       Account[]
-  Novel         Novel[]
-  Session       Session[]
+  accounts    Account[]
+  sessions    Session[]
 }

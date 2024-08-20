@@ -9,9 +9,9 @@ import kakaoIcon from "../../public/signIn-Icon/kakao_logo.svg";
 import naverIcon from "../../public/signIn-Icon/naver_logo.svg";
 
 function FormField() {
-  const handleClickGoogle = () => {
+  const handleClickGoogle = (type: string) => {
     try {
-      signIn("google", { callbackUrl: "/" });
+      signIn(type, { callbackUrl: "/" });
     } catch (error) {
       console.log(error);
     }
@@ -23,7 +23,7 @@ function FormField() {
         size="md"
         className="w-[250px] bg-[#f2f2f2] text-gray-600 pl-[80px]"
         leftIcon={<Image src={googleIcon} alt="구글 로그인" width={15} height={15} priority />}
-        onClick={handleClickGoogle}>
+        onClick={() => handleClickGoogle("google")}>
         Google
       </Button>
       <Button
@@ -37,7 +37,8 @@ function FormField() {
         size="md"
         color="green"
         className="w-[250px] bg-[#36AB36] text-whiteAlpha-900 pl-[85px]"
-        leftIcon={<Image src={naverIcon} alt="구글 로그인" width={15} height={15} priority />}>
+        leftIcon={<Image src={naverIcon} alt="구글 로그인" width={15} height={15} priority />}
+        onClick={() => handleClickGoogle("naver")}>
         Naver
       </Button>
     </form>
