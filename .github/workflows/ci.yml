@@ -41,7 +41,7 @@ jobs:
         run: echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
 
       - name: Generate Prisma Client
-        run: npx prisma generate --schema=service/pluma/schema.prisma
+        run: npx prisma generate --schema=service/pluma/prisma/schema.prisma
 
       - name: Test
         run: yarn affected:test --parallel=5
