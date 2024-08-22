@@ -17,7 +17,14 @@ const config: Config = {
         "custom-Page-gradient": "linear-gradient(0deg, #2B6CB0 0%, #2C5282 35.5%, #1A365D 93.5%)",
         "custom-box-gradient": "linear-gradient(180deg, #F8F8F8 25%, #BCDDF6 59%)",
       },
+      screens: {
+        mb: { min: "360px", max: "766px" },
+        tbc: { min: "767px", max: "1022px" },
+        tbr: { min: "1023px", max: "1439px" },
+        pc: { max: "1440px" },
+      },
     },
+
     colors: vars.colors.$static.light,
   },
   plugins: [],
