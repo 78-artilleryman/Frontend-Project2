@@ -10,6 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
+        "button-right": "linear-gradient(to left, var(--black-alpha-900) 60%, rgba(75, 0, 130, 0) 100%)",
+        "button-left": "linear-gradient(to right, var(--black-alpha-900) 60%, rgba(75, 0, 130, 0) 100%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "custom-Page-gradient": "linear-gradient(0deg, #2B6CB0 0%, #2C5282 35.5%, #1A365D 93.5%)",
