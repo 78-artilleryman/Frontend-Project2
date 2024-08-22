@@ -28,7 +28,7 @@ const authOptions: NextAuthOptions = {
     }),
   ],
   pages: {
-    signIn: "/users/signin",
+    signIn: "/signin",
   },
   callbacks: {
     session: ({ session, token }) => ({
