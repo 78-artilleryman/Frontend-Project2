@@ -3,14 +3,12 @@
 import React from "react";
 import { RiArrowRightWideFill } from "react-icons/ri";
 import { RiArrowLeftWideFill } from "react-icons/ri";
+import Banner from "./components/Banner";
 
 function NovelPage() {
   return (
-    <main className="w-full flex flex-col gap-[90px] items-center mb-[200px]">
-      <section className="bg-blue-900 h-[350px] w-full flex items-center justify-center relative">
-        <h1 className="absolute text-blue-900">Pluma</h1>
-        <div className="w-[500px] h-[500px] rounded-full bg-whiteAlpha-900" />
-      </section>
+    <main className="w-full flex flex-col gap-[90px] items-center mb-[200px] bg-gray-50">
+      <Banner />
       <section className="max-w-[1440px] w-full px-[90px] mb:px-[40px]">
         <h2 className="text-3xl font-bold mb-3 tbc:text-xl mb:text-sm">최근 수정 작품</h2>
         <div className="w-full relative  overflow-hidden rounded-[20px]">
