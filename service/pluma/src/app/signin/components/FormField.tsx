@@ -4,9 +4,9 @@ import { Button } from "@byeonghyeon/react-components-button";
 import Image from "next/image";
 import { signIn } from "next-auth/react";
 import React from "react";
-import googleIcon from "../../public/signIn-Icon/google_logo.svg";
-import kakaoIcon from "../../public/signIn-Icon/kakao_logo.svg";
-import naverIcon from "../../public/signIn-Icon/naver_logo.svg";
+import googleIcon from "../../../../public/signIn-Icon/google_logo.svg";
+import kakaoIcon from "../../../../public/signIn-Icon/kakao_logo.svg";
+import naverIcon from "../../../../public/signIn-Icon/naver_logo.svg";
 
 function FormField() {
   const handleClickGoogle = (type: string) => {
