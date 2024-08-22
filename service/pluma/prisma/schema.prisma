@@ -38,12 +38,43 @@ model Session {
 }
 
 model User {
-  id          String     @id @default(uuid())
-  email         String?    @unique @db.VarChar(255)
-  name          String?   @db.VarChar(255)
-  emailVerified DateTime? @db.Timestamptz(6)
-  image         String?
-  created_at    DateTime? @default(now()) @db.Timestamptz(6)
+  id          String     @id @default(uuid())                  // 유저 고유번호
+  email         String?    @unique @db.VarChar(255)            // 유저 이메일
+  name          String?   @db.VarChar(255)                     // 유저 이름
+  emailVerified DateTime? @db.Timestamptz(6)                    
+  image         String?                                        // 유저 프로필 이미지
+  created_at    DateTime? @default(now()) @db.Timestamptz(6)   // 만든날짜
   accounts    Account[]
   sessions    Session[]
+  novels      Novel[]                                          // 유저가 가진 소설들
+}
+
+model Novel {
+  id            String   @id @default(uuid())                  // 소설 고유번호
+  title         String   @db.VarChar(255)                      // 소설 제목
+  description   String   @db.Text                              // 소설 설명
+  userId        String                                         // 소설 소유자
+  created_at    DateTime? @default(now()) @db.Timestamptz(6)   // 만든날짜
+  udated_at    DateTime? @default(now()) @db.Timestamptz(6)    // 수정날짜
+  genres        NovelGenre[]                                   // 장르
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+
+model Genre {
+  id    String   @id @default(uuid())                          // 장르 고유번호
+  name  String   @db.VarChar(255) @unique                      // 장르명
+  novels NovelGenre[]                                          // 소설
+}
+
+model NovelGenre {
+  novelId String                                               // 소설 고유번호
+  genreId String                                               // 장르 고유번호
+
+
+  novel   Novel   @relation(fields: [novelId], references: [id], onDelete: Cascade)
+  genre   Genre   @relation(fields: [genreId], references: [id], onDelete: Cascade)
+
+  @@id([novelId, genreId])  // 복합 기본 키
+  @@unique([novelId, genreId])  // 조합의 유일성 보장
 }
