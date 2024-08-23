@@ -11,7 +11,7 @@ import naverIcon from "../../../../public/signIn-Icon/naver_logo.svg";
 function FormField() {
   const handleClickGoogle = (type: string) => {
     try {
-      signIn(type, { callbackUrl: "/" });
+      signIn(type, { callbackUrl: "/novel" });
     } catch (error) {
       console.log(error);
     }

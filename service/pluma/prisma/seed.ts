@@ -1,6 +1,8 @@
 import { fakerKO as faker } from "@faker-js/faker";
 import { PrismaClient } from "@prisma/client";
 
+// npx prisma db seed
+
 const prisma = new PrismaClient();
 
 async function seedUsers() {
@@ -93,9 +95,9 @@ async function seedGenre() {
 }
 
 async function main() {
-  seedUsers();
+  // seedUsers();
   seedNovels();
-  seedGenre();
+  // seedGenre();
 }
 
 main()

@@ -1,11 +1,39 @@
-"use client";
-
+import { cookies } from "next/headers";
 import React from "react";
 import { RiArrowRightWideFill } from "react-icons/ri";
 import { RiArrowLeftWideFill } from "react-icons/ri";
 import Banner from "./components/Banner";
 
-function NovelPage() {
+async function fetchNovels() {
+  const cookieStore = cookies();
+  const token = cookieStore.get("next-auth.session-token");
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/novels`, {
+      cache: "no-store",
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token?.value.toString(),
+      },
+    });
+
+    if (!response.ok) {
+      console.log("Response status:", response.status);
+      console.log("Response body:", await response.text());
+      throw new Error("Network response was not ok");
+    }
+
+    const novelListData = await response.json();
+    return novelListData;
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+}
+
+async function NovelPage() {
+  const data = await fetchNovels();
+  console.log(data);
   return (
     <main className="w-full flex flex-col gap-[90px] items-center mb-[200px] bg-gray-50">
       <Banner />
