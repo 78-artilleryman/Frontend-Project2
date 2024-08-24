@@ -38,10 +38,31 @@ export async function GET(req: NextRequest) {
         skip: skip,
       });
 
-      // 성공
-      return NextResponse.json(novelListData, {
-        status: 200,
+      // 총 소설 수 계산
+      const totalElements = await prisma.novel.count({
+        where: {
+          userId: userId,
+        },
       });
+
+      const totalPages = Math.ceil(totalElements / limit);
+      const customPageable = {
+        hasNext: page < totalPages,
+        totalPages: totalPages,
+        totalElements: totalElements,
+        page: page,
+        size: limit,
+        first: page === 1,
+        last: page === totalPages,
+      };
+
+      // 성공
+      return NextResponse.json(
+        { novels: novelListData, customPageable: customPageable },
+        {
+          status: 200,
+        }
+      );
     } catch (dbError) {
       // 데이터베이스 요청 오류 처리 로직
       console.error("Database error:", dbError);

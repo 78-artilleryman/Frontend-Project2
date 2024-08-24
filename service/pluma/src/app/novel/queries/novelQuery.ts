@@ -5,7 +5,7 @@ import { FetchNovelListResponse } from "../types/response.type";
 import { novelQueryKey } from "./queryKey";
 
 export const useFetchNovelSliderQuery = (params: FetchNovelListRequest) => {
-  return useQuery<FetchNovelListResponse[] | undefined>({
+  return useQuery<FetchNovelListResponse | undefined>({
     queryKey: novelQueryKey.slider({ ...params }).queryKey,
     queryFn: () => fetchNovels({ ...params }),
   });
