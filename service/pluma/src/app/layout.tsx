@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./style/globals.css";
-import { NextProvider } from "./providers";
+import { NextProvider } from "../context/providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",

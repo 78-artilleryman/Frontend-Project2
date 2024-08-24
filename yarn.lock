@@ -3845,6 +3845,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/query-devtools@npm:5.51.16":
+  version: 5.51.16
+  resolution: "@tanstack/query-devtools@npm:5.51.16"
+  checksum: 10c0/40f1fbad77b703b96809b06323962614f9868b6e453fbcfcc1c73f3ff4f479f4ef066706fdfb3c3be33da76122dac21725de42c0f65ac0344d3839688d672c32
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query-devtools@npm:^5.52.1":
+  version: 5.52.1
+  resolution: "@tanstack/react-query-devtools@npm:5.52.1"
+  dependencies:
+    "@tanstack/query-devtools": "npm:5.51.16"
+  peerDependencies:
+    "@tanstack/react-query": ^5.52.1
+    react: ^18 || ^19
+  checksum: 10c0/1c3541402228025a4e331a1cb9ccaf0796ca4f9816b64003be14a01c4d3b3e247b494c8fa70c7317df4172bfeb89681db8989febbb658c2e9a65bbea1f4a7eda
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query-next-experimental@npm:^5.52.1":
+  version: 5.52.1
+  resolution: "@tanstack/react-query-next-experimental@npm:5.52.1"
+  peerDependencies:
+    "@tanstack/react-query": ^5.52.1
+    next: ^13 || ^14 || ^15
+    react: ^18 || ^19
+  checksum: 10c0/5805009e606a2d0f525b152f8cb7f977d3fa854b202ea7537edf1a07f4b1b9e70d0f8cabf01dd4389ec745ca660200a20009694d812db95f20bd9145e853d599
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-query@npm:^5.52.1":
   version: 5.52.1
   resolution: "@tanstack/react-query@npm:5.52.1"
@@ -10772,6 +10802,8 @@ __metadata:
     "@supabase/ssr": "npm:0.4.0"
     "@supabase/supabase-js": "npm:^2.45.1"
     "@tanstack/react-query": "npm:^5.52.1"
+    "@tanstack/react-query-devtools": "npm:^5.52.1"
+    "@tanstack/react-query-next-experimental": "npm:^5.52.1"
     "@types/eslint": "npm:^9"
     "@types/node": "npm:^22.2.0"
     "@types/react": "npm:^18.3.3"
