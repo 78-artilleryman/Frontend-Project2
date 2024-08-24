@@ -95,9 +95,9 @@ async function seedGenre() {
 }
 
 async function main() {
-  // seedUsers();
+  seedUsers();
   seedNovels();
-  // seedGenre();
+  seedGenre();
 }
 
 main()

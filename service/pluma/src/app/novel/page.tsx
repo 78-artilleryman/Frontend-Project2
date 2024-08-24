@@ -4,19 +4,22 @@ import { RiArrowRightWideFill } from "react-icons/ri";
 import { RiArrowLeftWideFill } from "react-icons/ri";
 import Banner from "./components/Banner";
 
-async function fetchNovels() {
+async function fetchNovels({ sort = "updatedAt", page = 1, limit = 8 }) {
   const cookieStore = cookies();
   const token = cookieStore.get("next-auth.session-token");
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/novels`, {
-      cache: "no-store",
-      method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token?.value.toString(),
-      },
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/novels?sort=${sort}&page=${page}&limit=${limit}`,
+      {
+        cache: "no-store",
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token?.value.toString(),
+        },
+      }
+    );
 
     if (!response.ok) {
       console.log("Response status:", response.status);
@@ -32,7 +35,7 @@ async function fetchNovels() {
 }
 
 async function NovelPage() {
-  const data = await fetchNovels();
+  const data = await fetchNovels({});
   console.log(data);
   return (
     <main className="w-full flex flex-col gap-[90px] items-center mb-[200px] bg-gray-50">

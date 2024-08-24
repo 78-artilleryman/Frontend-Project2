@@ -13,12 +13,29 @@ export async function GET(req: NextRequest) {
     }
 
     const userId = token.sub;
+    const sortParam = req.nextUrl.searchParams.get("sort") || "createdAt";
+    const pageParam = req.nextUrl.searchParams.get("page") || "1";
+    const limitParam = req.nextUrl.searchParams.get("limit") || "10";
+
+    const page = parseInt(pageParam, 10);
+    const limit = parseInt(limitParam, 10);
+    const skip = (page - 1) * limit;
+
+    let orderBy = {};
+    if (sortParam === "createdAt") {
+      orderBy = { created_at: "desc" }; // 최신순
+    } else if (sortParam === "updatedAt") {
+      orderBy = { updated_at: "desc" }; // 수정날짜순
+    }
 
     try {
       const novelListData = await prisma.novel.findMany({
         where: {
           userId: userId,
         },
+        orderBy: orderBy,
+        take: limit,
+        skip: skip,
       });
 
       // 성공
