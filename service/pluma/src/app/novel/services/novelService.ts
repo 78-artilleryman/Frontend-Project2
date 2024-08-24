@@ -3,7 +3,7 @@ import { FetchNovelListResponse } from "../types/response.type";
 import { getCookieData } from "@/app/util/getCookie";
 
 export async function fetchNovels({
-  sort = "updatedAt",
+  sort = "createdAt",
   page = 1,
   limit = 8,
 }: FetchNovelListRequest): Promise<FetchNovelListResponse[] | undefined> {
