@@ -1,6 +1,6 @@
 import { FetchNovelListRequest } from "../types/request.type";
 import { FetchNovelListResponse } from "../types/response.type";
-import { getCookieData } from "@/app/util/getCookie";
+import { getCookieData } from "@/util/getCookie";
 
 export async function fetchNovels({
   sort = "createdAt",
