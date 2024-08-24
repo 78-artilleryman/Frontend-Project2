@@ -1,12 +1,12 @@
-import { cookies } from "next/headers";
 import React from "react";
 import { RiArrowRightWideFill } from "react-icons/ri";
 import { RiArrowLeftWideFill } from "react-icons/ri";
+import { getCookieData } from "../util/getCookie";
 import Banner from "./components/Banner";
 
 async function fetchNovels({ sort = "updatedAt", page = 1, limit = 8 }) {
-  const cookieStore = cookies();
-  const token = cookieStore.get("next-auth.session-token");
+  const token = await getCookieData("next-auth.session-token");
+
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/novels?sort=${sort}&page=${page}&limit=${limit}`,
@@ -16,7 +16,7 @@ async function fetchNovels({ sort = "updatedAt", page = 1, limit = 8 }) {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + token?.value.toString(),
+          Authorization: "Bearer " + token?.value,
         },
       }
     );
