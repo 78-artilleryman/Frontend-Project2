@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import NovelBox from "./NovelBox";
 
 function NoverListContainer() {

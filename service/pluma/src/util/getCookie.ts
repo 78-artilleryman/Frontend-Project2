@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-type CookieData = {
+export type CookieData = {
   name: string;
   value: string;
   path?: string;

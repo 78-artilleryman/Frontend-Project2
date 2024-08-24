@@ -1,14 +1,11 @@
 import { FetchNovelListRequest } from "../types/request.type";
 import { FetchNovelListResponse } from "../types/response.type";
-import { getCookieData } from "@/util/getCookie";
+import { CookieData } from "@/util/getCookie";
 
-export async function fetchNovels({
-  sort = "createdAt",
-  page = 1,
-  limit = 8,
-}: FetchNovelListRequest): Promise<FetchNovelListResponse[] | undefined> {
-  const token = await getCookieData("next-auth.session-token");
-
+export async function fetchNovels(
+  { sort = "createdAt", page = 1, limit = 8 }: FetchNovelListRequest,
+  token?: CookieData
+): Promise<FetchNovelListResponse[] | undefined> {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/novels?sort=${sort}&page=${page}&limit=${limit}`,
