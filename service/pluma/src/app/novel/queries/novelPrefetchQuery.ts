@@ -1,14 +1,15 @@
 import { dehydrate } from "@tanstack/react-query";
+import { cookies } from "next/headers";
 import { fetchNovels } from "../services/novelService";
 import { FetchNovelListRequest } from "../types/request.type";
 import { novelQueryKey } from "./queryKey";
-import { getCookieData } from "@/util/getCookie";
 import getQueryClient from "@/util/getQueryClient";
 
 // prefetch hook
 export const usePrefetchNovelsQuery = async (params: FetchNovelListRequest) => {
   const queryClient = getQueryClient();
-  const token = await getCookieData("next-auth.session-token");
+  const cookieStore = cookies();
+  const token = cookieStore.get("next-auth.session-token");
 
   await queryClient.prefetchQuery({
     queryKey: novelQueryKey.slider({ ...params, sort: "updatedAt" }).queryKey,
