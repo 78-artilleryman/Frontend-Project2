@@ -3,11 +3,8 @@ import Banner from "./components/Banner";
 import NovelListSlider from "./components/NovelListSlider";
 import NoverListContainer from "./components/NoverListContainer";
 import SlideControlButton from "./components/SlideControlButton";
-import { fetchNovels } from "./services/novelService";
 
 async function NovelPage() {
-  const data = await fetchNovels({});
-  console.log(data);
   return (
     <main className="w-full flex flex-col gap-[90px] items-center mb-[200px] bg-gray-50">
       <Banner />

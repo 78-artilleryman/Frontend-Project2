@@ -1,6 +1,12 @@
+import { FetchNovelListRequest } from "../types/request.type";
+import { FetchNovelListResponse } from "../types/response.type";
 import { getCookieData } from "@/app/util/getCookie";
 
-export async function fetchNovels({ sort = "updatedAt", page = 1, limit = 8 }) {
+export async function fetchNovels({
+  sort = "updatedAt",
+  page = 1,
+  limit = 8,
+}: FetchNovelListRequest): Promise<FetchNovelListResponse[] | undefined> {
   const token = await getCookieData("next-auth.session-token");
 
   try {
