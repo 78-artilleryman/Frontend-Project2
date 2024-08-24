@@ -1,6 +1,11 @@
 import { FetchNovelListRequest } from "../types/request.type";
 import { FetchNovelListResponse } from "../types/response.type";
-import { CookieData } from "@/util/getCookie";
+
+export type CookieData = {
+  name: string;
+  value: string;
+  path?: string;
+};
 
 export async function fetchNovels(
   { sort = "createdAt", page = 1, limit = 8 }: FetchNovelListRequest,
