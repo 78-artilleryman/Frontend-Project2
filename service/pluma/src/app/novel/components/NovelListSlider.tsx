@@ -8,7 +8,7 @@ function NovelListSlider() {
   const { data: noveSliderlList } = useFetchNovelSliderQuery({ sort: "updatedAt", page: 1, limit: 8 });
   return (
     <ul className="flex gap-8 w-[200%] flex-shrink-0">
-      {noveSliderlList?.novels.map(novel => <NovelBox key={novel.id} />)}
+      {noveSliderlList?.novels.map(novel => <NovelBox key={novel.id} {...novel} />)}
     </ul>
   );
 }
