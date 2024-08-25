@@ -36,6 +36,13 @@ export async function GET(req: NextRequest) {
         orderBy: orderBy,
         take: limit,
         skip: skip,
+        include: {
+          genres: {
+            include: {
+              genre: true,
+            },
+          },
+        },
       });
 
       // 총 소설 수 계산
@@ -44,6 +51,12 @@ export async function GET(req: NextRequest) {
           userId: userId,
         },
       });
+
+      // 장르 정보를 최상위 수준으로 이동시키는 로직
+      const novelsWithGenres = novelListData.map(novel => ({
+        ...novel,
+        genres: novel.genres.map(genreRel => genreRel.genre),
+      }));
 
       const totalPages = Math.ceil(totalElements / limit);
       const customPageable = {
@@ -58,7 +71,7 @@ export async function GET(req: NextRequest) {
 
       // 성공
       return NextResponse.json(
-        { novels: novelListData, customPageable: customPageable },
+        { novels: novelsWithGenres, customPageable: customPageable },
         {
           status: 200,
         }
