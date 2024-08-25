@@ -12,7 +12,7 @@ interface NovelBoxCoverProps {
 
 function NovelBoxCover(props: NovelBoxCoverProps) {
   return (
-    <div className="opacity-0 flex flex-col items-center rounded-[20px] h-full group-hover:bg-[rgba(0,0,0,0.6)] group-hover:opacity-100 absolute inset-0 z-30 transition-all justify-center gap-3">
+    <div className="opacity-0 flex flex-col items-center rounded-[20px] h-full hover:bg-[rgba(0,0,0,0.6)] hover:opacity-100 absolute inset-0 z-30 transition-all justify-center gap-3">
       <ul className="flex items-center gap-2">
         {props.genres.map(genre => (
           <li className="text-sm text-blackAlpha-900 bg-blue-400 p-2 text-center font-bold rounded" key={genre.id}>
