@@ -10,6 +10,10 @@ export interface Novel {
   userId: string;
   created_at: string;
   updated_at: string;
+  genres: {
+    id: string;
+    name: string;
+  }[];
 }
 
 interface CustomPageable {

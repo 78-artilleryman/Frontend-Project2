@@ -4,6 +4,10 @@ import NovelBoxCover from "./NovelBoxCover";
 interface NovelBoxProps {
   title: string;
   description: string;
+  genres: {
+    id: string;
+    name: string;
+  }[];
 }
 
 function NovelBox(props: NovelBoxProps) {
