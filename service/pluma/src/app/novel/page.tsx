@@ -11,7 +11,7 @@ async function NovelPage() {
 
   return (
     <HydrationBoundary state={dehydratedState}>
-      <main className="w-full flex flex-col gap-[90px] items-center mb-[200px] bg-gray-50">
+      <main className="w-full flex flex-col gap-[90px] items-center bg-gray-50">
         <Banner />
         <section className="max-w-[1440px] w-full px-[90px] mb:px-[40px]">
           <h2 className="text-3xl font-bold mb-3 tbc:text-xl mb:text-sm">최근 수정 작품</h2>

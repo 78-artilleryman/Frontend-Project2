@@ -25,7 +25,7 @@ export const NextProvider = ({ children }: Props) => {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryStreamedHydration>
-        <SessionProvider>{children}</SessionProvider>;
+        <SessionProvider>{children}</SessionProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </ReactQueryStreamedHydration>
     </QueryClientProvider>
