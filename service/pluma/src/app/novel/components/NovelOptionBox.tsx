@@ -1,21 +1,20 @@
 import React from "react";
 import { GoKebabHorizontal } from "react-icons/go";
-
 import useOutside from "@/hooks/use-outside";
-import useToggleHook from "@/hooks/useToggleHook";
+import useToggle from "@/hooks/use-toggle";
 
 function NovelOptionBox() {
-  const { isOpen, toggleState } = useToggleHook();
-  const ref = useOutside<HTMLUListElement>({ onCloseToggle: toggleState });
+  const { isToggle, onToggle } = useToggle();
+  const ref = useOutside<HTMLUListElement>({ onCloseToggle: onToggle });
   return (
     <>
       <GoKebabHorizontal
         color="white"
         className="cursor-pointer z-40 absolute right-4 top-4"
-        onClick={toggleState}
+        onClick={onToggle}
         size={20}
       />
-      {isOpen && (
+      {isToggle && (
         <ul
           className="z-40 absolute w-20 h-[70px] flex flex-col gap-3 items-center justify-center bg-gray-200 top-0 right-0 rounded-bl-[18px] rounded-tr-[18px]"
           ref={ref}>
