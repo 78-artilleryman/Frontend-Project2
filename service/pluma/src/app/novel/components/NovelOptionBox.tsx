@@ -1,11 +1,12 @@
 import React from "react";
 import { GoKebabHorizontal } from "react-icons/go";
-import useOutsideClick from "@/hooks/useOutSideClick";
+
+import useOutside from "@/hooks/use-outside";
 import useToggleHook from "@/hooks/useToggleHook";
 
 function NovelOptionBox() {
   const { isOpen, toggleState } = useToggleHook();
-  const { dropdownRef } = useOutsideClick(toggleState);
+  const ref = useOutside<HTMLUListElement>({ onCloseToggle: toggleState });
   return (
     <>
       <GoKebabHorizontal
@@ -17,7 +18,7 @@ function NovelOptionBox() {
       {isOpen && (
         <ul
           className="z-40 absolute w-20 h-[70px] flex flex-col gap-3 items-center justify-center bg-gray-200 top-0 right-0 rounded-bl-[18px] rounded-tr-[18px]"
-          ref={dropdownRef}>
+          ref={ref}>
           <li className="text-sm font-bold text-red-600">삭제</li>
           <li className="text-sm font-bold text-blackAlpha-900">수정</li>
         </ul>
