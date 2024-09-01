@@ -1,5 +1,5 @@
 import React from "react";
-import NovelBoxCover from "./NovelBoxCover";
+import NovelBoxCover from "./Novel-Box-Cover";
 
 interface NovelBoxProps {
   title: string;

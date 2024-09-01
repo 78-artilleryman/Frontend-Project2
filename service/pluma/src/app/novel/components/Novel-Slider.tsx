@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import { useFetchNovelSliderQuery } from "../queries/novelQuery";
-import NovelBox from "./NovelBox";
-import SlideControlButton from "./SlideControlButton";
+import NovelBox from "./Novel-Box";
+import SlideControlButton from "./Novel-Slider-Button";
 
-function NovelListSlider() {
+function NovelSlider() {
   const { data: noveSliderlList } = useFetchNovelSliderQuery({ sort: "updatedAt", page: 1, limit: 8 });
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,4 +39,4 @@ function NovelListSlider() {
   );
 }
 
-export default NovelListSlider;
+export default NovelSlider;

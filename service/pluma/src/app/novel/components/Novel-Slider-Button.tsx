@@ -2,11 +2,11 @@ import React, { ButtonHTMLAttributes } from "react";
 import { RiArrowRightWideFill } from "react-icons/ri";
 import { RiArrowLeftWideFill } from "react-icons/ri";
 
-interface SlideControlButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface NovelSliderButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   direction: "left" | "right";
 }
 
-function SlideControlButton({ direction, onClick }: SlideControlButtonProps) {
+function NovelSliderButton({ direction, onClick }: NovelSliderButtonProps) {
   const absoluteDirection =
     direction === "left" ? "left-0 bg-button-left rounded-l-md" : "right-0 bg-button-right rounded-r-md";
 
@@ -24,4 +24,4 @@ function SlideControlButton({ direction, onClick }: SlideControlButtonProps) {
   );
 }
 
-export default SlideControlButton;
+export default NovelSliderButton;

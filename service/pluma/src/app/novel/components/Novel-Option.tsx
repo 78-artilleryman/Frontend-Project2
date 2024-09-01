@@ -3,7 +3,7 @@ import { GoKebabHorizontal } from "react-icons/go";
 import useOutside from "@/hooks/use-outside";
 import useToggle from "@/hooks/use-toggle";
 
-function NovelOptionBox() {
+function NovelOption() {
   const { isToggle, onToggle } = useToggle();
   const ref = useOutside<HTMLUListElement>({ onCloseToggle: onToggle });
   return (
@@ -26,4 +26,4 @@ function NovelOptionBox() {
   );
 }
 
-export default NovelOptionBox;
+export default NovelOption;
