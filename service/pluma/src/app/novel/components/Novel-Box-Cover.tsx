@@ -1,6 +1,6 @@
 import React from "react";
 import NovelOptionBox from "./Novel-Option";
-import { translateGenre } from "@/util/translateGenre";
+import { translateGenre } from "@/common/util/translateGenre";
 
 interface NovelBoxCoverProps {
   title: string;

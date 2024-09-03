@@ -1,7 +1,7 @@
 import React from "react";
 import { GoKebabHorizontal } from "react-icons/go";
-import useOutside from "@/hooks/use-outside";
-import useToggle from "@/hooks/use-toggle";
+import useOutside from "@/common/hooks/use-outside";
+import useToggle from "@/common/hooks/use-toggle";
 
 function NovelOption() {
   const { isToggle, onToggle } = useToggle();

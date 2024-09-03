@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { fetchNovels } from "../services/novelService";
 import { FetchNovelListRequest } from "../types/request.type";
 import { novelQueryKey } from "./queryKey";
-import getQueryClient from "@/util/getQueryClient";
+import getQueryClient from "@/common/util/getQueryClient";
 
 // prefetch hook
 export const usePrefetchNovelsQuery = async (params: FetchNovelListRequest) => {
