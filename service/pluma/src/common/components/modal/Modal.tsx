@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 import { createPortal } from "react-dom";
+import * as Components from "./components/index";
 import classes from "./modal.module.css";
 import { ModalContextStates, ModalContextValues } from "./modal.type";
 
@@ -25,3 +26,7 @@ export function Modal(props: ModalContextValues) {
     modalElement
   );
 }
+
+Modal.Title = Components.Title;
+Modal.Text = Components.Text;
+Modal.CloseButton = Components.CloseButton;
