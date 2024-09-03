@@ -1,9 +1,8 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 import { useModalContext } from "../Modal";
 
 interface ModalTitleProps {
-  children: ReactNode;
   className?: string;
 }
 
