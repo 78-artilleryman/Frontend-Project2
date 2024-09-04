@@ -10,16 +10,20 @@ function NovelOption() {
     <>
       <GoKebabHorizontal
         color="white"
-        className="cursor-pointer z-40 absolute right-4 top-4"
+        className="absolute right-4 top-4 z-40 cursor-pointer"
         onClick={onToggle}
         size={20}
       />
       {isToggle && (
         <ul
-          className="z-40 absolute w-20 h-[70px] flex flex-col gap-3 items-center justify-center bg-gray-200 top-0 right-0 rounded-bl-[18px] rounded-tr-[18px]"
+          className="absolute right-0 top-0 z-40 flex h-[74px] w-20 flex-col items-center justify-center rounded-bl-[18px] rounded-tr-[18px] bg-gray-200"
           ref={ref}>
-          <li className="text-sm font-bold text-red-600">삭제</li>
-          <li className="text-sm font-bold text-blackAlpha-900">수정</li>
+          <li className="w-full rounded-tr-2xl py-2 text-center text-sm font-bold text-red-600 hover:bg-gray-300">
+            삭제
+          </li>
+          <li className="text-blackAlpha-900 w-full rounded-bl-2xl py-2 text-center text-sm font-bold hover:bg-gray-300">
+            수정
+          </li>
         </ul>
       )}
     </>
