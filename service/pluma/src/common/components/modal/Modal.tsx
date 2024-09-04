@@ -1,7 +1,6 @@
 import { createContext, useContext } from "react";
 import { createPortal } from "react-dom";
 import * as Components from "./components/index";
-import classes from "./modal.module.css";
 import { ModalContextStates, ModalContextValues } from "./modal.type";
 
 const initialModalContextState = {
@@ -21,7 +20,9 @@ export function Modal(props: ModalContextValues) {
   const modalElement = document.querySelector("#modal")!;
   return createPortal(
     <ModalContext.Provider value={props.value}>
-      <div className={classes["modal-root"]}>{props.children}</div>
+      <div className="fixed left-[50%] top-[50%] z-50 -translate-x-1/2 -translate-y-1/2 transform">
+        {props.children}
+      </div>
     </ModalContext.Provider>,
     modalElement
   );

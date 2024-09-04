@@ -2,7 +2,7 @@ import React from "react";
 import { Modal } from "@/common/components/modal/Modal";
 
 interface NovelDeleteModalProps {
-  novelTitle: string;
+  novelTitle?: string;
 }
 
 function NovelDeleteModal({ novelTitle }: NovelDeleteModalProps) {

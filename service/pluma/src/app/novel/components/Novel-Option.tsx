@@ -20,9 +20,7 @@ function NovelOption() {
           className="absolute right-0 top-0 z-40 flex h-[74px] w-20 flex-col items-center justify-center rounded-bl-[18px] rounded-tr-[18px] bg-gray-200"
           ref={ref}>
           <NovelOptionButton controlType="delete" />
-          <li className="text-blackAlpha-900 w-full rounded-bl-2xl py-2 text-center text-sm font-bold hover:bg-gray-300">
-            수정
-          </li>
+          <NovelOptionButton controlType="edit" />
         </div>
       )}
     </>
