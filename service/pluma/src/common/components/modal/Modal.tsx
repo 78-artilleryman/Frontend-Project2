@@ -20,9 +20,7 @@ export function Modal(props: ModalContextValues) {
   const modalElement = document.querySelector("#modal")!;
   return createPortal(
     <ModalContext.Provider value={props.value}>
-      <div className="fixed left-[50%] top-[50%] z-50 -translate-x-1/2 -translate-y-1/2 transform">
-        {props.children}
-      </div>
+      <div className="fixed left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transform">{props.children}</div>
     </ModalContext.Provider>,
     modalElement
   );
@@ -31,3 +29,4 @@ export function Modal(props: ModalContextValues) {
 Modal.Title = Components.Title;
 Modal.Text = Components.Text;
 Modal.CloseButton = Components.CloseButton;
+Modal.Backdrop = Components.Backdrop;

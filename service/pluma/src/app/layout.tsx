@@ -15,9 +15,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div id="backdrop" />
-        <div id="modal" />
-        <NextProvider>{children}</NextProvider>
+        <NextProvider>
+          <div id="backdrop" />
+          <div id="modal" />
+          {children}
+        </NextProvider>
       </body>
     </html>
   );
