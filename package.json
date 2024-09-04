@@ -43,6 +43,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "vite": "^4.4.9"
   },
   "lint-staged": {
