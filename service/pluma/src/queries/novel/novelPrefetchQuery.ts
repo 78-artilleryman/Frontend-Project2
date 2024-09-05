@@ -1,7 +1,7 @@
 import { dehydrate } from "@tanstack/react-query";
 import { cookies } from "next/headers";
-import { fetchNovels } from "../services/novelService";
-import { FetchNovelListRequest } from "../types/request.type";
+import { FetchNovelListRequest } from "../../app/novel/types/request.type";
+import { fetchNovels } from "../../services/novel/novelService";
 import { novelQueryKey } from "./queryKey";
 import getQueryClient from "@/common/util/getQueryClient";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useFetchNovelSliderQuery } from "../queries/novelQuery";
+import { useFetchNovelSliderQuery } from "../../queries/novel/novelQuery";
 import NovelBox from "./Novel-Box";
 import SlideControlButton from "./Novel-Slider-Button";
 
@@ -27,9 +27,9 @@ function NovelSlider() {
   };
 
   return (
-    <div className="w-full relative overflow-hidden rounded-[20px] group">
+    <div className="group relative w-full overflow-hidden rounded-[20px]">
       <ul
-        className="flex gap-8 w-[200%] flex-shrink-0"
+        className="flex w-[200%] flex-shrink-0 gap-8"
         style={{ transform: `translateX(-${currentIndex * slideWidth}%)`, transition: "transform 0.3s ease" }}>
         {noveSliderlList?.novels.map(novel => <NovelBox key={novel.id} {...novel} />)}
       </ul>
