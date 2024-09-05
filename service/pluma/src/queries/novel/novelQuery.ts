@@ -1,8 +1,9 @@
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { fetchNovels } from "../../services/novel/novelService";
+
 import { FetchNovelListRequest } from "../../app/novel/types/request.type";
 import { FetchNovelListResponse } from "../../app/novel/types/response.type";
 import { novelQueryKey } from "./queryKey";
+import { fetchNovels } from "@/services/novel/novelService";
 
 export const useFetchNovelSliderQuery = (params: FetchNovelListRequest) => {
   return useQuery<FetchNovelListResponse | undefined>({

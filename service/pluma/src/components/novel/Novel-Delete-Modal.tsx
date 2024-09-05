@@ -15,7 +15,6 @@ function NovelDeleteModal({ novelTitle }: NovelDeleteModalProps) {
 
   return (
     <Modal value={modalValues}>
-      <Modal.Backdrop />
       <Modal.CloseButton />
       <Modal.Title />
       <Modal.Text>
