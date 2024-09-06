@@ -35,3 +35,4 @@ export function Modal(props: ModalContextValues) {
 Modal.Title = Components.Title;
 Modal.Text = Components.Text;
 Modal.CloseButton = Components.CloseButton;
+Modal.Backdrop = Components.Backdrop;
