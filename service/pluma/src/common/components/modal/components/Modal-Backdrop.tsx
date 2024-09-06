@@ -5,7 +5,7 @@ function ModalBackdrop() {
   const modalContext = useModalContext();
   const backdropElement = document.querySelector("#backdrop")!;
   return createPortal(
-    <div className="bg-blackAlpha-500 fixed left-0 top-0 z-50 h-screen w-full" onClick={modalContext.onCloseModal} />,
+    <div className="bg-blackAlpha-500 fixed left-0 top-0 z-[49] h-screen w-full" onClick={modalContext.onCloseModal} />,
     backdropElement
   );
 }
