@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
 function ModalCloseButton({ onClick, className }: ButtonHTMLAttributes<HTMLButtonElement>) {
-  const DefaultModalButtonClass = "absolute top-0 right-0 ";
+  const DefaultModalButtonClass = "absolute top-4 right-4 ";
   const ModalButtonClass = twMerge(DefaultModalButtonClass, className);
 
   return (

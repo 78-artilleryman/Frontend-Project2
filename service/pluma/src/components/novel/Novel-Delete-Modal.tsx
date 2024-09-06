@@ -14,7 +14,7 @@ function NovelDeleteModal({ novelTitle }: NovelDeleteModalProps) {
   };
 
   return (
-    <Modal value={modalValues}>
+    <Modal value={modalValues} className="flex flex-col items-center gap-3">
       <Modal.Backdrop />
       <Modal.CloseButton />
       <Modal.Title />
@@ -22,6 +22,7 @@ function NovelDeleteModal({ novelTitle }: NovelDeleteModalProps) {
         정말 <span className="text-red-400">{novelTitle}</span>
         을(를) 삭제하시겠습니까?
       </Modal.Text>
+      <Modal.DeleteButton />
     </Modal>
   );
 }

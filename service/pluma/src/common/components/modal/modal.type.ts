@@ -12,4 +12,5 @@ export interface ModalContextStates {
 
 export interface ModalContextValues extends PropsWithChildren {
   value: ModalContextStates;
+  className?: string;
 }
