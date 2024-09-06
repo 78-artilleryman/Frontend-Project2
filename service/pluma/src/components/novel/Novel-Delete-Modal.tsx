@@ -3,14 +3,15 @@ import { Modal } from "@/common/components/modal/Modal";
 
 interface NovelDeleteModalProps {
   novelTitle?: string;
+  handleModalClose: () => void;
 }
 
-function NovelDeleteModal({ novelTitle }: NovelDeleteModalProps) {
+function NovelDeleteModal({ novelTitle, handleModalClose }: NovelDeleteModalProps) {
   const modalValues = {
     isLoading: false,
     isDisabled: false,
     title: "소설 삭제",
-    onCloseModal: () => 0,
+    onCloseModal: handleModalClose,
   };
 
   return (
