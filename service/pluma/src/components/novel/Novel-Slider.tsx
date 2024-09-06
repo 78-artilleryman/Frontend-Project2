@@ -11,7 +11,6 @@ function NovelSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slideWidth = 10;
-
   const totalSlides = noveSliderlList?.novels.length || 0;
 
   const handleNext = () => {
