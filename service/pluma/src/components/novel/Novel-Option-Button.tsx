@@ -1,12 +1,15 @@
 import React, { ButtonHTMLAttributes } from "react";
 import NovelDeleteModal from "./Novel-Delete-Modal";
 import useModal from "@/common/hooks/use-modal";
+import { useNovelStore } from "@/store/novel/novelStore";
+import { NovelType } from "@/types/novel/novel.type";
 
 interface NovelOptionButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   controlType: "delete" | "edit";
+  novel: NovelType;
 }
 
-function NovelOptionButton({ controlType }: NovelOptionButtonProps) {
+function NovelOptionButton({ controlType, novel }: NovelOptionButtonProps) {
   const defaultButtonClass = "w-full py-2 text-center text-sm font-bold hover:bg-gray-300 ";
 
   const {
@@ -15,15 +18,16 @@ function NovelOptionButton({ controlType }: NovelOptionButtonProps) {
     handleModalClose: deleteModalClose,
   } = useModal();
   const { openModal: editeModalState, handleModalOpen: editeModalOpen, handleModalClose: editModalClose } = useModal();
+  const { setNovel } = useNovelStore();
 
   const handleOpenModal = () => {
+    setNovel({ ...novel });
     if (controlType === "delete") {
       deleteModalOepn();
     } else {
       editeModalOpen();
     }
   };
-
   if (controlType === "delete") {
     return (
       <>
