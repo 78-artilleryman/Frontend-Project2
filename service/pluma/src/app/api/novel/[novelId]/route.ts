@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 import prisma from "@/common/db";
 
-export async function DELETE(req: NextRequest) {
+export async function DELETE(req: NextRequest, { params }: { params: { novelId: string } }) {
   try {
     // 인증 토큰을 가져옵니다.
     const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
@@ -12,7 +12,7 @@ export async function DELETE(req: NextRequest) {
     }
 
     // 요청 URL에서 소설 ID를 가져옵니다.
-    const novelId = req.nextUrl.searchParams.get("id");
+    const { novelId } = params;
     if (!novelId) {
       // 소설 ID가 제공되지 않았을 때의 처리
       return NextResponse.json({ message: "No novel ID provided" }, { status: 400 });

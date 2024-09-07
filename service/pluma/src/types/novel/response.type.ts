@@ -25,3 +25,7 @@ interface CustomPageable {
   page: number;
   size: number;
 }
+
+export interface DeleteNovelResponse {
+  message: string;
+}

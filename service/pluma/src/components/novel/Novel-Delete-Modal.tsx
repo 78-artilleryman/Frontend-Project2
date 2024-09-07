@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "@/common/components/modal/Modal";
+import { useNovelMutation } from "@/queries/novel/nevelMutation";
 import { useNovelStore } from "@/store/novel/novelStore";
 
 interface NovelDeleteModalProps {
@@ -7,7 +8,9 @@ interface NovelDeleteModalProps {
 }
 
 function NovelDeleteModal({ handleModalClose }: NovelDeleteModalProps) {
-  const { novel, clearNovel } = useNovelStore();
+  const { novel } = useNovelStore();
+
+  const { mutate } = useNovelMutation(novel?.id, "delete");
 
   const modalValues = {
     isLoading: false,
@@ -17,7 +20,7 @@ function NovelDeleteModal({ handleModalClose }: NovelDeleteModalProps) {
   };
 
   const handleDeleteNovel = () => {
-    clearNovel();
+    mutate();
   };
 
   return (
