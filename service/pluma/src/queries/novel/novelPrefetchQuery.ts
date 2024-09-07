@@ -1,7 +1,7 @@
 import { dehydrate } from "@tanstack/react-query";
 import { cookies } from "next/headers";
+import { GetNovelList } from "../../services/novel/novelService";
 import { FetchNovelListRequest } from "../../types/novel/request.type";
-import { fetchNovels } from "../../services/novel/novelService";
 import { novelQueryKey } from "./queryKey";
 import getQueryClient from "@/common/util/getQueryClient";
 
@@ -13,12 +13,12 @@ export const usePrefetchNovelsQuery = async (params: FetchNovelListRequest) => {
 
   await queryClient.prefetchQuery({
     queryKey: novelQueryKey.slider({ ...params, sort: "updatedAt" }).queryKey,
-    queryFn: () => fetchNovels({ ...params }, token),
+    queryFn: () => GetNovelList({ ...params }, token),
   });
 
   await queryClient.prefetchInfiniteQuery({
     queryKey: novelQueryKey.container(params).queryKey,
-    queryFn: ({ pageParam = 1 }) => fetchNovels({ ...params, page: pageParam }, token),
+    queryFn: ({ pageParam = 1 }) => GetNovelList({ ...params, page: pageParam }, token),
     initialPageParam: 1,
     getNextPageParam: (lastPage: any) => {
       const { customPageable } = lastPage;

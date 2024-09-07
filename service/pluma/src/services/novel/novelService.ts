@@ -7,7 +7,7 @@ export type CookieData = {
   path?: string;
 };
 
-export async function fetchNovels(
+export async function GetNovelList(
   { sort = "createdAt", page = 1, limit = 8 }: FetchNovelListRequest,
   token?: CookieData
 ): Promise<FetchNovelListResponse | undefined> {
