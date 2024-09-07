@@ -1,5 +1,5 @@
-import { FetchNovelListRequest } from "../../app/novel/types/request.type";
-import { FetchNovelListResponse } from "../../app/novel/types/response.type";
+import { FetchNovelListRequest } from "../../types/novel/request.type";
+import { FetchNovelListResponse } from "../../types/novel/response.type";
 
 export type CookieData = {
   name: string;

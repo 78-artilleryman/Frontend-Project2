@@ -1,7 +1,7 @@
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 
-import { FetchNovelListRequest } from "../../app/novel/types/request.type";
-import { FetchNovelListResponse } from "../../app/novel/types/response.type";
+import { FetchNovelListRequest } from "../../types/novel/request.type";
+import { FetchNovelListResponse } from "../../types/novel/response.type";
 import { novelQueryKey } from "./queryKey";
 import { fetchNovels } from "@/services/novel/novelService";
 
