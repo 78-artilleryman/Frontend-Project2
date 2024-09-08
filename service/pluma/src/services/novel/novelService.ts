@@ -1,5 +1,7 @@
 import { FetchNovelListRequest } from "../../types/novel/request.type";
 import { DeleteNovelResponse, FetchNovelListResponse } from "../../types/novel/response.type";
+import { baseHttpClient } from "../baseHttpClient";
+import { getFetchHeader } from "@/common/util/getFetchHeader";
 
 export type CookieData = {
   name: string;
@@ -11,58 +13,23 @@ export type CookieData = {
 export async function GetNovelList(
   { sort = "createdAt", page = 1, limit = 8 }: FetchNovelListRequest,
   token?: CookieData
-): Promise<FetchNovelListResponse | undefined> {
+): Promise<FetchNovelListResponse> {
+  const HEADER = getFetchHeader(token?.value, "a");
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/novels?sort=${sort}&page=${page}&limit=${limit}`,
-      {
-        cache: "no-store",
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token?.value,
-        },
-      }
-    );
-
-    if (!response.ok) {
-      console.log("Response status:", response.status);
-      console.log("Response body:", await response.text());
-      throw new Error("Network response was not ok");
-    }
-
-    const novelListData = await response.json();
-    return novelListData;
+    return await baseHttpClient().get<FetchNovelListResponse>("novels", HEADER, { sort, page, limit });
   } catch (error) {
     console.error("Fetch error:", error);
+    throw error;
   }
 }
 
 // 소설 지우는 함수
-export async function DeleteNovel(novelId: string, token = ""): Promise<DeleteNovelResponse | undefined> {
+export async function DeleteNovel(novelId: string, token = ""): Promise<DeleteNovelResponse> {
+  const HEADER = getFetchHeader(token, "a");
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/novel/${novelId}`, {
-      method: "DELETE",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    });
-
-    if (!response.ok) {
-      // 오류 발생 시 본문을 JSON으로 읽기
-      const errorBody = await response.json();
-      console.log("Response status:", response.status);
-      console.log("Response body:", errorBody);
-      throw new Error("Network response was not ok");
-    }
-
-    // 성공적인 응답 처리
-    const responseBody = await response.json();
-    return responseBody;
+    return await baseHttpClient().delete<DeleteNovelResponse>(`novel/${novelId}`, HEADER);
   } catch (error) {
     console.error("Fetch error:", error);
+    throw error;
   }
 }
