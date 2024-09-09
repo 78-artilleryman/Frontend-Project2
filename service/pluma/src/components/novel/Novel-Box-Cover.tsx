@@ -14,7 +14,7 @@ function NovelBoxCover(props: NovelType) {
           </li>
         ))}
       </ul>
-      <h4 className="text-whiteAlpha-900 text-overflow-3 text-xl font-bold">{props.title}</h4>
+      <h4 className="text-whiteAlpha-900 text-overflow-3 w-[180px] text-center text-lg font-bold">{props.title}</h4>
       <p className="text-whiteAlpha-900 text-overflow-3 w-[180px] text-sm font-normal">{props.description}</p>
     </div>
   );
