@@ -30,7 +30,16 @@ function NovelSlider() {
       <ul
         className="flex w-[200%] flex-shrink-0 gap-8"
         style={{ transform: `translateX(-${currentIndex * slideWidth}%)`, transition: "transform 0.3s ease" }}>
-        {noveSliderlList?.novels.map(novel => <NovelBox key={novel.id} {...novel} />)}
+        {noveSliderlList?.novels.map(novel => (
+          <NovelBox key={novel.id}>
+            <NovelBox.Cover {...novel}>
+              <NovelBox.Option {...novel}>
+                <NovelBox.OptionButton controlType="delete" novel={novel} />
+                <NovelBox.OptionButton controlType="edit" novel={novel} />
+              </NovelBox.Option>
+            </NovelBox.Cover>
+          </NovelBox>
+        ))}
       </ul>
       {currentIndex > 0 && <SlideControlButton direction="left" onClick={handlePrev} />}
       {currentIndex < totalSlides - 1 && <SlideControlButton direction="right" onClick={handleNext} />}
