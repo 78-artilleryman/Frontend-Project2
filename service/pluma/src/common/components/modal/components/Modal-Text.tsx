@@ -7,7 +7,7 @@ interface ModalTextProps {
 }
 
 function ModalText({ className, children }: ModalTextProps) {
-  const DefaultModalTextClass = "text-sm font-normal text-blackAlpha-900 ";
+  const DefaultModalTextClass = "text-sm font-normal text-blackAlpha-900 w-[200px] text-center ";
   const ModalTextClass = twMerge(DefaultModalTextClass, className);
 
   return <p className={ModalTextClass}>{children}</p>;

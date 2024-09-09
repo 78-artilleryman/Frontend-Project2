@@ -1,4 +1,6 @@
-export type NovelType = {
+import { PropsWithChildren } from "react";
+
+export interface NovelType extends PropsWithChildren {
   id: string;
   title: string;
   description: string;
@@ -9,4 +11,4 @@ export type NovelType = {
     id: string;
     name: string;
   }[];
-};
+}

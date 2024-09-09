@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes } from "react";
 import NovelDeleteModal from "./Novel-Delete-Modal";
 import useModal from "@/common/hooks/use-modal";
-import { useNovelStore } from "@/store/novel/novelStore";
+
 import { NovelType } from "@/types/novel/novel.type";
 
 interface NovelOptionButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,10 +18,8 @@ function NovelOptionButton({ controlType, novel }: NovelOptionButtonProps) {
     handleModalClose: deleteModalClose,
   } = useModal();
   const { openModal: editeModalState, handleModalOpen: editeModalOpen, handleModalClose: editModalClose } = useModal();
-  const { setNovel } = useNovelStore();
 
   const handleOpenModal = () => {
-    setNovel({ ...novel });
     if (controlType === "delete") {
       deleteModalOepn();
     } else {
@@ -31,7 +29,7 @@ function NovelOptionButton({ controlType, novel }: NovelOptionButtonProps) {
   if (controlType === "delete") {
     return (
       <>
-        {deleteModalState && <NovelDeleteModal handleModalClose={deleteModalClose} />}
+        {deleteModalState && <NovelDeleteModal handleModalClose={deleteModalClose} novel={novel} />}
         <button className={`${defaultButtonClass}` + "rounded-tr-2xl text-red-600"} onClick={handleOpenModal}>
           삭제
         </button>
@@ -40,7 +38,7 @@ function NovelOptionButton({ controlType, novel }: NovelOptionButtonProps) {
   } else {
     return (
       <>
-        {editeModalState && <NovelDeleteModal handleModalClose={editModalClose} />}
+        {editeModalState && <NovelDeleteModal handleModalClose={editModalClose} novel={novel} />}
         <button className={`${defaultButtonClass}` + "text-blackAlpha-900 rounded-bl-2xl"} onClick={handleOpenModal}>
           수정
         </button>

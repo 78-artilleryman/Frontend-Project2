@@ -1,15 +1,14 @@
 import React from "react";
 import { Modal } from "@/common/components/modal/Modal";
 import { useNovelMutation } from "@/queries/novel/nevelMutation";
-import { useNovelStore } from "@/store/novel/novelStore";
+import { NovelType } from "@/types/novel/novel.type";
 
 interface NovelDeleteModalProps {
   handleModalClose: () => void;
+  novel: NovelType;
 }
 
-function NovelDeleteModal({ handleModalClose }: NovelDeleteModalProps) {
-  const { novel } = useNovelStore();
-
+function NovelDeleteModal({ handleModalClose, novel }: NovelDeleteModalProps) {
   const { mutate } = useNovelMutation(novel?.id, "delete");
 
   const modalValues = {
