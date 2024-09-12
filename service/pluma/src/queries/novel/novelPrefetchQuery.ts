@@ -17,8 +17,8 @@ export const usePrefetchNovelsQuery = async (params: FetchNovelListRequest) => {
   });
 
   await queryClient.prefetchInfiniteQuery({
-    queryKey: novelQueryKey.container(params).queryKey,
-    queryFn: ({ pageParam = 1 }) => GetNovelList({ ...params, page: pageParam }, token),
+    queryKey: novelQueryKey.container({ ...params, limit: 14 }).queryKey,
+    queryFn: ({ pageParam = 1 }) => GetNovelList({ ...params, page: pageParam, limit: 14 }, token),
     initialPageParam: 1,
     getNextPageParam: (lastPage: any) => {
       const { customPageable } = lastPage;
