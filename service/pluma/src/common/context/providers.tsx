@@ -16,7 +16,12 @@ export const NextProvider = ({ children }: Props) => {
       new QueryClient({
         defaultOptions: {
           queries: {
-            staleTime: 60 * 1000,
+            staleTime: 60 * 1000 * 5,
+            refetchOnWindowFocus: false, // 창 포커스 시 자동으로 다시 패칭 안 함
+            retry: 2, // 실패 시 2번 재시도
+          },
+          mutations: {
+            retry: 1, // 뮤테이션 실패 시 1번 재시도
           },
         },
       })
