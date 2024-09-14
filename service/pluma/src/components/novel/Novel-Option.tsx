@@ -19,7 +19,7 @@ function NovelOption(props: NovelType) {
       />
       {isToggle && (
         <div
-          className="absolute right-0 top-0 z-40 flex h-[74px] w-20 flex-col items-center justify-center rounded-bl-[18px] rounded-tr-[18px] bg-gray-200"
+          className="animate-dropdown-grow absolute right-0 top-0 z-40 flex h-[74px] w-20 flex-col items-center justify-center rounded-bl-[18px] rounded-tr-[18px] bg-gray-200"
           ref={ref}>
           {props.children}
         </div>

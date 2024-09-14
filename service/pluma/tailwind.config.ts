@@ -64,11 +64,24 @@ const config: Config = {
             opacity: "1", // 깜빡임 효과 종료
           },
         },
+        "dropdown-grow": {
+          "0%": {
+            transform: "scale(0)",
+            transformOrigin: "top right",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "scale(1)",
+            transformOrigin: "top right",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "bannerAnimation-pc": "bannerAnimation_PC 4s ease-in-out",
         "bannerAnimation-tbr": "bannerAnimation_TBR 4s ease-in-out",
         "bannerAnimation-tbc": "bannerAnimation_TBC 4s ease-in-out",
+        "dropdown-grow": "dropdown-grow 0.2s ease-in-out forwards",
       },
     },
 
