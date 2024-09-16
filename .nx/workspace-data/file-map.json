@@ -2,11 +2,13 @@
   "version": "6.0",
   "nxVersion": "19.6.1",
   "deps": {
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "vite": "^4.4.9",
     "@nrwl/eslint-plugin-nx": "^19.6.1",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
-    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/parser": "^8.5.0",
     "eslint": "^8.48.0",
+    "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-json-format": "^2.0.1",
@@ -31,96 +33,20 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".eslintrc.json",
-        "hash": "4851511352268071414"
-      },
-      {
-        "file": ".github/workflows/ci.yml",
-        "hash": "12006193325514916918"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "12964804158823169020"
+        "file": "tsconfig.service.json",
+        "hash": "6438649411579008587"
       },
       {
         "file": ".husky/pre-commit",
         "hash": "5084766859094539064"
       },
       {
-        "file": ".husky/pre-push",
-        "hash": "6502312112624594739"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "8973046889015498160"
-      },
-      {
-        "file": ".yarn/releases/yarn-4.3.1.cjs",
-        "hash": "1397390985206817274"
-      },
-      {
-        "file": ".yarn/sdks/eslint/bin/eslint.js",
-        "hash": "14872269478262836979"
-      },
-      {
-        "file": ".yarn/sdks/eslint/lib/api.js",
-        "hash": "11935524110648288742"
-      },
-      {
-        "file": ".yarn/sdks/eslint/lib/unsupported-api.js",
-        "hash": "10989494384090494064"
-      },
-      {
-        "file": ".yarn/sdks/eslint/package.json",
-        "hash": "9302568071849794418"
-      },
-      {
-        "file": ".yarn/sdks/integrations.yml",
-        "hash": "5703335058684100671"
-      },
-      {
-        "file": ".yarn/sdks/prettier/bin/prettier.cjs",
-        "hash": "1386140985451125376"
-      },
-      {
         "file": ".yarn/sdks/prettier/index.cjs",
         "hash": "3393616046143878484"
       },
       {
-        "file": ".yarn/sdks/prettier/package.json",
-        "hash": "15426012732732659717"
-      },
-      {
-        "file": ".yarn/sdks/typescript/bin/tsc",
-        "hash": "13885846455737793067"
-      },
-      {
-        "file": ".yarn/sdks/typescript/bin/tsserver",
-        "hash": "6819096246728401411"
-      },
-      {
-        "file": ".yarn/sdks/typescript/lib/tsc.js",
-        "hash": "2839614163630542371"
-      },
-      {
-        "file": ".yarn/sdks/typescript/lib/tsserver.js",
-        "hash": "1301760797202983736"
-      },
-      {
-        "file": ".yarn/sdks/typescript/lib/tsserverlibrary.js",
-        "hash": "1451277444867543573"
-      },
-      {
         "file": ".yarn/sdks/typescript/lib/typescript.js",
         "hash": "2824640601725886217"
-      },
-      {
-        "file": ".yarn/sdks/typescript/package.json",
-        "hash": "5518062098860193450"
-      },
-      {
-        "file": ".yarnrc.yml",
-        "hash": "18347966596315914205"
       },
       {
         "file": "README.md",
@@ -131,375 +57,103 @@
         "hash": "4573631067785534434"
       },
       {
+        "file": ".yarn/sdks/typescript/lib/tsserverlibrary.js",
+        "hash": "1451277444867543573"
+      },
+      {
+        "file": ".yarn/sdks/typescript/lib/tsserver.js",
+        "hash": "1301760797202983736"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "10811907717662197473"
+      },
+      {
+        "file": ".yarn/sdks/eslint/package.json",
+        "hash": "9302568071849794418"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "573462163605999085"
+      },
+      {
+        "file": ".yarn/sdks/eslint/lib/unsupported-api.js",
+        "hash": "10989494384090494064"
+      },
+      {
+        "file": ".yarn/releases/yarn-4.3.1.cjs",
+        "hash": "1397390985206817274"
+      },
+      {
+        "file": ".yarn/sdks/typescript/package.json",
+        "hash": "5518062098860193450"
+      },
+      {
+        "file": ".husky/pre-push",
+        "hash": "6502312112624594739"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "3918482135505437676"
+      },
+      {
+        "file": ".yarn/sdks/integrations.yml",
+        "hash": "5703335058684100671"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "15068655348110139355"
+      },
+      {
         "file": "package.json",
-        "hash": "4622798174824390022"
+        "hash": "17517824135353583713"
+      },
+      {
+        "file": ".yarn/sdks/typescript/bin/tsserver",
+        "hash": "6819096246728401411"
+      },
+      {
+        "file": ".yarn/sdks/typescript/bin/tsc",
+        "hash": "13885846455737793067"
+      },
+      {
+        "file": ".yarn/sdks/prettier/bin/prettier.cjs",
+        "hash": "1386140985451125376"
+      },
+      {
+        "file": ".yarn/sdks/prettier/package.json",
+        "hash": "15426012732732659717"
       },
       {
         "file": "tsconfig.base.json",
         "hash": "16141623451074293051"
       },
       {
+        "file": ".yarn/sdks/eslint/lib/api.js",
+        "hash": "11935524110648288742"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "12964804158823169020"
+      },
+      {
         "file": "tsconfig.eslint.json",
         "hash": "2757264458533909294"
       },
       {
-        "file": "tsconfig.service.json",
-        "hash": "6438649411579008587"
+        "file": ".yarn/sdks/eslint/bin/eslint.js",
+        "hash": "14872269478262836979"
       },
       {
-        "file": "yarn.lock",
-        "hash": "16386189896153011701"
+        "file": ".yarn/sdks/typescript/lib/tsc.js",
+        "hash": "2839614163630542371"
+      },
+      {
+        "file": ".yarnrc.yml",
+        "hash": "18347966596315914205"
       }
     ],
     "projectFileMap": {
-      "@byeonghyeon/react-components-accordion": [
-        {
-          "file": "package/react/components/accordion/build.js",
-          "hash": "5842952762362316863"
-        },
-        {
-          "file": "package/react/components/accordion/package.json",
-          "hash": "14117984083349811847",
-          "deps": [
-            "@byeonghyeon/themes",
-            "npm:react",
-            "@byeonghyeon/esbuild-config",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:@vanilla-extract/css",
-            "npm:@vanilla-extract/dynamic",
-            "npm:@vanilla-extract/esbuild-plugin",
-            "npm:@vanilla-extract/recipes",
-            "npm:@vanilla-extract/sprinkles",
-            "npm:react-dom",
-            "npm:typescript",
-            "@byeonghyeon/react-hooks-button",
-            "@byeonghyeon/react-hooks-toggle",
-            "npm:clsx"
-          ]
-        },
-        {
-          "file": "package/react/components/accordion/src/Accordion.tsx",
-          "hash": "11946205302063584074"
-        },
-        {
-          "file": "package/react/components/accordion/src/AccordionButton.tsx",
-          "hash": "7734171642564900357"
-        },
-        {
-          "file": "package/react/components/accordion/src/AccordionContext.tsx",
-          "hash": "14875711207596763766"
-        },
-        {
-          "file": "package/react/components/accordion/src/AccordionItem.tsx",
-          "hash": "3017204819807824506"
-        },
-        {
-          "file": "package/react/components/accordion/src/AccordionPanel.tsx",
-          "hash": "15997248161067892325"
-        },
-        {
-          "file": "package/react/components/accordion/src/index.ts",
-          "hash": "17566388677849376540"
-        },
-        {
-          "file": "package/react/components/accordion/src/style.css.ts",
-          "hash": "14652186045004927737"
-        },
-        {
-          "file": "package/react/components/accordion/src/types.tsx",
-          "hash": "1779933654789481147"
-        },
-        {
-          "file": "package/react/components/accordion/tsconfig.json",
-          "hash": "10344179325425879767"
-        }
-      ],
-      "pluma": [
-        {
-          "file": "service/pluma/.gitignore",
-          "hash": "15751075988610075934"
-        },
-        {
-          "file": "service/pluma/README.md",
-          "hash": "10085892738136194526"
-        },
-        {
-          "file": "service/pluma/next-auth.d.ts",
-          "hash": "16021371019398187889"
-        },
-        {
-          "file": "service/pluma/next.config.mjs",
-          "hash": "6567081978241091914"
-        },
-        {
-          "file": "service/pluma/package.json",
-          "hash": "4379093693102207303",
-          "deps": [
-            "npm:@types/eslint",
-            "npm:@types/node",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:eslint@9.9.0",
-            "npm:postcss",
-            "npm:prisma",
-            "npm:tailwindcss",
-            "npm:ts-node",
-            "npm:typescript",
-            "@byeonghyeon/react-components-accordion",
-            "@byeonghyeon/react-components-button",
-            "@byeonghyeon/react-components-input",
-            "@byeonghyeon/react-components-layout",
-            "@byeonghyeon/react-components-select",
-            "@byeonghyeon/react-components-toast",
-            "@byeonghyeon/themes",
-            "npm:@next-auth/prisma-adapter",
-            "npm:@prisma/client",
-            "npm:@supabase/ssr",
-            "npm:@supabase/supabase-js",
-            "npm:next",
-            "npm:next-auth",
-            "npm:react",
-            "npm:react-dom"
-          ]
-        },
-        {
-          "file": "service/pluma/postcss.config.mjs",
-          "hash": "2557392112968376575"
-        },
-        {
-          "file": "service/pluma/prisma/migrations/20240820093202_init/migration.sql",
-          "hash": "16521282948825383181"
-        },
-        {
-          "file": "service/pluma/prisma/migrations/migration_lock.toml",
-          "hash": "11493296588214560035"
-        },
-        {
-          "file": "service/pluma/prisma/schema.prisma",
-          "hash": "5721616021097032917"
-        },
-        {
-          "file": "service/pluma/public/next.svg",
-          "hash": "8300767200008744458"
-        },
-        {
-          "file": "service/pluma/public/signIn-Icon/google_logo.svg",
-          "hash": "17401123689124255513"
-        },
-        {
-          "file": "service/pluma/public/signIn-Icon/kakao_logo.svg",
-          "hash": "14896972891943396911"
-        },
-        {
-          "file": "service/pluma/public/signIn-Icon/naver_logo.svg",
-          "hash": "3562020153065831167"
-        },
-        {
-          "file": "service/pluma/public/vercel.svg",
-          "hash": "2376673330454856631"
-        },
-        {
-          "file": "service/pluma/src/app/api/auth/[...nextauth]/route.ts",
-          "hash": "12155789142814871475"
-        },
-        {
-          "file": "service/pluma/src/app/favicon.ico",
-          "hash": "9157999678830540297"
-        },
-        {
-          "file": "service/pluma/src/app/layout.tsx",
-          "hash": "17407565891055242733"
-        },
-        {
-          "file": "service/pluma/src/app/page.tsx",
-          "hash": "12965397286766075724"
-        },
-        {
-          "file": "service/pluma/src/app/providers.tsx",
-          "hash": "7584300744487285762"
-        },
-        {
-          "file": "service/pluma/src/app/style/globals.css",
-          "hash": "10720985167564240575"
-        },
-        {
-          "file": "service/pluma/src/app/style/yds.module.css",
-          "hash": "12738203733650894636"
-        },
-        {
-          "file": "service/pluma/src/app/users/signin/page.tsx",
-          "hash": "16723454094890848473"
-        },
-        {
-          "file": "service/pluma/src/components/FormField.tsx",
-          "hash": "14405500035769985598"
-        },
-        {
-          "file": "service/pluma/src/db/index.ts",
-          "hash": "2847860230013863731"
-        },
-        {
-          "file": "service/pluma/tailwind.config.ts",
-          "hash": "17762071324499893725"
-        },
-        {
-          "file": "service/pluma/tsconfig.json",
-          "hash": "3301762639499271746"
-        }
-      ],
-      "@byeonghyeon/react-components-button": [
-        {
-          "file": "package/react/components/button/build.js",
-          "hash": "5842952762362316863"
-        },
-        {
-          "file": "package/react/components/button/package.json",
-          "hash": "675166905409206260",
-          "deps": [
-            "@byeonghyeon/themes",
-            "npm:react",
-            "@byeonghyeon/esbuild-config",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:@vanilla-extract/css",
-            "npm:@vanilla-extract/dynamic",
-            "npm:@vanilla-extract/esbuild-plugin",
-            "npm:@vanilla-extract/recipes",
-            "npm:@vanilla-extract/sprinkles",
-            "npm:react-dom",
-            "npm:typescript",
-            "@byeonghyeon/react-hooks-button",
-            "@byeonghyeon/react-hooks-toggle",
-            "npm:clsx"
-          ]
-        },
-        {
-          "file": "package/react/components/button/src/Button.tsx",
-          "hash": "5207097278620567793"
-        },
-        {
-          "file": "package/react/components/button/src/index.ts",
-          "hash": "8409040364927157818"
-        },
-        {
-          "file": "package/react/components/button/src/style.css.ts",
-          "hash": "13055652925997448181"
-        },
-        {
-          "file": "package/react/components/button/src/types.ts",
-          "hash": "4862492733407655971"
-        },
-        {
-          "file": "package/react/components/button/tsconfig.json",
-          "hash": "10344179325425879767"
-        }
-      ],
-      "@byeonghyeon/react-hooks-select": [
-        {
-          "file": "package/react/hooks/select/build.js",
-          "hash": "8366363271680645186"
-        },
-        {
-          "file": "package/react/hooks/select/package.json",
-          "hash": "8332941245268481710",
-          "deps": [
-            "npm:react",
-            "@byeonghyeon/esbuild-config",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:react-dom",
-            "npm:typescript",
-            "npm:clsx"
-          ]
-        },
-        {
-          "file": "package/react/hooks/select/src/index.ts",
-          "hash": "14124778264363565620"
-        },
-        {
-          "file": "package/react/hooks/select/src/types.ts",
-          "hash": "3698533023306847201"
-        },
-        {
-          "file": "package/react/hooks/select/src/useSelect.ts",
-          "hash": "4877079796987037219"
-        },
-        {
-          "file": "package/react/hooks/select/tsconfig.json",
-          "hash": "10344179325425879767"
-        }
-      ],
-      "@byeonghyeon/react-hooks-input": [
-        {
-          "file": "package/react/hooks/input/build.js",
-          "hash": "8366363271680645186"
-        },
-        {
-          "file": "package/react/hooks/input/package.json",
-          "hash": "4500792040388562157",
-          "deps": [
-            "npm:react",
-            "@byeonghyeon/esbuild-config",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:react-dom",
-            "npm:typescript",
-            "npm:clsx"
-          ]
-        },
-        {
-          "file": "package/react/hooks/input/src/index.ts",
-          "hash": "5091935344832275230"
-        },
-        {
-          "file": "package/react/hooks/input/src/types.ts",
-          "hash": "10750398461453406194"
-        },
-        {
-          "file": "package/react/hooks/input/src/useInput.tsx",
-          "hash": "9822253254366136850"
-        },
-        {
-          "file": "package/react/hooks/input/tsconfig.json",
-          "hash": "10344179325425879767"
-        }
-      ],
-      "@byeonghyeon/react-hooks-toggle": [
-        {
-          "file": "package/react/hooks/toggle/build.js",
-          "hash": "8366363271680645186"
-        },
-        {
-          "file": "package/react/hooks/toggle/package.json",
-          "hash": "8351803188991387903",
-          "deps": [
-            "npm:react",
-            "@byeonghyeon/esbuild-config",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:react-dom",
-            "npm:typescript",
-            "npm:clsx"
-          ]
-        },
-        {
-          "file": "package/react/hooks/toggle/src/index.ts",
-          "hash": "13190166400749655539"
-        },
-        {
-          "file": "package/react/hooks/toggle/src/types.ts",
-          "hash": "13666444803187522029"
-        },
-        {
-          "file": "package/react/hooks/toggle/src/useToggle.ts",
-          "hash": "6852102219029575629"
-        },
-        {
-          "file": "package/react/hooks/toggle/tsconfig.json",
-          "hash": "10344179325425879767"
-        }
-      ],
       "@byeonghyeon/themes": [
         {
           "file": "package/themes/build.js",
@@ -566,14 +220,49 @@
           "hash": "10248009443664204963"
         }
       ],
-      "@byeonghyeon/react-components-input": [
+      "@byeonghyeon/react-hooks-select": [
         {
-          "file": "package/react/components/input/build.js",
+          "file": "package/react/hooks/select/build.js",
+          "hash": "8366363271680645186"
+        },
+        {
+          "file": "package/react/hooks/select/package.json",
+          "hash": "8332941245268481710",
+          "deps": [
+            "npm:react",
+            "@byeonghyeon/esbuild-config",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:react-dom",
+            "npm:typescript",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "package/react/hooks/select/src/index.ts",
+          "hash": "14124778264363565620"
+        },
+        {
+          "file": "package/react/hooks/select/src/types.ts",
+          "hash": "3698533023306847201"
+        },
+        {
+          "file": "package/react/hooks/select/src/useSelect.ts",
+          "hash": "4877079796987037219"
+        },
+        {
+          "file": "package/react/hooks/select/tsconfig.json",
+          "hash": "10344179325425879767"
+        }
+      ],
+      "@byeonghyeon/react-components-toast": [
+        {
+          "file": "package/react/components/toast/build.js",
           "hash": "5842952762362316863"
         },
         {
-          "file": "package/react/components/input/package.json",
-          "hash": "11439351311038022415",
+          "file": "package/react/components/toast/package.json",
+          "hash": "16117085144740341654",
           "deps": [
             "@byeonghyeon/themes",
             "npm:react",
@@ -587,37 +276,470 @@
             "npm:@vanilla-extract/sprinkles",
             "npm:react-dom",
             "npm:typescript",
-            "@byeonghyeon/react-hooks-input",
             "npm:clsx"
           ]
         },
         {
-          "file": "package/react/components/input/src/Input.tsx",
-          "hash": "15818057243411271702"
+          "file": "package/react/components/toast/src/Toast.tsx",
+          "hash": "13028516293091213668"
         },
         {
-          "file": "package/react/components/input/src/InputGroup.tsx",
-          "hash": "15933892946994493775"
+          "file": "package/react/components/toast/src/ToastContainer.tsx",
+          "hash": "13495842080058656066"
         },
         {
-          "file": "package/react/components/input/src/InputLeftAddon.tsx",
-          "hash": "15350856995970534865"
+          "file": "package/react/components/toast/src/ToastContext.ts",
+          "hash": "12482114565053062793"
         },
         {
-          "file": "package/react/components/input/src/index.ts",
-          "hash": "7206012316751655975"
+          "file": "package/react/components/toast/src/ToastProvider.tsx",
+          "hash": "14980993917057057855"
         },
         {
-          "file": "package/react/components/input/src/style.css.ts",
-          "hash": "16247249432375562866"
+          "file": "package/react/components/toast/src/index.ts",
+          "hash": "7250574523632467111"
         },
         {
-          "file": "package/react/components/input/src/types.ts",
-          "hash": "8065024183968919911"
+          "file": "package/react/components/toast/src/style.css.ts",
+          "hash": "15453810563803982080"
         },
         {
-          "file": "package/react/components/input/tsconfig.json",
+          "file": "package/react/components/toast/src/types.ts",
+          "hash": "13481647225971472081"
+        },
+        {
+          "file": "package/react/components/toast/tsconfig.json",
           "hash": "10344179325425879767"
+        }
+      ],
+      "pluma": [
+        {
+          "file": "service/pluma/.dockerignore",
+          "hash": "12532510474301563397"
+        },
+        {
+          "file": "service/pluma/.gitignore",
+          "hash": "15751075988610075934"
+        },
+        {
+          "file": "service/pluma/Dockerfile",
+          "hash": "7300218652964895355"
+        },
+        {
+          "file": "service/pluma/README.md",
+          "hash": "10085892738136194526"
+        },
+        {
+          "file": "service/pluma/middleware.ts",
+          "hash": "11357518197634526552"
+        },
+        {
+          "file": "service/pluma/next-auth.d.ts",
+          "hash": "6822641445459203740"
+        },
+        {
+          "file": "service/pluma/next.config.mjs",
+          "hash": "6567081978241091914"
+        },
+        {
+          "file": "service/pluma/package.json",
+          "hash": "8205234189736087168",
+          "deps": [
+            "npm:@faker-js/faker",
+            "npm:@types/eslint",
+            "npm:@types/node",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:eslint@8.48.0",
+            "npm:postcss",
+            "npm:prisma",
+            "npm:tailwindcss",
+            "npm:ts-node",
+            "npm:typescript",
+            "@byeonghyeon/react-components-accordion",
+            "@byeonghyeon/react-components-button",
+            "@byeonghyeon/react-components-input",
+            "@byeonghyeon/react-components-layout",
+            "@byeonghyeon/react-components-select",
+            "@byeonghyeon/react-components-toast",
+            "@byeonghyeon/themes",
+            "npm:@lukemorales/query-key-factory",
+            "npm:@next-auth/prisma-adapter",
+            "npm:@prisma/client",
+            "npm:@supabase/ssr",
+            "npm:@supabase/supabase-js",
+            "npm:@tanstack/query-core",
+            "npm:@tanstack/react-query",
+            "npm:@tanstack/react-query-devtools",
+            "npm:@tanstack/react-query-next-experimental",
+            "npm:next",
+            "npm:next-auth",
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-icons",
+            "npm:tailwind-merge",
+            "npm:zustand"
+          ]
+        },
+        {
+          "file": "service/pluma/postcss.config.mjs",
+          "hash": "2557392112968376575"
+        },
+        {
+          "file": "service/pluma/prisma/migrations/20240820093202_init/migration.sql",
+          "hash": "16521282948825383181"
+        },
+        {
+          "file": "service/pluma/prisma/migrations/20240822155524_add/migration.sql",
+          "hash": "11841380561497940662"
+        },
+        {
+          "file": "service/pluma/prisma/migrations/20240824094139_novel/migration.sql",
+          "hash": "649016353738109615"
+        },
+        {
+          "file": "service/pluma/prisma/migrations/20240913142443_add/migration.sql",
+          "hash": "9827623555917033975"
+        },
+        {
+          "file": "service/pluma/prisma/migrations/migration_lock.toml",
+          "hash": "11493296588214560035"
+        },
+        {
+          "file": "service/pluma/prisma/schema.prisma",
+          "hash": "17047039992085708955"
+        },
+        {
+          "file": "service/pluma/prisma/seed.ts",
+          "hash": "3324837844227550088"
+        },
+        {
+          "file": "service/pluma/public/icon/x.svg",
+          "hash": "16049843775811253498"
+        },
+        {
+          "file": "service/pluma/public/next.svg",
+          "hash": "8300767200008744458"
+        },
+        {
+          "file": "service/pluma/public/signIn-Icon/google_logo.svg",
+          "hash": "17401123689124255513"
+        },
+        {
+          "file": "service/pluma/public/signIn-Icon/kakao_logo.svg",
+          "hash": "14896972891943396911"
+        },
+        {
+          "file": "service/pluma/public/signIn-Icon/naver_logo.svg",
+          "hash": "3562020153065831167"
+        },
+        {
+          "file": "service/pluma/public/vercel.svg",
+          "hash": "2376673330454856631"
+        },
+        {
+          "file": "service/pluma/src/app/api/auth/[...nextauth]/route.ts",
+          "hash": "12565529408234335974"
+        },
+        {
+          "file": "service/pluma/src/app/api/novel/[novelId]/route.ts",
+          "hash": "11950331960788344480"
+        },
+        {
+          "file": "service/pluma/src/app/api/novels/route.ts",
+          "hash": "4237323770984284640"
+        },
+        {
+          "file": "service/pluma/src/app/favicon.ico",
+          "hash": "9157999678830540297"
+        },
+        {
+          "file": "service/pluma/src/app/layout.tsx",
+          "hash": "11131391427467527868"
+        },
+        {
+          "file": "service/pluma/src/app/novel/create/page.tsx",
+          "hash": "6426926740315817333"
+        },
+        {
+          "file": "service/pluma/src/app/novel/page.tsx",
+          "hash": "12158158216649580922"
+        },
+        {
+          "file": "service/pluma/src/app/page.tsx",
+          "hash": "12965397286766075724"
+        },
+        {
+          "file": "service/pluma/src/app/signin/page.tsx",
+          "hash": "13507163012547862470"
+        },
+        {
+          "file": "service/pluma/src/app/style/globals.css",
+          "hash": "10136587760329473964"
+        },
+        {
+          "file": "service/pluma/src/app/style/yds.module.css",
+          "hash": "12738203733650894636"
+        },
+        {
+          "file": "service/pluma/src/common/auth.ts",
+          "hash": "7853514201923721571"
+        },
+        {
+          "file": "service/pluma/src/common/components/modal/Modal.tsx",
+          "hash": "1351891324095240180"
+        },
+        {
+          "file": "service/pluma/src/common/components/modal/components/Modal-Backdrop.tsx",
+          "hash": "12380022685888732314"
+        },
+        {
+          "file": "service/pluma/src/common/components/modal/components/Modal-CloseButton.tsx",
+          "hash": "15272127066450114422"
+        },
+        {
+          "file": "service/pluma/src/common/components/modal/components/Modal-Delete-Button.tsx",
+          "hash": "283446207724129880"
+        },
+        {
+          "file": "service/pluma/src/common/components/modal/components/Modal-Text.tsx",
+          "hash": "7939773131954934601"
+        },
+        {
+          "file": "service/pluma/src/common/components/modal/components/Modal-Title.tsx",
+          "hash": "7325563331973257423"
+        },
+        {
+          "file": "service/pluma/src/common/components/modal/components/index.ts",
+          "hash": "325924377025043726"
+        },
+        {
+          "file": "service/pluma/src/common/components/modal/modal.type.ts",
+          "hash": "4343522385701475448"
+        },
+        {
+          "file": "service/pluma/src/common/context/providers.tsx",
+          "hash": "5136637655685703463"
+        },
+        {
+          "file": "service/pluma/src/common/db/index.ts",
+          "hash": "2847860230013863731"
+        },
+        {
+          "file": "service/pluma/src/common/hooks/use-intersect.ts",
+          "hash": "10466324639868664505"
+        },
+        {
+          "file": "service/pluma/src/common/hooks/use-modal.ts",
+          "hash": "2762476002636822548"
+        },
+        {
+          "file": "service/pluma/src/common/hooks/use-outside.ts",
+          "hash": "649148247488877179"
+        },
+        {
+          "file": "service/pluma/src/common/hooks/use-toggle.ts",
+          "hash": "12007046864273617324"
+        },
+        {
+          "file": "service/pluma/src/common/util/cookieUtils.ts",
+          "hash": "13359186843263765312"
+        },
+        {
+          "file": "service/pluma/src/common/util/getFetchHeader.ts",
+          "hash": "7163919421142998850"
+        },
+        {
+          "file": "service/pluma/src/common/util/getQueryClient.ts",
+          "hash": "8301398540732877057"
+        },
+        {
+          "file": "service/pluma/src/common/util/translateGenre.ts",
+          "hash": "13021783073136731386"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Banner.tsx",
+          "hash": "1326722621112108516"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Box-Cover.tsx",
+          "hash": "17139124114474929945"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Box.tsx",
+          "hash": "5349166931648711494"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Container.tsx",
+          "hash": "7000069721354830937"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Create-Box.tsx",
+          "hash": "9319976654582297517"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Delete-Modal.tsx",
+          "hash": "10059464031213955923"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Option-Button.tsx",
+          "hash": "15252200899726761898"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Option.tsx",
+          "hash": "18243733120649160761"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Slider-Button.tsx",
+          "hash": "13210525658177004354"
+        },
+        {
+          "file": "service/pluma/src/components/novel/Novel-Slider.tsx",
+          "hash": "16862444124255134153"
+        },
+        {
+          "file": "service/pluma/src/components/signin/Signin-Form.tsx",
+          "hash": "2377058909785681858"
+        },
+        {
+          "file": "service/pluma/src/queries/novel/nevelMutation.ts",
+          "hash": "10688328891848359050"
+        },
+        {
+          "file": "service/pluma/src/queries/novel/novelPrefetchQuery.ts",
+          "hash": "12953102181157465929"
+        },
+        {
+          "file": "service/pluma/src/queries/novel/novelQuery.ts",
+          "hash": "6174040177210292503"
+        },
+        {
+          "file": "service/pluma/src/queries/novel/queryKey.ts",
+          "hash": "3578198384188878365"
+        },
+        {
+          "file": "service/pluma/src/services/baseHttpClient.ts",
+          "hash": "12741813012215314225"
+        },
+        {
+          "file": "service/pluma/src/services/novel/novelService.ts",
+          "hash": "17132578139176704497"
+        },
+        {
+          "file": "service/pluma/src/store/novel/novelStore.ts",
+          "hash": "13353890807935431984"
+        },
+        {
+          "file": "service/pluma/src/types/novel/novel.type.ts",
+          "hash": "16059570480566944416"
+        },
+        {
+          "file": "service/pluma/src/types/novel/request.type.ts",
+          "hash": "1938814989962570568"
+        },
+        {
+          "file": "service/pluma/src/types/novel/response.type.ts",
+          "hash": "15482320304767443318"
+        },
+        {
+          "file": "service/pluma/tailwind.config.ts",
+          "hash": "4417176769644643698"
+        },
+        {
+          "file": "service/pluma/tsconfig.json",
+          "hash": "3301762639499271746"
+        }
+      ],
+      "@byeonghyeon/react-hooks-button": [
+        {
+          "file": "package/react/hooks/button/build.js",
+          "hash": "8366363271680645186"
+        },
+        {
+          "file": "package/react/hooks/button/package.json",
+          "hash": "6464670974182885097",
+          "deps": [
+            "npm:react",
+            "@byeonghyeon/esbuild-config",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:react-dom",
+            "npm:typescript",
+            "@byeonghyeon/react-hooks-toggle",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "package/react/hooks/button/src/index.ts",
+          "hash": "10535575191923847207"
+        },
+        {
+          "file": "package/react/hooks/button/src/types.ts",
+          "hash": "7401870048003053364"
+        },
+        {
+          "file": "package/react/hooks/button/src/useButton.tsx",
+          "hash": "2513533916059990907"
+        },
+        {
+          "file": "package/react/hooks/button/src/useToggleButton.ts",
+          "hash": "11047898918961548447"
+        },
+        {
+          "file": "package/react/hooks/button/tsconfig.json",
+          "hash": "10344179325425879767"
+        }
+      ],
+      "@byeonghyeon/react-hooks-toggle": [
+        {
+          "file": "package/react/hooks/toggle/build.js",
+          "hash": "8366363271680645186"
+        },
+        {
+          "file": "package/react/hooks/toggle/package.json",
+          "hash": "8351803188991387903",
+          "deps": [
+            "npm:react",
+            "@byeonghyeon/esbuild-config",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:react-dom",
+            "npm:typescript",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "package/react/hooks/toggle/src/index.ts",
+          "hash": "13190166400749655539"
+        },
+        {
+          "file": "package/react/hooks/toggle/src/types.ts",
+          "hash": "13666444803187522029"
+        },
+        {
+          "file": "package/react/hooks/toggle/src/useToggle.ts",
+          "hash": "6852102219029575629"
+        },
+        {
+          "file": "package/react/hooks/toggle/tsconfig.json",
+          "hash": "10344179325425879767"
+        }
+      ],
+      "@byeonghyeon/esbuild-config": [
+        {
+          "file": "package/esbuild-config/README.md",
+          "hash": "6886952344311067916"
+        },
+        {
+          "file": "package/esbuild-config/index.js",
+          "hash": "16504265236192296889"
+        },
+        {
+          "file": "package/esbuild-config/package.json",
+          "hash": "16824665687894947468",
+          "deps": [
+            "npm:esbuild"
+          ]
         }
       ],
       "@byeonghyeon/react-components-select": [
@@ -666,21 +788,114 @@
           "hash": "10344179325425879767"
         }
       ],
-      "@byeonghyeon/esbuild-config": [
+      "@byeonghyeon/react-components-accordion": [
         {
-          "file": "package/esbuild-config/README.md",
-          "hash": "6886952344311067916"
+          "file": "package/react/components/accordion/build.js",
+          "hash": "5842952762362316863"
         },
         {
-          "file": "package/esbuild-config/index.js",
-          "hash": "16504265236192296889"
-        },
-        {
-          "file": "package/esbuild-config/package.json",
-          "hash": "16824665687894947468",
+          "file": "package/react/components/accordion/package.json",
+          "hash": "14117984083349811847",
           "deps": [
-            "npm:esbuild"
+            "@byeonghyeon/themes",
+            "npm:react",
+            "@byeonghyeon/esbuild-config",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:@vanilla-extract/css",
+            "npm:@vanilla-extract/dynamic",
+            "npm:@vanilla-extract/esbuild-plugin",
+            "npm:@vanilla-extract/recipes",
+            "npm:@vanilla-extract/sprinkles",
+            "npm:react-dom",
+            "npm:typescript",
+            "@byeonghyeon/react-hooks-button",
+            "@byeonghyeon/react-hooks-toggle",
+            "npm:clsx"
           ]
+        },
+        {
+          "file": "package/react/components/accordion/src/Accordion.tsx",
+          "hash": "11946205302063584074"
+        },
+        {
+          "file": "package/react/components/accordion/src/AccordionButton.tsx",
+          "hash": "7734171642564900357"
+        },
+        {
+          "file": "package/react/components/accordion/src/AccordionContext.tsx",
+          "hash": "14875711207596763766"
+        },
+        {
+          "file": "package/react/components/accordion/src/AccordionItem.tsx",
+          "hash": "3017204819807824506"
+        },
+        {
+          "file": "package/react/components/accordion/src/AccordionPanel.tsx",
+          "hash": "15997248161067892325"
+        },
+        {
+          "file": "package/react/components/accordion/src/index.ts",
+          "hash": "17566388677849376540"
+        },
+        {
+          "file": "package/react/components/accordion/src/style.css.ts",
+          "hash": "14652186045004927737"
+        },
+        {
+          "file": "package/react/components/accordion/src/types.tsx",
+          "hash": "1779933654789481147"
+        },
+        {
+          "file": "package/react/components/accordion/tsconfig.json",
+          "hash": "10344179325425879767"
+        }
+      ],
+      "@byeonghyeon/react-components-button": [
+        {
+          "file": "package/react/components/button/build.js",
+          "hash": "5842952762362316863"
+        },
+        {
+          "file": "package/react/components/button/package.json",
+          "hash": "675166905409206260",
+          "deps": [
+            "@byeonghyeon/themes",
+            "npm:react",
+            "@byeonghyeon/esbuild-config",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:@vanilla-extract/css",
+            "npm:@vanilla-extract/dynamic",
+            "npm:@vanilla-extract/esbuild-plugin",
+            "npm:@vanilla-extract/recipes",
+            "npm:@vanilla-extract/sprinkles",
+            "npm:react-dom",
+            "npm:typescript",
+            "@byeonghyeon/react-hooks-button",
+            "@byeonghyeon/react-hooks-toggle",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "package/react/components/button/src/Button.tsx",
+          "hash": "5207097278620567793"
+        },
+        {
+          "file": "package/react/components/button/src/index.ts",
+          "hash": "8409040364927157818"
+        },
+        {
+          "file": "package/react/components/button/src/style.css.ts",
+          "hash": "13055652925997448181"
+        },
+        {
+          "file": "package/react/components/button/src/types.ts",
+          "hash": "4862492733407655971"
+        },
+        {
+          "file": "package/react/components/button/tsconfig.json",
+          "hash": "10344179325425879767"
         }
       ],
       "@byeonghyeon/storybook": [
@@ -805,6 +1020,41 @@
           "hash": "12640478118144390273"
         }
       ],
+      "@byeonghyeon/react-hooks-input": [
+        {
+          "file": "package/react/hooks/input/build.js",
+          "hash": "8366363271680645186"
+        },
+        {
+          "file": "package/react/hooks/input/package.json",
+          "hash": "4500792040388562157",
+          "deps": [
+            "npm:react",
+            "@byeonghyeon/esbuild-config",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:react-dom",
+            "npm:typescript",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "package/react/hooks/input/src/index.ts",
+          "hash": "5091935344832275230"
+        },
+        {
+          "file": "package/react/hooks/input/src/types.ts",
+          "hash": "10750398461453406194"
+        },
+        {
+          "file": "package/react/hooks/input/src/useInput.tsx",
+          "hash": "9822253254366136850"
+        },
+        {
+          "file": "package/react/hooks/input/tsconfig.json",
+          "hash": "10344179325425879767"
+        }
+      ],
       "@byeonghyeon/react-components-layout": [
         {
           "file": "package/react/components/layout/build.js",
@@ -913,14 +1163,14 @@
           "hash": "10344179325425879767"
         }
       ],
-      "@byeonghyeon/react-components-toast": [
+      "@byeonghyeon/react-components-input": [
         {
-          "file": "package/react/components/toast/build.js",
+          "file": "package/react/components/input/build.js",
           "hash": "5842952762362316863"
         },
         {
-          "file": "package/react/components/toast/package.json",
-          "hash": "16117085144740341654",
+          "file": "package/react/components/input/package.json",
+          "hash": "11439351311038022415",
           "deps": [
             "@byeonghyeon/themes",
             "npm:react",
@@ -934,79 +1184,36 @@
             "npm:@vanilla-extract/sprinkles",
             "npm:react-dom",
             "npm:typescript",
+            "@byeonghyeon/react-hooks-input",
             "npm:clsx"
           ]
         },
         {
-          "file": "package/react/components/toast/src/Toast.tsx",
-          "hash": "13028516293091213668"
+          "file": "package/react/components/input/src/Input.tsx",
+          "hash": "15818057243411271702"
         },
         {
-          "file": "package/react/components/toast/src/ToastContainer.tsx",
-          "hash": "13495842080058656066"
+          "file": "package/react/components/input/src/InputGroup.tsx",
+          "hash": "15933892946994493775"
         },
         {
-          "file": "package/react/components/toast/src/ToastContext.ts",
-          "hash": "12482114565053062793"
+          "file": "package/react/components/input/src/InputLeftAddon.tsx",
+          "hash": "15350856995970534865"
         },
         {
-          "file": "package/react/components/toast/src/ToastProvider.tsx",
-          "hash": "14980993917057057855"
+          "file": "package/react/components/input/src/index.ts",
+          "hash": "7206012316751655975"
         },
         {
-          "file": "package/react/components/toast/src/index.ts",
-          "hash": "7250574523632467111"
+          "file": "package/react/components/input/src/style.css.ts",
+          "hash": "16247249432375562866"
         },
         {
-          "file": "package/react/components/toast/src/style.css.ts",
-          "hash": "15453810563803982080"
+          "file": "package/react/components/input/src/types.ts",
+          "hash": "8065024183968919911"
         },
         {
-          "file": "package/react/components/toast/src/types.ts",
-          "hash": "13481647225971472081"
-        },
-        {
-          "file": "package/react/components/toast/tsconfig.json",
-          "hash": "10344179325425879767"
-        }
-      ],
-      "@byeonghyeon/react-hooks-button": [
-        {
-          "file": "package/react/hooks/button/build.js",
-          "hash": "8366363271680645186"
-        },
-        {
-          "file": "package/react/hooks/button/package.json",
-          "hash": "6464670974182885097",
-          "deps": [
-            "npm:react",
-            "@byeonghyeon/esbuild-config",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:react-dom",
-            "npm:typescript",
-            "@byeonghyeon/react-hooks-toggle",
-            "npm:clsx"
-          ]
-        },
-        {
-          "file": "package/react/hooks/button/src/index.ts",
-          "hash": "10535575191923847207"
-        },
-        {
-          "file": "package/react/hooks/button/src/types.ts",
-          "hash": "7401870048003053364"
-        },
-        {
-          "file": "package/react/hooks/button/src/useButton.tsx",
-          "hash": "2513533916059990907"
-        },
-        {
-          "file": "package/react/hooks/button/src/useToggleButton.ts",
-          "hash": "11047898918961548447"
-        },
-        {
-          "file": "package/react/hooks/button/tsconfig.json",
+          "file": "package/react/components/input/tsconfig.json",
           "hash": "10344179325425879767"
         }
       ]
