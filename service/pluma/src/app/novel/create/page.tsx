@@ -2,13 +2,18 @@
 
 import { Button } from "@byeonghyeon/react-components-button";
 import { Input } from "@byeonghyeon/react-components-input";
+import Link from "next/link";
 import React from "react";
+import { IoIosArrowBack } from "react-icons/io";
 import { genreTranslations } from "@/common/util/translateGenre";
 
 function NovelCreatePage() {
   return (
     <div className="bg-custom-Page-gradient flex h-screen w-screen items-center justify-center">
-      <div className="bg-custom-box-gradient flex h-[645px] w-[800px] flex-col items-center gap-3 rounded-[20px] py-8">
+      <div className="bg-custom-box-gradient relative flex h-[645px] w-[800px] flex-col items-center gap-3 rounded-[20px] py-8">
+        <Link href="/novel" className="absolute left-5 top-10">
+          <IoIosArrowBack size={30} />
+        </Link>
         <h1 className="text-blackAlpha-900 text-3xl font-bold">소설 생성</h1>
         <div className="flex gap-3">
           <div className="h-2 w-[50px] rounded-lg bg-blue-500" />
@@ -24,7 +29,7 @@ function NovelCreatePage() {
           <label className="text-blackAlpha-900 text-base font-bold">장르</label>
           <div className="mx-auto grid w-[100%] grid-cols-4 gap-3">
             {Object.values(genreTranslations).map((genre, index) => (
-              <Button className="flex justify-center" key={index} onClick={() => console.log(genre)}>
+              <Button variant="outline" className="flex justify-center" key={index} onClick={() => console.log(genre)}>
                 {genre}
               </Button>
             ))}
