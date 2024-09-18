@@ -1,4 +1,4 @@
-const genreTranslations: Record<string, string> = {
+export const genreTranslations: Record<string, string> = {
   Fantasy: "판타지",
   "Science Fiction": "SF",
   Romance: "로맨스",
