@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
         title,
         description,
         image,
-        userId, // userId가 반드시 string이어야 함
+        userId,
         genres: {
           create: genres.map((genreId: string) => ({
             genre: {
