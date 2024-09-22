@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 export interface NovelType extends PropsWithChildren {
-  id?: string;
+  id: string;
   title: string;
   description: string;
   userId: string;
