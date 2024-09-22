@@ -3,10 +3,21 @@
 import { Button } from "@byeonghyeon/react-components-button";
 import React from "react";
 import { genreTranslations } from "@/common/util/translateGenre";
+import { useFetchGenresListQuery } from "@/queries/genres/genresQuery";
 import { createNovelStore } from "@/store/novel/novelStore";
+import { Genre } from "@/types/genres/response.type";
 
 function CreateGenreList() {
   const { novel, updateField } = createNovelStore();
+  const { data: genreList } = useFetchGenresListQuery();
+
+  // 성공적인 응답인지 확인
+  const genresInKorean: Genre[] = Array.isArray(genreList)
+    ? genreList.map(genre => ({
+        id: genre.id,
+        name: genreTranslations[genre.name] || genre.name, // 변환이 없을 경우 원래 이름 사용
+      }))
+    : []; // 실패한 경우 빈 배열
 
   // 장르 선택 핸들러
   const handleGenreSelect = (genreKey: string) => {
@@ -23,13 +34,13 @@ function CreateGenreList() {
     <div className="flex w-[45%] flex-col gap-2">
       <label className="text-blackAlpha-900 text-base font-bold">장르</label>
       <div className="mx-auto grid w-[100%] grid-cols-4 gap-3">
-        {Object.keys(genreTranslations).map((genreKey, index) => (
+        {genresInKorean.map(genre => (
           <Button
-            variant={novel.genres.includes(genreKey) ? "solid" : "outline"}
+            variant={novel.genres.includes(genre.id) ? "solid" : "outline"}
             className="flex justify-center"
-            key={index}
-            onClick={() => handleGenreSelect(genreKey)}>
-            {genreTranslations[genreKey]}
+            key={genre.id}
+            onClick={() => handleGenreSelect(genre.id)}>
+            {genre.name}
           </Button>
         ))}
       </div>
