@@ -35,6 +35,8 @@ export async function POST(req: NextRequest) {
             },
           })),
         },
+        created_at: new Date().toISOString().replace("Z", "+00"),
+        updated_at: new Date().toISOString().replace("Z", "+00"),
       },
     });
 

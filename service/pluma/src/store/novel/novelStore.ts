@@ -16,8 +16,6 @@ export const createNovelStore = create<PostNovelState>(set => ({
     description: "",
     image: null,
     genres: [],
-    created_at: "",
-    updated_at: "",
   },
 
   // 하나의 함수로 모든 필드를 업데이트
@@ -37,8 +35,6 @@ export const createNovelStore = create<PostNovelState>(set => ({
         description: "",
         image: null,
         genres: [],
-        created_at: "",
-        updated_at: "",
       },
     })),
 }));

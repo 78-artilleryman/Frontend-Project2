@@ -8,7 +8,5 @@ export interface PostNovelRequest {
   title: string;
   description: string;
   image?: string | null;
-  created_at: string;
-  updated_at: string;
   genres: string[];
 }
