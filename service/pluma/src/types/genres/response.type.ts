@@ -1,5 +1,5 @@
 // Genre 타입 정의
-interface Genre {
+export interface Genre {
   id: string;
   name: string;
 }
