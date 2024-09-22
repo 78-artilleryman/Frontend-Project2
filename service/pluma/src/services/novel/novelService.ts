@@ -1,5 +1,5 @@
-import { FetchNovelListRequest } from "../../types/novel/request.type";
-import { DeleteNovelResponse, FetchNovelListResponse } from "../../types/novel/response.type";
+import { FetchNovelListRequest, PostNovelRequest } from "../../types/novel/request.type";
+import { DeleteNovelResponse, FetchNovelListResponse, PostNovelResponse } from "../../types/novel/response.type";
 import { baseHttpClient } from "../baseHttpClient";
 import { getFetchHeader } from "@/common/util/getFetchHeader";
 
@@ -17,6 +17,17 @@ export async function GetNovelList(
   const HEADER = getFetchHeader(token?.value, "a");
   try {
     return await baseHttpClient().get<FetchNovelListResponse>("novels", HEADER, { sort, page, limit });
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+}
+
+// 소설 생성하는 함수
+export async function PostNovel(bodyData: PostNovelRequest, token = ""): Promise<PostNovelResponse> {
+  const HEADER = getFetchHeader(token, "a");
+  try {
+    return await baseHttpClient().post<PostNovelResponse, PostNovelRequest>("novel", HEADER, bodyData);
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;

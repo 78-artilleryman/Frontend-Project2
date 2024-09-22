@@ -8,8 +8,6 @@ import { createNovelStore } from "@/store/novel/novelStore";
 function CreateGenreList() {
   const { novel, updateField } = createNovelStore();
 
-  console.log(novel);
-
   // 장르 선택 핸들러
   const handleGenreSelect = (genreKey: string) => {
     const currentGenres = novel.genres;

@@ -2,23 +2,25 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { novelQueryKey } from "./queryKey";
 import { getCookie } from "@/common/util/cookieUtils";
-import { DeleteNovel } from "@/services/novel/novelService";
+import { DeleteNovel, PostNovel } from "@/services/novel/novelService";
+import { PostNovelRequest } from "@/types/novel/request.type";
 
 type mutationMethodType = "post" | "delete" | "update";
 
-export const useNovelMutation = (novelId = "", mutationMethod: mutationMethodType) => {
+export const useNovelMutation = (novelId = "", mutationMethod: mutationMethodType, bodyData?: PostNovelRequest) => {
   const queryClient = useQueryClient();
   const token = getCookie("next-auth.session-token");
 
   return useMutation({
-    mutationFn: () => {
+    mutationFn: async () => {
       switch (mutationMethod) {
         case "delete":
-          return DeleteNovel(novelId, token);
+          return await DeleteNovel(novelId, token);
         case "post":
-          return DeleteNovel(novelId, token);
+          if (!bodyData) throw new Error("Body data is required for posting a novel");
+          return await PostNovel(bodyData, token);
         case "update":
-          return DeleteNovel(novelId, token);
+          return await DeleteNovel(novelId, token);
         default:
           throw new Error("Invalid mutation method");
       }
