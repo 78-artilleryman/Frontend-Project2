@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { novelQueryKey } from "./queryKey";
-import { getCookie } from "@/common/util/cookieUtils";
+import { getClientSideCookie } from "@/common/util/cookieUtils";
 import { DeleteNovel, PostNovel } from "@/services/novel/novelService";
 import { PostNovelRequest } from "@/types/novel/request.type";
 
@@ -9,7 +9,7 @@ type mutationMethodType = "post" | "delete" | "update";
 
 export const useNovelMutation = (novelId = "", mutationMethod: mutationMethodType, bodyData?: PostNovelRequest) => {
   const queryClient = useQueryClient();
-  const token = getCookie("next-auth.session-token");
+  const token = getClientSideCookie("next-auth.session-token");
 
   return useMutation({
     mutationFn: async () => {

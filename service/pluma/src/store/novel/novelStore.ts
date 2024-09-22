@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import { PostNovelRequest } from "@/types/novel/request.type";
 import { NovelState, PostNovelState } from "@/types/novel/state.type";
 
