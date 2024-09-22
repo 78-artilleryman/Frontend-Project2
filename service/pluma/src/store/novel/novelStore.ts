@@ -1,5 +1,5 @@
 import create from "zustand";
-import { NovelType } from "@/types/novel/novel.type";
+import { PostNovelRequest } from "@/types/novel/request.type";
 import { NovelState, PostNovelState } from "@/types/novel/state.type";
 
 // 상태 생성
@@ -15,14 +15,13 @@ export const createNovelStore = create<PostNovelState>(set => ({
     title: "",
     description: "",
     image: null,
-    userId: "",
     genres: [],
     created_at: "",
     updated_at: "",
   },
 
   // 하나의 함수로 모든 필드를 업데이트
-  updateField: <K extends keyof NovelType>(field: K, value: NovelType[K]) =>
+  updateField: <K extends keyof PostNovelRequest>(field: K, value: PostNovelRequest[K]) =>
     set(state => ({
       novel: {
         ...state.novel,
@@ -37,7 +36,6 @@ export const createNovelStore = create<PostNovelState>(set => ({
         title: "",
         description: "",
         image: null,
-        userId: "",
         genres: [],
         created_at: "",
         updated_at: "",

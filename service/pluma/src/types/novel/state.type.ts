@@ -11,6 +11,6 @@ export type NovelState = {
 export type PostNovelState = {
   novel: PostNovelRequest;
   // eslint-disable-next-line no-unused-vars
-  updateField: <K extends keyof NovelType>(field: K, value: NovelType[K]) => void;
+  updateField: <K extends keyof PostNovelRequest>(field: K, value: PostNovelRequest[K]) => void;
   resetNovel: () => void;
 };
