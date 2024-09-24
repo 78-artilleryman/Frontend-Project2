@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ChangeEvent } from "react";
-import { createNovelStore } from "@/store/novel/novelStore";
+import { createNovelStore } from "@/store/novel/store";
 
 function CreateTextarea() {
   const { novel, updateField } = createNovelStore();

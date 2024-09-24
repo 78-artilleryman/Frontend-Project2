@@ -3,8 +3,8 @@
 import { Button } from "@byeonghyeon/react-components-button";
 import React from "react";
 import { genreTranslations } from "@/common/util/translateGenre";
-import { useFetchGenresListQuery } from "@/queries/genres/genresQuery";
-import { createNovelStore } from "@/store/novel/novelStore";
+import { useFetchGenresListQuery } from "@/queries/genres/query";
+import { createNovelStore } from "@/store/novel/store";
 import { Genre } from "@/types/genres/response.type";
 
 function CreateGenreList() {

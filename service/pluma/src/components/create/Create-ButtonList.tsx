@@ -3,8 +3,8 @@
 import { Button } from "@byeonghyeon/react-components-button";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { useNovelMutation } from "@/queries/novel/nevelMutation";
-import { createNovelStore } from "@/store/novel/novelStore";
+import { useNovelMutation } from "@/queries/novel/mutation";
+import { createNovelStore } from "@/store/novel/store";
 
 function CreateButtonList() {
   const { novel } = createNovelStore();

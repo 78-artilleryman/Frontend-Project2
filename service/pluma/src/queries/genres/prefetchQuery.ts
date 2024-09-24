@@ -2,7 +2,7 @@ import { dehydrate } from "@tanstack/react-query";
 import { cookies } from "next/headers";
 import { genresQueryKey } from "./queryKey";
 import getQueryClient from "@/common/util/getQueryClient";
-import { GetGenresList } from "@/services/genres/genresService";
+import { GetGenresList } from "@/services/genres/service";
 import { GenreResponse } from "@/types/genres/response.type";
 
 // prefetch hook

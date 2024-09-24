@@ -4,7 +4,7 @@ import Banner from "../../components/novel/Novel-Banner";
 import NoverListContainer from "../../components/novel/Novel-Container";
 import NovelSlider from "../../components/novel/Novel-Slider";
 
-import { usePrefetchNovelsQuery } from "../../queries/novel/novelPrefetchQuery";
+import { usePrefetchNovelsQuery } from "../../queries/novel/prefetchQuery";
 
 async function NovelPage() {
   const { dehydratedState } = await usePrefetchNovelsQuery({ sort: "createdAt", page: 1, limit: 8 });

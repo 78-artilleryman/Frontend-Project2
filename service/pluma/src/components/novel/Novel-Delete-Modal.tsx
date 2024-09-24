@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal } from "@/common/components/modal/Modal";
-import { useNovelMutation } from "@/queries/novel/nevelMutation";
+import { useNovelMutation } from "@/queries/novel/mutation";
 import { NovelType } from "@/types/novel/novel.type";
 
 interface NovelDeleteModalProps {

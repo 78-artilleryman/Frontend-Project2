@@ -6,7 +6,7 @@ import ButtonList from "@/components/create/Create-ButtonList";
 import GenreList from "@/components/create/Create-GenreList";
 import Input from "@/components/create/Create-Input";
 import Textarea from "@/components/create/Create-Textarea";
-import { usePrefetchGenresQuery } from "@/queries/genres/genresPrefetchQuery";
+import { usePrefetchGenresQuery } from "@/queries/genres/prefetchQuery";
 
 async function NovelCreatePage() {
   const { dehydratedState } = await usePrefetchGenresQuery();

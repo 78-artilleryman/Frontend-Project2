@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { novelQueryKey } from "./queryKey";
 import { getClientSideCookie } from "@/common/util/cookieUtils";
-import { DeleteNovel, PostNovel } from "@/services/novel/novelService";
+import { DeleteNovel, PostNovel } from "@/services/novel/service";
 import { PostNovelRequest } from "@/types/novel/request.type";
 
 type mutationMethodType = "post" | "delete" | "update";

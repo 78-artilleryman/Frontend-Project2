@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useFetchNovelSliderQuery } from "../../queries/novel/novelQuery";
+import { useFetchNovelSliderQuery } from "../../queries/novel/query";
 import NovelBox from "./Novel-Box";
 import SlideControlButton from "./Novel-Slider-Button";
 

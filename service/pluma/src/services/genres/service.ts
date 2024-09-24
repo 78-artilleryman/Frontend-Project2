@@ -1,5 +1,5 @@
 import { baseHttpClient } from "../baseHttpClient";
-import { CookieData } from "../novel/novelService";
+import { CookieData } from "../novel/service";
 import { getFetchHeader } from "@/common/util/getFetchHeader";
 import { GenreResponse } from "@/types/genres/response.type";
 

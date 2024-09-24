@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useFetchNovelContainerQuery } from "../../queries/novel/novelQuery";
+import { useFetchNovelContainerQuery } from "../../queries/novel/query";
 import NovelBox from "./Novel-Box";
 import CreateNovelBox from "./Novel-Create-Box";
 import useIntersect from "@/common/hooks/use-intersect";

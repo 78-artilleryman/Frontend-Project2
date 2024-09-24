@@ -2,7 +2,7 @@
 
 import { Input } from "@byeonghyeon/react-components-input";
 import React, { ChangeEvent } from "react";
-import { createNovelStore } from "@/store/novel/novelStore";
+import { createNovelStore } from "@/store/novel/store";
 
 function CreateInput() {
   const { novel, updateField } = createNovelStore();

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { genresQueryKey } from "./queryKey";
 
-import { GetGenresList } from "@/services/genres/genresService";
+import { GetGenresList } from "@/services/genres/service";
 import { GenreResponse } from "@/types/genres/response.type";
 
 export const useFetchGenresListQuery = () => {
