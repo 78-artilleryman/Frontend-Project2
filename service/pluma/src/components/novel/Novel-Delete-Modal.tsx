@@ -1,3 +1,4 @@
+import { useToast } from "@byeonghyeon/react-components-toast";
 import React from "react";
 import { Modal } from "@/common/components/modal/Modal";
 import { useNovelMutation } from "@/queries/novel/mutation";
@@ -10,6 +11,7 @@ interface NovelDeleteModalProps {
 
 function NovelDeleteModal({ handleModalClose, novel }: NovelDeleteModalProps) {
   const { mutate } = useNovelMutation(novel?.id, "delete");
+  const { toast } = useToast();
 
   const modalValues = {
     isLoading: false,
@@ -20,6 +22,11 @@ function NovelDeleteModal({ handleModalClose, novel }: NovelDeleteModalProps) {
 
   const handleDeleteNovel = () => {
     mutate();
+    toast({
+      payload: {
+        message: "소설이 삭제되었습니다.",
+      },
+    });
   };
 
   return (
