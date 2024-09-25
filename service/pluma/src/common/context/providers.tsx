@@ -1,9 +1,10 @@
 "use client";
-
+import { ToastProvider } from "@byeonghyeon/react-components-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ReactQueryStreamedHydration } from "@tanstack/react-query-next-experimental";
 import { SessionProvider } from "next-auth/react";
+
 import React from "react";
 
 interface Props {
@@ -30,7 +31,9 @@ export const NextProvider = ({ children }: Props) => {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryStreamedHydration>
-        <SessionProvider>{children}</SessionProvider>
+        <SessionProvider>
+          <ToastProvider>{children}</ToastProvider>
+        </SessionProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </ReactQueryStreamedHydration>
     </QueryClientProvider>
