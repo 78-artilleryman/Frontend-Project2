@@ -8,7 +8,7 @@ import { useNovelMutation } from "@/queries/novel/mutation";
 import { createNovelStore } from "@/store/novel/store";
 
 function CreateButtonList() {
-  const { novel } = createNovelStore();
+  const { novel, resetNovel } = createNovelStore();
   const { mutate } = useNovelMutation("", "post", novel);
   const { toast } = useToast();
 
@@ -22,6 +22,7 @@ function CreateButtonList() {
       },
     });
     router.push("/novel");
+    resetNovel();
   };
 
   return (
