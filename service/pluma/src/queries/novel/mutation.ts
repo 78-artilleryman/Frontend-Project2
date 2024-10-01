@@ -3,7 +3,6 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { novelQueryKey } from "./queryKey";
 import { getClientSideCookie } from "@/common/util/cookieUtils";
 import { DeleteNovel, PostNovel } from "@/services/novel/service";
-import { createNovelStore } from "@/store/novel/store";
 import { PostNovelRequest } from "@/types/novel/request.type";
 
 type mutationMethodType = "post" | "delete" | "update";
@@ -11,8 +10,6 @@ type mutationMethodType = "post" | "delete" | "update";
 export const useNovelMutation = (novelId = "", mutationMethod: mutationMethodType, bodyData?: PostNovelRequest) => {
   const queryClient = useQueryClient();
   const token = getClientSideCookie("next-auth.session-token");
-
-  const { resetNovel } = createNovelStore();
 
   return useMutation({
     mutationFn: async () => {
@@ -30,12 +27,11 @@ export const useNovelMutation = (novelId = "", mutationMethod: mutationMethodTyp
     },
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: novelQueryKey.slider({ sort: "createdAt", page: 1, limit: 8 }).queryKey,
-      });
-      queryClient.invalidateQueries({
         queryKey: novelQueryKey.slider({ sort: "updatedAt", page: 1, limit: 8 }).queryKey,
       });
-      resetNovel();
+      queryClient.invalidateQueries({
+        queryKey: novelQueryKey.container({ sort: "createdAt", page: 1, limit: 14 }).queryKey,
+      });
     },
     onError: error => {
       console.error("Error:", error);

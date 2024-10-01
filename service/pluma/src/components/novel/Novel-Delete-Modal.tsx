@@ -21,10 +21,22 @@ function NovelDeleteModal({ handleModalClose, novel }: NovelDeleteModalProps) {
   };
 
   const handleDeleteNovel = () => {
-    mutate();
-    toast({
-      payload: {
-        message: "소설이 삭제되었습니다.",
+    mutate(undefined, {
+      onSuccess: () => {
+        toast({
+          payload: {
+            message: "소설이 삭제되었습니다.",
+          },
+        });
+        handleModalClose();
+      },
+      onError: error => {
+        console.error("소설 삭제 실패:", error);
+        toast({
+          payload: {
+            message: "소설 삭제에 실패했습니다.",
+          },
+        });
       },
     });
   };
