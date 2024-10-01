@@ -14,8 +14,6 @@ function NovelDeleteModal({ handleModalClose, novel }: NovelDeleteModalProps) {
   const { toast } = useToast();
 
   const modalValues = {
-    isLoading: false,
-    isDisabled: false,
     title: "소설 삭제",
     onCloseModal: handleModalClose,
   };
