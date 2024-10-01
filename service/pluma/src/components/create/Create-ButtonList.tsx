@@ -15,13 +15,24 @@ function CreateButtonList() {
   const router = useRouter();
 
   const handlePostNovel = async () => {
-    mutate();
-    toast({
-      payload: {
-        message: "소설이 생성되었습니다.",
+    mutate(undefined, {
+      onSuccess: () => {
+        toast({
+          payload: {
+            message: "소설이 생성되었습니다.",
+          },
+        });
+        router.push("/novel");
+      },
+      onError: error => {
+        console.error("소설 생성 실패:", error);
+        toast({
+          payload: {
+            message: "소설 생성에 실패했습니다.",
+          },
+        });
       },
     });
-    router.push("/novel");
   };
 
   return (
