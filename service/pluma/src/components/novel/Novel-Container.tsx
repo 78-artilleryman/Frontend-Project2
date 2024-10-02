@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { useFetchNovelContainerQuery } from "../../queries/novel/query";
 import NovelBox from "./Novel-Box";
@@ -24,14 +25,16 @@ function NovelContainer() {
       {novelContainerList &&
         novelContainerList.pages.flatMap(page =>
           page.novels.map(novel => (
-            <NovelBox key={novel.id}>
-              <NovelBox.Cover {...novel}>
-                <NovelBox.Option {...novel}>
-                  <NovelBox.OptionButton controlType="delete" novel={novel} />
-                  <NovelBox.OptionButton controlType="edit" novel={novel} />
-                </NovelBox.Option>
-              </NovelBox.Cover>
-            </NovelBox>
+            <Link href={`/novel/${novel.id}`} key={novel.id} prefetch={false}>
+              <NovelBox>
+                <NovelBox.Cover {...novel}>
+                  <NovelBox.Option {...novel}>
+                    <NovelBox.OptionButton controlType="delete" novel={novel} />
+                    <NovelBox.OptionButton controlType="edit" novel={novel} />
+                  </NovelBox.Option>
+                </NovelBox.Cover>
+              </NovelBox>
+            </Link>
           ))
         )}
       <div ref={ref} />

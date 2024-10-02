@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { useFetchNovelSliderQuery } from "../../queries/novel/query";
 import NovelBox from "./Novel-Box";
@@ -31,14 +32,16 @@ function NovelSlider() {
         className="flex w-[200%] flex-shrink-0 gap-8"
         style={{ transform: `translateX(-${currentIndex * slideWidth}%)`, transition: "transform 0.3s ease" }}>
         {noveSliderlList?.novels.map(novel => (
-          <NovelBox key={novel.id}>
-            <NovelBox.Cover {...novel}>
-              <NovelBox.Option {...novel}>
-                <NovelBox.OptionButton controlType="delete" novel={novel} />
-                <NovelBox.OptionButton controlType="edit" novel={novel} />
-              </NovelBox.Option>
-            </NovelBox.Cover>
-          </NovelBox>
+          <Link href={`/novel/${novel.id}`} key={novel.id} prefetch={false}>
+            <NovelBox>
+              <NovelBox.Cover {...novel}>
+                <NovelBox.Option {...novel}>
+                  <NovelBox.OptionButton controlType="delete" novel={novel} />
+                  <NovelBox.OptionButton controlType="edit" novel={novel} />
+                </NovelBox.Option>
+              </NovelBox.Cover>
+            </NovelBox>
+          </Link>
         ))}
       </ul>
       {currentIndex > 0 && <SlideControlButton direction="left" onClick={handlePrev} />}
