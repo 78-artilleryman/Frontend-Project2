@@ -49,14 +49,17 @@ jobs:
       - name: Build
         run: yarn affected:build --parallel=5
 
-      - name: Log in to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+      - name: Log in to Amazon ECR Public
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} # GitHub Secrets에 저장된 AWS Access Key
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # GitHub Secrets에 저장된 AWS Secret Access Key
+          ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }} # ECR registry URI
+        run: |
+          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY}}
 
       - name: Build, tag, and push Docker image to ECR
         env:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }} # ECR registry URI
-          ECR_REPOSITORY: pluma # ECR 리포지토리 이름
           IMAGE_TAG: ${{ github.sha }} # 커밋 SHA를 이미지 태그로 사용
         run: |
           docker build -f service/pluma/Dockerfile -t pluma-app . 
