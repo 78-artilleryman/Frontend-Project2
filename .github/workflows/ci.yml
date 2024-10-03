@@ -55,13 +55,19 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # GitHub Secrets에 저장된 AWS Secret Access Key
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }} # ECR registry URI
         run: |
-          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY}}
+          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin $ECR_REGISTRY
 
       - name: Build, tag, and push Docker image to ECR
         env:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }} # ECR registry URI
           IMAGE_TAG: ${{ github.sha }} # 커밋 SHA를 이미지 태그로 사용
         run: |
-          docker build -f service/pluma/Dockerfile -t pluma-app . 
-          docker tag pluma-app:$IMAGE_TAG ${{ secrets.ECR_REGISTRY}}/pluma:$IMAGE_TAG
-          docker push ${{ secrets.ECR_REGISTRY}}/pluma:$TAG
+          docker build -f service/pluma/Dockerfile -t pluma . 
+          docker tag pluma $ECR_REGISTRY/pluma:$IMAGE_TAG
+
+      - name: Push Docker image to ECR Public
+        env:
+          ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }} # ECR registry URI
+          IMAGE_TAG: ${{ github.sha }} # 커밋 SHA를 이미지 태그로 사용
+        run: |
+          docker push $ECR_REGISTRY/pluma:$IMAGE_TAG
