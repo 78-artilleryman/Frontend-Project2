@@ -48,3 +48,17 @@ jobs:
 
       - name: Build
         run: yarn affected:build --parallel=5
+
+      - name: Log in to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push Docker image to ECR
+        env:
+          ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }} # ECR registry URI
+          ECR_REPOSITORY: pluma # ECR 리포지토리 이름
+          IMAGE_TAG: ${{ github.sha }} # 커밋 SHA를 이미지 태그로 사용
+        run: |
+          docker build -f service/pluma/Dockerfile -t pluma-app . 
+          docker tag pluma-app:$IMAGE_TAG ${{ secrets.ECR_REGISTRY}}/pluma:$IMAGE_TAG
+          docker push ${{ secrets.ECR_REGISTRY}}/pluma:$TAG

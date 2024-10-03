@@ -17,9 +17,5 @@ COPY . .
 # Next.js 애플리케이션 빌드
 RUN yarn workspace pluma build
 
-# 애플리케이션 실행
+# 애플리케이션 실행docker build -t pluma .
 CMD ["yarn", "workspace", "pluma", "start"]
-
-
-#docker build -f service/pluma/Dockerfile -t pluma-app .(루트에서 실행)
-#docker run -d -p 3000:3000 pluma-app                   
