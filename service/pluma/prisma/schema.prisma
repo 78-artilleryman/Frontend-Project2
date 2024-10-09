@@ -62,9 +62,27 @@ model Novel {
   created_at    DateTime? @default(now()) @db.Timestamptz(6)   // 만든날짜
   updated_at    DateTime? @default(now()) @db.Timestamptz(6)   // 수정날짜
   genres        NovelGenre[]                                   // 장르
+  folders       Folder[]                                       // 소설에 포함된 폴더들
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+model Folder {
+  id            String   @id @default(uuid())                  // 폴더 고유번호
+  name          String   @db.VarChar(255)                      // 폴더 이름
+  novelId       String                                         // 소설 고유번호
+  created_at    DateTime? @default(now()) @db.Timestamptz(6)   // 만든날짜
+  files         File[]                                         // 폴더에 포함된 파일들
+  novel         Novel    @relation(fields: [novelId], references: [id], onDelete: Cascade)
+}
+
+model File {
+  id            String   @id @default(uuid())                  // 파일 고유번호
+  name          String   @db.VarChar(255)                      // 파일 이름
+  content       String   @db.Text                              // 파일 내용
+  folderId      String                                         // 폴더 고유번호
+  created_at    DateTime? @default(now()) @db.Timestamptz(6)   // 만든날짜
+  folder        Folder   @relation(fields: [folderId], references: [id], onDelete: Cascade)
+}
 
 model Genre {
   id            String   @id @default(uuid())                  // 장르 고유번호
