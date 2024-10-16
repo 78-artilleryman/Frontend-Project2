@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import React from "react";
 import { LuFileEdit } from "react-icons/lu";
 import { LuSettings } from "react-icons/lu";
@@ -10,13 +10,13 @@ import { RiTimerLine } from "react-icons/ri";
 import { TbWorldPlus } from "react-icons/tb";
 
 function NavBar() {
-  const urlSearch = useSearchParams();
-  const novelId = urlSearch.get("novelid");
+  const params = useParams();
+  const novelId = params.novelid;
 
   return (
     <section className="bg-whiteAlpha-900 relative flex h-full w-[60px] flex-col items-center gap-2 p-2">
       {/* 소설 리스트 페이지 이동 */}
-      <Link href={`novel/${novelId}/`}>
+      <Link href={`/novel/${novelId}/file/1`}>
         <button
           className="hover:bg-blackAlpha-300 flex h-12 w-12 items-center justify-center rounded-lg px-2"
           type="button">
@@ -25,7 +25,7 @@ function NavBar() {
       </Link>
 
       {/* 인물 설정 페이지 이동 */}
-      <Link href={`novel/${novelId}/`}>
+      <Link href={`/novel/${novelId}/person`}>
         <button
           className="hover:bg-blackAlpha-300 flex h-12 w-12 items-center justify-center rounded-lg px-2"
           type="button">
@@ -34,7 +34,7 @@ function NavBar() {
       </Link>
 
       {/* 세계관 설정 페이지 이동 */}
-      <Link href={`novel/${novelId}/`}>
+      <Link href={`/novel/${novelId}/world`}>
         <button
           className="hover:bg-blackAlpha-300 flex h-12 w-12 items-center justify-center rounded-lg px-2"
           type="button">
@@ -50,7 +50,7 @@ function NavBar() {
         </button>
 
         {/* 환경설정 페이지 이동 */}
-        <Link href={`novel/${novelId}/`}>
+        <Link href={`/novel/${novelId}/setting`}>
           <button
             className="hover:bg-blackAlpha-300 flex h-12 w-12 items-center justify-center rounded-lg px-2"
             type="button">
