@@ -16,15 +16,15 @@ export default {
   argTypes: {
     size: {
       options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
-      control: "select",
+      control: { type: "select" },
     },
     color: {
       options: Object.keys(vars.colors.$scale),
-      control: "select",
+      control: { type: "select" },
     },
     variant: {
       options: ["solid", "outline", "ghost"],
-      control: "select",
+      control: { type: "select" },
     },
   },
 };
@@ -36,6 +36,19 @@ export const ButtonStory = {
     isDisabled: false,
     leftIcon: "🎱",
     isLoading: false,
+  },
+};
+
+export const ButtonTestStory = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { buttonProps, isSelected } = useToggleButton({ elementType: "button" }, false);
+
+    return (
+      <_Button {...buttonProps} color="gray" leftIcon="🎱">
+        Button
+      </_Button>
+    );
   },
 };
 
