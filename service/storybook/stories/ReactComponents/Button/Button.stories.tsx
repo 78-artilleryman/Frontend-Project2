@@ -42,7 +42,7 @@ export const ButtonStory = {
 export const ButtonTestStory = {
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { buttonProps, isSelected } = useToggleButton({ elementType: "button" }, false);
+    const { buttonProps } = useToggleButton({ elementType: "button" }, false);
 
     return (
       <_Button {...buttonProps} color="gray" leftIcon="🎱">
