@@ -4,15 +4,14 @@ import "@byeonghyeon/react-components-layout/style.css";
 import { Text } from "@byeonghyeon/react-components-layout";
 import { useButton, useToggleButton } from "@byeonghyeon/react-hooks-button";
 import { vars } from "@byeonghyeon/themes";
+import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
-export default {
-  title: "React Components/Button",
+const meta: Meta<typeof _Button> = {
   component: _Button,
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
   argTypes: {
     size: {
       options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
@@ -29,7 +28,10 @@ export default {
   },
 };
 
-export const ButtonStory = {
+export default meta;
+type Story = StoryObj<typeof _Button>;
+
+export const ButtonStory: Story = {
   args: {
     size: "lg",
     children: "Button",
@@ -39,7 +41,7 @@ export const ButtonStory = {
   },
 };
 
-export const ButtonTestStory = {
+export const ButtonTestStory: Story = {
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { buttonProps } = useToggleButton({ elementType: "button" }, false);
@@ -52,7 +54,7 @@ export const ButtonTestStory = {
   },
 };
 
-export const TextButtonStory = {
+export const TextButtonStory: Story = {
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { buttonProps } = useButton({
@@ -75,7 +77,7 @@ export const TextButtonStory = {
   },
 };
 
-export const ToggleButtonStory = {
+export const ToggleButtonStory: Story = {
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { buttonProps, isSelected } = useToggleButton({ elementType: "button" }, false);
