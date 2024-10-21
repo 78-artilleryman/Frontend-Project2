@@ -1,16 +1,19 @@
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from "@byeonghyeon/react-components-accordion";
 import { Text, Heading } from "@byeonghyeon/react-components-layout";
 import "@byeonghyeon/react-components-accordion/style.css";
+import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import "@byeonghyeon/react-components-layout/style.css";
 
-export default {
+const meta: Meta<typeof Accordion> = {
   parameters: {
     layout: "centered",
   },
 };
+export default meta;
+type Story = StoryObj<typeof Accordion>;
 
-export const AccordionStory = {
+export const AccordionStory: Story = {
   render: () => (
     <Accordion defaultActiveItems={["목록1"]} style={{ width: "500px" }}>
       <AccordionItem itemName="목록1">
