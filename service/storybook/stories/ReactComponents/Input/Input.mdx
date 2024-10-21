@@ -1,0 +1,26 @@
+import { Canvas, Meta, Primary } from "@storybook/blocks";
+import * as InputStories from "./Input.stories";
+
+<Meta of={InputStories} />
+
+# Input
+
+# Example
+
+<Primary />
+
+### default
+
+<Canvas of={InputStories.InputStory} />
+
+### Group
+
+<Canvas of={InputStories.InputGroupStory} />
+
+### Filled
+
+<Canvas of={InputStories.InputVariantFilledStory} />
+
+### Focus
+
+<Canvas of={InputStories.InputFocusVisibleState} />

@@ -1,16 +1,18 @@
 import { Input, InputGroup, InputLeftAddon } from "@byeonghyeon/react-components-input";
+import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import "@byeonghyeon/react-components-input/style.css";
 
-export default {
-  title: "React Components/Input",
+const meta: Meta<typeof Input> = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
-export const InputStory = {
+export default meta;
+type Story = StoryObj<typeof Input>;
+
+export const InputStory: Story = {
   render: () => <Input placeholder="placeholder" />,
 };
 
