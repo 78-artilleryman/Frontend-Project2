@@ -4,7 +4,6 @@ import React from "react";
 import "@byeonghyeon/react-components-layout/style.css";
 
 export default {
-  title: "React Components/Select",
   parameters: {
     layout: "centered",
   },

@@ -3,7 +3,6 @@ import { Heading as _Heading } from "@byeonghyeon/react-components-layout";
 import { classes, vars } from "@byeonghyeon/themes";
 
 export default {
-  title: "React Components/Layout/Typography/Heading",
   component: _Heading,
   parameters: {
     layout: "centered",

@@ -4,7 +4,6 @@ import "@byeonghyeon/react-components-layout/style.css";
 import * as React from "react";
 
 export default {
-  title: "React Components/Layout/Grid",
   component: _Grid,
   parameters: {
     layout: "centered",

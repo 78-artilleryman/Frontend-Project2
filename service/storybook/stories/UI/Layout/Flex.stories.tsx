@@ -3,7 +3,6 @@ import "@byeonghyeon/react-components-layout/style.css";
 import * as React from "react";
 
 export default {
-  title: "React Components/Layout/Flex",
   component: _Flex,
   parameters: {
     layout: "centered",

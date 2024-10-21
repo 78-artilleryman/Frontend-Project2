@@ -3,7 +3,6 @@ import "@byeonghyeon/react-components-layout/style.css";
 import { classes, vars } from "@byeonghyeon/themes";
 
 export default {
-  title: "React Components/Layout/Typography/Text",
   component: _Text,
   parameters: {
     layout: "centered",

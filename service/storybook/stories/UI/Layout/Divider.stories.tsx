@@ -4,7 +4,6 @@ import { vars } from "@byeonghyeon/themes";
 import * as React from "react";
 
 export default {
-  title: "React Components/Layout/Divider",
   component: _Divider,
   decorators: [
     Story => (

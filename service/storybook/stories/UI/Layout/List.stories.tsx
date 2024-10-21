@@ -2,7 +2,6 @@ import "@byeonghyeon/react-components-layout/style.css";
 import { OrderedList, ListItem, UnorderedList, List } from "@byeonghyeon/react-components-layout";
 import React from "react";
 export default {
-  title: "React Components/Layout/List",
   parameters: {
     layout: "centered",
   },
