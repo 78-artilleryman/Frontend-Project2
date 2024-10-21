@@ -5,11 +5,9 @@ import React from "react";
 import "@byeonghyeon/react-components-layout/style.css";
 
 export default {
-  title: "React Components/Accordion",
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 };
 
 export const AccordionStory = {
