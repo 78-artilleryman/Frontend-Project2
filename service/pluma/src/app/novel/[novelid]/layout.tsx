@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import React from "react";
+import FileAccordion from "@/components/edit/FileAccordion";
 import NavBar from "@/components/edit/NavBar";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function NovelDetailLayout({
       </header>
       <div className="flex h-screen w-full">
         <NavBar />
-        <div className="bg-blackAlpha-900 h-full w-[200px]" />
+        <FileAccordion />
         {children}
       </div>
     </main>
