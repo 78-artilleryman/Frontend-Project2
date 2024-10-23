@@ -8,10 +8,10 @@ import { seedUsers } from "./seedUsers";
 
 async function main() {
   await seedUsers();
-  //await seedGenre();
-  //await seedNovels();
-  //await seedFolders();
-  //await seedFiles();
+  await seedGenre();
+  await seedNovels();
+  await seedFolders();
+  await seedFiles();
 }
 
 main()
