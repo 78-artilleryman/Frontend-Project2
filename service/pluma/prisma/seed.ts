@@ -67,6 +67,45 @@ async function seedNovels() {
   }
 }
 
+async function seedFolders() {
+  const totalNovels = await prisma.novel.findMany();
+
+  if (totalNovels.length > 0) {
+    for (let i = 0; i < 50; i++) {
+      const randomNovel = totalNovels[Math.floor(Math.random() * totalNovels.length)];
+
+      const folder = await prisma.folder.create({
+        data: {
+          name: faker.lorem.words(2),
+          novelId: randomNovel.id,
+        },
+      });
+
+      console.log(folder);
+    }
+  }
+}
+
+async function seedFiles() {
+  const totalFolders = await prisma.folder.findMany();
+
+  if (totalFolders.length > 0) {
+    for (let i = 0; i < 100; i++) {
+      const randomFolder = totalFolders[Math.floor(Math.random() * totalFolders.length)];
+
+      const file = await prisma.file.create({
+        data: {
+          name: faker.lorem.words(2),
+          content: faker.lorem.paragraphs(3),
+          folderId: randomFolder.id,
+        },
+      });
+
+      console.log(file);
+    }
+  }
+}
+
 async function seedGenre() {
   const novelGenres = [
     "Fantasy", // 판타지
@@ -98,6 +137,8 @@ async function main() {
   seedUsers();
   seedNovels();
   seedGenre();
+  seedFolders();
+  seedFiles();
 }
 
 main()
