@@ -32,7 +32,12 @@ export async function GET(req: NextRequest) {
         },
       },
       include: {
-        files: true, // 각 폴더에 속한 파일 정보를 포함합니다.
+        files: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
       },
     });
 
