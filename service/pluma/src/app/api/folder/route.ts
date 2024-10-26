@@ -22,7 +22,7 @@ export async function GET(req: NextRequest, { params }: { params: { novelId: str
     const userId = token.sub;
 
     // 소설 ID와 사용자 ID에 따라 폴더와 파일 정보를 가져옵니다.
-    const foldersWithFiles = await prisma.folder.findMany({
+    const foldersWithFiles = await prisma.storyFolder.findMany({
       where: {
         novelId: novelId,
         novel: {
