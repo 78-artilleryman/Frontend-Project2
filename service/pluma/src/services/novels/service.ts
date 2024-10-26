@@ -27,7 +27,7 @@ export async function GetNovelList(
 export async function PostNovel(bodyData: PostNovelRequest, token = ""): Promise<PostNovelResponse> {
   const HEADER = getFetchHeader(token, "a");
   try {
-    return await baseHttpClient().post<PostNovelResponse, PostNovelRequest>("novel", HEADER, bodyData);
+    return await baseHttpClient().post<PostNovelResponse, PostNovelRequest>("novels", HEADER, bodyData);
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;
@@ -38,7 +38,7 @@ export async function PostNovel(bodyData: PostNovelRequest, token = ""): Promise
 export async function DeleteNovel(novelId: string, token = ""): Promise<DeleteNovelResponse> {
   const HEADER = getFetchHeader(token, "a");
   try {
-    return await baseHttpClient().delete<DeleteNovelResponse>(`novel/${novelId}`, HEADER);
+    return await baseHttpClient().delete<DeleteNovelResponse>(`novels/${novelId}`, HEADER);
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;

@@ -1,6 +1,6 @@
 import { dehydrate } from "@tanstack/react-query";
 import { cookies } from "next/headers";
-import { GetNovelList } from "../../services/novel/service";
+import { GetNovelList } from "../../services/novels/service";
 import { FetchNovelListRequest } from "../../types/novel/request.type";
 import { novelQueryKey } from "./queryKey";
 import getQueryClient from "@/common/util/getQueryClient";
