@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 import prisma from "@/common/db";
 
-export async function GET(req: NextRequest, { params }: { params: { novelId: string } }) {
+// 스토리 폴더 및 파일 목록 조회
+export async function GET(req: NextRequest) {
   try {
     // 인증 토큰을 가져옵니다.
     const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
@@ -11,8 +12,9 @@ export async function GET(req: NextRequest, { params }: { params: { novelId: str
       return NextResponse.json({ message: "Not authenticated" }, { status: 401 });
     }
 
-    // 요청 URL에서 소설 ID를 가져옵니다.
-    const { novelId } = params;
+    // 요청 URL에서 쿼리 파라미터로 소설 ID를 가져옵니다.
+    const url = new URL(req.url);
+    const novelId = url.searchParams.get("novelId");
     if (!novelId) {
       // 소설 ID가 제공되지 않았을 때의 처리
       return NextResponse.json({ message: "No novel ID provided" }, { status: 400 });
