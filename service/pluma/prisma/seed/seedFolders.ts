@@ -10,7 +10,7 @@ export async function seedFolders() {
     for (let i = 0; i < 50; i++) {
       const randomNovel = totalNovels[Math.floor(Math.random() * totalNovels.length)];
 
-      const folder = await prisma.folder.create({
+      const folder = await prisma.storyFolder.create({
         data: {
           name: faker.lorem.words(2),
           novelId: randomNovel.id,
