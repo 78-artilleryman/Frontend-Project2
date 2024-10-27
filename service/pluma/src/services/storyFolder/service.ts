@@ -1,8 +1,16 @@
 import { baseHttpClient } from "../baseHttpClient";
 import { CookieData } from "../novels/service";
 import { getFetchHeader } from "@/common/util/getFetchHeader";
-import { FetchStoryFolderListRequest, PostStoryFolderRequest } from "@/types/storyFolder/request.type";
-import { FetchStoryFolderListResponse, PostStoryFolderResponse } from "@/types/storyFolder/response.type";
+import {
+  DeleteStoryFolderRequest,
+  FetchStoryFolderListRequest,
+  PostStoryFolderRequest,
+} from "@/types/storyFolder/request.type";
+import {
+  DeleteStoryFolderResponse,
+  FetchStoryFolderListResponse,
+  PostStoryFolderResponse,
+} from "@/types/storyFolder/response.type";
 
 export async function GetSotryFolderList(
   { novelId }: FetchStoryFolderListRequest,
@@ -27,6 +35,19 @@ export async function PostSotryFolder(
       novelId,
       folderName,
     });
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+}
+
+export async function DeleteSotryFolder(
+  { folderId }: DeleteStoryFolderRequest,
+  token = ""
+): Promise<DeleteStoryFolderResponse> {
+  const HEADER = getFetchHeader(token, "a");
+  try {
+    return await baseHttpClient().delete<DeleteStoryFolderResponse>(`storyFolder${folderId}`, HEADER);
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;

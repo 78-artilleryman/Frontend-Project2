@@ -15,3 +15,7 @@ export interface PostStoryFolderResponse {
   novelId: string;
   created_at: Date;
 }
+
+export interface DeleteStoryFolderResponse {
+  message: string;
+}
