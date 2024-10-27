@@ -8,3 +8,10 @@ export interface FetchStoryFolderListResponse {
     name: string;
   }[];
 }
+
+export interface PostStoryFolderResponse {
+  id: string;
+  name: string;
+  novelId: string;
+  created_at: Date;
+}
