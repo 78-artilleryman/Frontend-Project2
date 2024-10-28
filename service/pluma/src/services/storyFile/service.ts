@@ -7,10 +7,10 @@ import { FetchStoryFileListResponse } from "@/types/storyFile/response.type";
 export async function GetSotryFolderList(
   { folderId }: FetchStoryFileListRequest,
   token?: CookieData
-): Promise<FetchStoryFileListResponse> {
+): Promise<FetchStoryFileListResponse[]> {
   const HEADER = getFetchHeader(token?.value, "a");
   try {
-    return await baseHttpClient().get<FetchStoryFileListResponse>("storyFile", HEADER, { folderId });
+    return await baseHttpClient().get<FetchStoryFileListResponse[]>("storyFile", HEADER, { folderId });
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;
