@@ -3,5 +3,12 @@ export interface FetchStoryFileListResponse {
   name: string;
   content: string;
   folderId: string;
-  created_at: string;
+  created_at: Date;
+}
+
+export interface PostStoryFileResponse {
+  id: string;
+  name: string;
+  folderId: string;
+  created_at: Date;
 }
