@@ -1,8 +1,16 @@
 import { baseHttpClient } from "../baseHttpClient";
 import { CookieData } from "../novels/service";
 import { getFetchHeader } from "@/common/util/getFetchHeader";
-import { FetchStoryFileListRequest, PostStoryFileRequest } from "@/types/storyFile/request.type";
-import { FetchStoryFileListResponse, PostStoryFileResponse } from "@/types/storyFile/response.type";
+import {
+  DeleteStoryFileRequest,
+  FetchStoryFileListRequest,
+  PostStoryFileRequest,
+} from "@/types/storyFile/request.type";
+import {
+  DeleteStoryFileResponse,
+  FetchStoryFileListResponse,
+  PostStoryFileResponse,
+} from "@/types/storyFile/response.type";
 
 export async function GetSotryFolderList(
   { folderId }: FetchStoryFileListRequest,
@@ -17,16 +25,29 @@ export async function GetSotryFolderList(
   }
 }
 
-export async function PostSotryFㅑㅣㄷ(
+export async function PostSotryFile(
   { folderId, fileName }: PostStoryFileRequest,
   token = ""
 ): Promise<PostStoryFileResponse> {
   const HEADER = getFetchHeader(token, "a");
   try {
-    return await baseHttpClient().post<PostStoryFileResponse, PostStoryFileRequest>("storyFolder", HEADER, {
+    return await baseHttpClient().post<PostStoryFileResponse, PostStoryFileRequest>("storyFile", HEADER, {
       folderId,
       fileName,
     });
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+}
+
+export async function DeleteSotryFile(
+  { folderId }: DeleteStoryFileRequest,
+  token = ""
+): Promise<DeleteStoryFileResponse> {
+  const HEADER = getFetchHeader(token, "a");
+  try {
+    return await baseHttpClient().delete<DeleteStoryFileResponse>(`storyFile/${folderId}`, HEADER);
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;

@@ -12,3 +12,7 @@ export interface PostStoryFileResponse {
   folderId: string;
   created_at: Date;
 }
+
+export interface DeleteStoryFileResponse {
+  message: string;
+}
