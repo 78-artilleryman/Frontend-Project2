@@ -15,10 +15,10 @@ import {
 export async function GetSotryFolderList(
   { novelId }: FetchStoryFolderListRequest,
   token?: CookieData
-): Promise<FetchStoryFolderListResponse> {
+): Promise<FetchStoryFolderListResponse[]> {
   const HEADER = getFetchHeader(token?.value, "a");
   try {
-    return await baseHttpClient().get<FetchStoryFolderListResponse>("storyFolder", HEADER, { novelId });
+    return await baseHttpClient().get<FetchStoryFolderListResponse[]>("storyFolder", HEADER, { novelId });
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;
