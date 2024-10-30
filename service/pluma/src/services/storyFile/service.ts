@@ -12,7 +12,7 @@ import {
   PostStoryFileResponse,
 } from "@/types/storyFile/response.type";
 
-export async function GetSotryFolderList(
+export async function GetSotryFileList(
   { folderId }: FetchStoryFileListRequest,
   token?: CookieData
 ): Promise<FetchStoryFileListResponse[]> {

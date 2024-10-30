@@ -1,5 +1,5 @@
 import { createQueryKeys } from "@lukemorales/query-key-factory";
 
-export const novelQueryKey = createQueryKeys("storyFolder", {
+export const storyFolderQueryKey = createQueryKeys("storyFolder", {
   list: () => ["folder"],
 });
