@@ -8,5 +8,5 @@ export interface PostStoryFileRequest {
 }
 
 export interface DeleteStoryFileRequest {
-  folderId: string;
+  fileId: string;
 }

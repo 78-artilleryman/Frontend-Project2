@@ -42,12 +42,12 @@ export async function PostSotryFile(
 }
 
 export async function DeleteSotryFile(
-  { folderId }: DeleteStoryFileRequest,
+  { fileId }: DeleteStoryFileRequest,
   token = ""
 ): Promise<DeleteStoryFileResponse> {
   const HEADER = getFetchHeader(token, "a");
   try {
-    return await baseHttpClient().delete<DeleteStoryFileResponse>(`storyFile/${folderId}`, HEADER);
+    return await baseHttpClient().delete<DeleteStoryFileResponse>(`storyFile/${fileId}`, HEADER);
   } catch (error) {
     console.error("Fetch error:", error);
     throw error;
