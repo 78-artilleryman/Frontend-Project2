@@ -20,7 +20,7 @@ export const useNovelMutation = (
         case "delete":
           return await DeleteSotryFolder({ folderId }, token);
         case "post":
-          if (!bodyData) throw new Error("Body data is required for posting a novel");
+          if (!bodyData) throw new Error("Body data is required for posting a story folder");
           return await PostSotryFolder(bodyData, token);
         case "update":
           return await DeleteSotryFolder({ folderId }, token);
