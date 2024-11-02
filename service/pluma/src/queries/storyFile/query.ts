@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-
 import { storyFileQueryKey } from "./queryKey";
 import { GetSotryFileList } from "@/services/storyFile/service";
 import { FetchStoryFileListRequest } from "@/types/storyFile/request.type";
