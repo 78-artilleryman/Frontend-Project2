@@ -4,9 +4,8 @@ const QuillEditor = dynamic(() => import("@/components/edit/QuillEditor"), { ssr
 
 function NovelDetailPage() {
   return (
-    <div className="mx-auto flex h-[calc(100vh-40px)] w-[100%] justify-center gap-6 overflow-y-auto pt-10">
+    <div className="mx-auto flex w-[100%] justify-center gap-6 overflow-y-auto bg-[#f1f1f1]">
       <QuillEditor />
-      <div className="h-[100px] w-[20%] bg-blue-300">test</div>
     </div>
   );
 }
