@@ -12,7 +12,7 @@ COPY ../../package.json ./
 COPY ../../yarn.lock ./
 
 # 의존성 설치
-RUN yarn install --production
+RUN yarn workspaces focus --production
 
 # 프로젝트의 모든 파일 복사
 COPY . .
@@ -22,3 +22,4 @@ RUN yarn workspace pluma build
 
 # 애플리케이션 실행docker build -t pluma .
 CMD ["yarn", "workspace", "pluma", "start"]
+ 
