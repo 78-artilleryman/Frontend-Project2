@@ -17,6 +17,7 @@ export async function GetSotryFolderList(
   token?: CookieData
 ): Promise<FetchStoryFolderListResponse[]> {
   const HEADER = getFetchHeader(token?.value, "a");
+
   try {
     return await baseHttpClient().get<FetchStoryFolderListResponse[]>("storyFolder", HEADER, { novelId });
   } catch (error) {

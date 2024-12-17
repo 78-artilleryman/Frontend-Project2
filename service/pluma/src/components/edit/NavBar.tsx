@@ -14,7 +14,7 @@ function NavBar() {
   const novelId = params.novelid;
 
   return (
-    <section className="bg-whiteAlpha-900 relative flex h-full w-[60px] flex-col items-center gap-2 p-2">
+    <section className="bg-whiteAlpha-900 relative flex h-[calc(100vh-40px)] w-[60px] flex-col items-center gap-2 overflow-hidden p-2">
       {/* 소설 리스트 페이지 이동 */}
       <Link href={`/novel/${novelId}/file/1`}>
         <button

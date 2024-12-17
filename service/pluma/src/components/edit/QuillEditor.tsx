@@ -27,7 +27,7 @@ function QuillEditor() {
 
   return (
     <div>
-      <div ref={editorRef} style={{ height: "100vh" }} />
+      <div ref={editorRef} style={{ maxWidth: "750px", width: "750px", minHeight: "80vh", borderTop: "none" }} />
     </div>
   );
 }
